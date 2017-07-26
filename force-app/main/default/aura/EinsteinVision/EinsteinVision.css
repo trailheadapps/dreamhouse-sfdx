@@ -1,0 +1,50 @@
+.THIS {
+	margin: 12px;    
+}
+
+.THIS td {
+	padding: 2px;
+}
+
+.THIS .probability {
+	padding-right: 4px;
+    text-align: right;
+}
+
+.THIS {
+    position: relative;
+}
+
+.THIS img {
+    margin: 8px 0;
+    height: 150px;
+}
+
+.THIS table {
+    display: block;
+    width: 100%;
+}
+
+.THIS tr {
+    border-top: 1px dashed rgb(216, 221, 230);
+    width: 100%;
+}
+
+.THIS .slds-grid > div {
+    padding: 2px 3px 0 3px;
+    font-size: 12px;
+    border-bottom: 1px dashed rgb(216, 221, 230);
+}
+
+.THIS .slds-file-selector {
+    margin-top: 4px;
+    width: 100% !important;
+}
+
+.THIS .slds-file-selector__dropzone {
+    width: 100% !important;
+}
+
+.THIS .slds-form-element__label {
+    display: none;
+}

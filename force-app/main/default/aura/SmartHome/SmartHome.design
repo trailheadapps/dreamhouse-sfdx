@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="tabIcons" label="Show tab icons" default="false" description="Show Tab Icons" />
+	<design:attribute name="demoMode" label="Demo Mode" default="true" description="Demo Mode" />
+</design:component>

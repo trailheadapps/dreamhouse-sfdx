@@ -1,0 +1,3 @@
+<design:component label="Image-Based Search">
+    <design:attribute name="modelId" label="Model Id" description="Einstein Vision Model Id" />
+</design:component>

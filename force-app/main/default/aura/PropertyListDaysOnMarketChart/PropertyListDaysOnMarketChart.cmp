@@ -1,0 +1,33 @@
+<aura:component controller="PropertyController" 
+                implements="flexipage:availableForAllPageTypes"
+                access="global">
+	
+    <aura:attribute name="properties" type="Property__c[]"/>
+    <aura:attribute name="chartModel" type="Object[]"/>
+    <aura:attribute name="maxDaysOnMarket" type="Integer"/>
+    
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  	
+    <div>
+        <div class="title">
+            <lightning:icon iconName="custom:custom85" size="small"/>
+            <h3 class="slds-section__title">Properties by days on the market</h3>
+        </div>
+        <table>
+            <aura:iteration items="{!v.chartModel}" var="item" indexVar="index">
+                <tr>
+                    <td class="col-address">
+                        <div class="slds-truncate"><a data-id="{#item.id}" onclick="{!c.navigateToRecord}">{#item.address}, {#item.city}</a></div>
+                    </td>
+                    <td class="col-days">
+                        <div class="slds-truncate">{#item.daysOnMarket} days</div>
+                    </td>
+                    <td>
+                        <div class="{# 'bar ' + item.status}" data-id="{#item.id}" onclick="{!c.barClickHandler}" style="{# 'width:' + (item.daysOnMarket / v.maxDaysOnMarket * 100) + '%'}"></div>
+                    </td>
+                </tr>            
+            </aura:iteration>
+        </table>
+    </div>
+    
+</aura:component>

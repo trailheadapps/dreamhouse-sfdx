@@ -1,0 +1,103 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" showHeader="false">
+
+    <apex:slds />
+    
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Property__c" jsShorthand="Property">
+            <apex:remoteObjectField name="Name" jsShorthand="address"/>
+            <apex:remoteObjectField name="City__c" jsShorthand="city"/>
+            <apex:remoteObjectField name="State__c" jsShorthand="state"/>
+            <apex:remoteObjectField name="Price__c" jsShorthand="price"/>
+            <apex:remoteObjectField name="Location__Latitude__s" jsShorthand="lat"/>
+            <apex:remoteObjectField name="Location__Longitude__s" jsShorthand="long"/>
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+   
+
+    <html>
+
+        <head>
+            <link rel="stylesheet" href="{!URLFOR($Resource.leaflet1,'/leaflet.css')}" />
+            <style>
+                .map {
+                    height: 480px;
+                }
+                
+                .new-view {
+                    background-color: #8B85F9;
+                }
+                
+                .new-favorite {
+                    background-color: #53B6D7;
+                }
+                
+                .new-appointment {
+                    background-color: #E260AB;
+                }
+                
+                .right {
+                    text-align: right;
+                }
+                
+                .event-col {
+                    width: 140px;
+                }                
+            </style>
+        </head>
+
+        <body>
+            
+            <div id="app" class="slds-scope"></div>
+
+            <script src="{!URLFOR($Resource.leaflet1,'/leaflet.js')}"></script>
+            <script>
+
+                function getSLDSPath() {
+                	return "{!URLFOR($Asset.SLDS)}";
+                }
+
+            	function getRandomNumber(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+            
+                function getProperties(callback) {
+                
+                    var property = new SObjectModel.Property();
+                    var properties;
+                    
+                    property.retrieve({limit: 20}, function(error, records, event) {
+                        if (error) {
+                            alert(error.message);
+                        } else {
+                            properties = [];
+                            console.log(records);
+                            records.forEach(function(property) {
+                                properties.push({
+                                    id: property.get("Id"),
+                                    address: property.get("address"),
+                                    city: property.get("city"),
+                                    price: property.get("price"),
+                                    state: property.get("state"),
+                                    lat: property.get("lat"),
+                                    long: property.get("long"),
+                                    view: getRandomNumber(100, 900),
+                                    favorite: getRandomNumber(10, 60),
+                                    appointment: getRandomNumber(0,8)
+                                });
+                            });
+                            console.log(properties);
+                            callback(properties);
+                            
+                        }
+                    });
+                
+                }
+                
+            </script>
+            
+            <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+            <script src="{!URLFOR($Resource.heatmap)}"></script>
+        
+        </body>
+    </html>
+</apex:page>

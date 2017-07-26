@@ -1,0 +1,35 @@
+<aura:component controller="LIFXController">
+
+	<!-- Components that allows users to control LIFX connected lights -->
+
+    <aura:attribute name="lights" type="Array"/>
+    <aura:attribute name="waiting" type="Boolean" default="false"/>
+    <aura:attribute name="demoMode" type="Boolean" default="true"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+
+    <aura:handler name="change" value="{!v.brightness}" action="{!c.brightnessChange}"/>
+    
+    <div>
+        <aura:iteration items="{!v.lights}" var="light" indexVar="index">
+            <lightning:layout >
+                <lightning:layoutItem padding="around-small">
+                    <div class="slds-form-element">
+                        <label class="slds-checkbox--toggle slds-grid slds-grid--vertical-align-center">
+                            <span class="slds-form-element__label slds-m-bottom--none">{!light.label}</span>
+                            <input name="checkbox" type="checkbox" data-id="{!light.id}" checked="{!light.power=='on'}" onchange="{!c.powerChangeHandler}"/>
+                            <span class="slds-checkbox--faux" data-check-on="On" data-check-off="Off"></span>
+                        </label>
+                    </div>
+                </lightning:layoutItem>	
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <input min='0' max='100' type='range' data-id="{!light.id}" value="{!light.brightness * 100}" onchange='{!c.brightnessChangeHandler}'/>
+                </lightning:layoutItem>
+            </lightning:layout>            
+        </aura:iteration>
+        <aura:if isTrue="{! v.waiting }">
+	        <lightning:spinner size="large"/>
+        </aura:if>    
+    </div>
+
+</aura:component>

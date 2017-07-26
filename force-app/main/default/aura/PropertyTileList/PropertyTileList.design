@@ -1,0 +1,3 @@
+<design:component label="Property Tile List">
+    <design:attribute name="pageSize" label="Houses per page" default="8" description="Number of properties per page" />
+</design:component>

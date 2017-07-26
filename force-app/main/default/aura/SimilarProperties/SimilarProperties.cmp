@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global"
+                controller="PropertyController">
+	
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="property" type="Property__c" />
+ 	<aura:attribute name="similarProperties" type="Property__c[]" />
+    <aura:attribute name="searchCriteria" type="String" default="Price" />
+    
+    <force:recordData aura:id="service" 
+                         recordId="{!v.recordId}" 
+                         targetFields="{!v.property}" 
+                         fields="['Id', 'Address__c', 'City__c', 'Price__c', 'Beds__c']"
+                         recordUpdated="{!c.recordUpdated}"/>
+    
+	<aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
+
+    <lightning:card iconName="utility:crossfilter" title="{! 'Similar Properties by ' + v.searchCriteria}">
+        <div class="slds-p-left--medium slds-p-right--medium">
+            <ul class="slds-list--vertical">
+                <aura:iteration items="{!v.similarProperties}" var="item" indexVar="i">
+                    <li class="slds-item slds-m-bottom--medium">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <img src="{!item.Thumbnail__c}" class="slds-avatar--large slds-avatar--circle" alt="{!item.Title_c}" />
+                            </div>
+                            <div class="slds-media__body">
+                                <a data-record="{!item.Id}" onclick="{!c.navigateToRecord}">
+                                    <h3 class="slds-text-heading--small">{!item.Name}</h3>
+                                </a>
+                                <ul class="slds-grid slds-wrap">
+                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Bedrooms:</span> {!item.Beds__c}</li>
+                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Bathrooms:</span> {!item.Baths__c}</li>
+                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Price:</span> <lightning:formattedNumber value="{!item.Price__c}" style="currency" currencyCode="USD"/></li>
+                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Status:</span> {!item.Status__c}</li>
+                                </ul>                                
+                            </div>
+                        </div>
+                    </li>    
+                </aura:iteration>
+            </ul>
+        </div>
+    </lightning:card>
+    
+</aura:component>

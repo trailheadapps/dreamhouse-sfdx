@@ -1,0 +1,35 @@
+.THIS {
+    position: relative;
+}
+
+.THIS .slds-card__body h1 {
+    font-weight: 300;
+    color: #0070D2;
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+.THIS .slds-card__body h2 {
+    font-weight: 300;
+    color: #0070D2;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.THIS .slds-card__body {
+	height: 120px;
+    text-align: center;
+}
+
+.THIS .slds-icon-standard-solution {
+    background-color: transparent;
+}
+
+.THIS .slds-icon-standard-solution svg {
+    fill: #54698D;
+}
+
+.THIS .select {
+	padding-top: 40px;
+}

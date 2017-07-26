@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="EinsteinVisionController">
+    
+    <aura:attribute name="datasets" type="Object[]"/>
+    <aura:attribute name="pathToZip" type="String" default="https://s3-us-west-1.amazonaws.com/sfdc-demo/houses.zip"/>
+    <aura:attribute name="waiting" type="Boolean" default="false"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div>
+        
+        <lightning:layout verticalAlign="end" class="path-to-zip slds-m-around--small">
+            <lightning:layoutitem flexibility="grow">
+                <lightning:input label="ZIP file URL:" value="{!v.pathToZip}"/>
+            </lightning:layoutitem>
+            <lightning:layoutitem >
+                <lightning:button onclick="{!c.onCreateDataset}">Create Dataset</lightning:button>
+                <lightning:button onclick="{!c.onRefresh}">Refresh Datasets</lightning:button>
+            </lightning:layoutitem>
+        </lightning:layout>
+        
+        <lightning:layout multipleRows="true">
+            <aura:iteration items="{!v.datasets}" var="dataset">
+                <lightning:layoutitem size="6" padding="around-small">
+                    <c:EinsteinVisionDataset dataset="{!dataset}" onchange="{!c.datasetChange}"/>
+                </lightning:layoutitem>
+            </aura:iteration>
+        </lightning:layout>
+        
+        <aura:if isTrue="{! v.waiting }">
+            <lightning:spinner size="large"/>
+        </aura:if>            
+
+    </div>
+
+</aura:component>

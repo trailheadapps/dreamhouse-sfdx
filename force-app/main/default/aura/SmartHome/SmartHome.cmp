@@ -1,0 +1,44 @@
+<aura:component implements="force:lightningQuickAction" access="global">
+
+    <aura:attribute name="tabIcons" type="Boolean" default="false"/>
+    <aura:attribute name="demoMode" type="Boolean" default="true"/>
+
+    <lightning:tabset >
+        <lightning:tab >
+            <aura:set attribute="label">
+                <aura:if isTrue="{!v.tabIcons}">
+	                <lightning:icon iconName="utility:connected_apps" size="small"/>
+                </aura:if>
+                Lights
+            </aura:set>
+            <c:SmartLights demoMode="{!v.demoMode}"/>
+        </lightning:tab>
+        <lightning:tab >
+            <aura:set attribute="label">
+                <aura:if isTrue="{!v.tabIcons}">
+	                <lightning:icon iconName="utility:unlock" size="small"/>
+                </aura:if>    
+                Locks
+            </aura:set>
+            <c:SmartLocks />
+        </lightning:tab>
+        <lightning:tab >
+            <aura:set attribute="label">
+                <aura:if isTrue="{!v.tabIcons}">
+	                <lightning:icon iconName="utility:frozen" size="small"/>
+                </aura:if>    
+                Temp
+            </aura:set>
+            <c:SmartThermostat />
+        </lightning:tab>
+        <lightning:tab >
+            <aura:set attribute="label">
+                <aura:if isTrue="{!v.tabIcons}">
+	                <lightning:icon iconName="utility:shield" size="small"/>
+                </aura:if>.    
+                Alarm
+            </aura:set>
+        </lightning:tab>
+    </lightning:tabset>
+
+</aura:component>

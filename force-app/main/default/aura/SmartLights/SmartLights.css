@@ -1,0 +1,44 @@
+.THIS {
+    position: relative;
+    height: 160px;
+}
+
+.THIS input[type=range]{
+    -webkit-appearance: none;
+    width:100%;
+}
+
+.THIS input[type=range]::-webkit-slider-runnable-track {
+    width: 500px;
+    height: 2px;
+    background: #32738E;
+    border: none;
+    border-radius: 3px;
+}
+
+.THIS input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 16px;
+    border-radius: 2px;
+    background: #32738E;
+    margin-top: -10px;
+}
+
+.THIS input[type=range]:focus {
+    outline: none;
+}
+
+.THIS input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #32738E;
+}
+
+.THIS .slds-checkbox--toggle [type=checkbox]:checked+.slds-checkbox--faux, 
+.THIS .slds-checkbox--toggle [type=checkbox]:checked~.slds-checkbox--faux {
+	background-color: #32738E;    
+}
+
+.THIS .slds-form-element__label {
+	width: 110px;
+}

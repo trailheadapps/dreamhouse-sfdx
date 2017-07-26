@@ -1,0 +1,25 @@
+<aura:component >
+
+	<!-- Components that allows users to control connected locks -->
+
+    <aura:attribute name="locks" type="Array"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    
+    <div>
+        <aura:iteration items="{!v.locks}" var="lock" indexVar="index">
+            <lightning:layout horizontalAlign="center" verticalAlign="center" multipleRows="false">
+				<lightning:layoutItem padding="around-small">
+                    <div class="slds-form-element">
+                        <label class="slds-checkbox--toggle slds-grid slds-grid--vertical-align-center">
+                            <span class="slds-form-element__label slds-m-bottom--none">{!lock.label}</span>
+                            <input name="checkbox" type="checkbox" data-id="{!lock.id}" checked="{! lock.value==1 }"/>
+                            <span class="slds-checkbox--faux" data-check-on="On" data-check-off="Off"></span>
+                        </label>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>                
+        </aura:iteration>
+    </div>
+
+</aura:component>

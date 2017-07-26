@@ -1,0 +1,23 @@
+.THIS {
+    margin: 8px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS .right {
+    text-align: right;
+}
+
+.THIS .centered {
+    color: #999999;
+    font-size: 0.9rem;
+    text-align: center;
+	align-self: center;
+    padding: 0 12px;
+}

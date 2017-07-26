@@ -1,0 +1,34 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" 
+				access="global">
+    
+    <aura:attribute name="recordId" type="Id" />
+	<aura:attribute name="property" type="Property__c" default="{Days_On_Market__c: 0}"/> 
+	<aura:attribute name="propertyRecord" type="Property__c"/> 
+	<aura:attribute name="formattedDateListed" type="String" /> 
+	<aura:attribute name="status" type="String" /> 
+    
+    <force:recordData aura:id="service" 
+                      recordId="{!v.recordId}" 
+                      targetFields="{!v.property}" 
+                      fields="['Id', 'Date_Listed__c', 'Days_On_Market__c']" 
+                      recordUpdated="{!c.recordUpdated}"/>
+    
+    <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
+
+    <div>
+        <lightning:layout >
+        	<lightning:layoutitem class="{! 'days-block ' + v.status}">
+                <div class="days">{!v.property.Days_On_Market__c}</div>days
+            </lightning:layoutitem>
+            <lightning:layoutitem flexibility="grow" class="chart">
+                <div class="{! 'bar ' + v.status }" style="{! 'width:' + v.property.Days_On_Market__c / 90 * 100 + '%' }"/>
+                <div class="axis">
+                    <div><div class="legend">{!v.formattedDateListed}</div></div>
+                    <div><div class="legend">30 days</div></div>
+                    <div><div class="legend">60 days</div></div>
+                </div>
+            </lightning:layoutitem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

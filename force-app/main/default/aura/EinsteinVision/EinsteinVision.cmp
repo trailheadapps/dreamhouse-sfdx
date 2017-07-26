@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable" access="global" controller="EinsteinVisionController">
+    
+    <aura:attribute name="modelId" type="String"/>
+    <aura:attribute name="files" type="Object[]"/>
+    <aura:attribute name="predictions" type="Object[]"/>
+	<aura:attribute name="waiting" type="Boolean" default="false"/>
+    <aura:attribute name="pictureSrc" type="String" />
+    
+    <aura:registerEvent name="einsteinVisionEvent" type="c:EinsteinVisionEvent"/>
+
+    <div>
+
+        <lightning:input aura:id="fileInput" type="file" name="file" multiple="false" accept="image/*;capture=camera" files="{!v.files}" onchange="{! c.readFile }"
+                         label="Select a picture:"/>
+
+        <img src="{!v.pictureSrc}"/>
+        
+        <aura:iteration items="{!v.predictions}" var="prediction">
+            <lightning:layout >
+                <lightning:layoutitem ><lightning:icon iconName="utility:preview" size="x-small"/></lightning:layoutitem>
+                <lightning:layoutitem >{! prediction.formattedProbability}</lightning:layoutitem>
+                <lightning:layoutitem flexibility="grow">{!prediction.label}</lightning:layoutitem>
+            </lightning:layout>
+        </aura:iteration>    
+	
+        <aura:if isTrue="{! v.waiting }">
+	        <lightning:spinner size="large"/>
+        </aura:if>            
+
+    </div>
+    
+</aura:component>

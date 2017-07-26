@@ -1,0 +1,7 @@
+<design:component label="Similar Properties">
+     <sfdc:objects >
+         <sfdc:object >Property__c</sfdc:object>
+     </sfdc:objects>
+     <design:attribute name="searchCriteria" label="Search By" datasource="Bedrooms, Price" default="Price" 
+                       description="Search for similar houses based on what criteria?" />
+ </design:component>

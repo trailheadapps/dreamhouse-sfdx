@@ -1,0 +1,45 @@
+.THIS {
+    text-align: center;
+}
+
+.THIS input[type=range]{
+    -webkit-appearance: none;
+    width:200px;
+}
+
+.THIS input[type=range]::-webkit-slider-runnable-track {
+    width: 500px;
+    height: 2px;
+    background: #506486;
+    border: none;
+    border-radius: 3px;
+}
+
+.THIS input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 16px;
+    border-radius: 2px;
+    background: #506486;
+    margin-top: -11px;
+}
+
+.THIS input[type=range]:focus {
+    outline: none;
+}
+
+.THIS input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #506486;
+}
+
+.THIS .current-temp {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 68px;
+}
+
+.THIS .requested-temp {
+    font-size:28px;
+    font-weight:300;
+}

@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+
+    <ltng:require styles="{!$Resource.nouislider + '/nouislider.css'}" 
+                  scripts="{!$Resource.nouislider + '/nouislider.js'}"
+                  afterScriptsLoaded="{!c.jsLoaded}" />
+
+	<aura:registerEvent name="rangeChange" type="c:RangeChange"/>
+
+    <aura:attribute name="min" type="String" default="0"/>
+    <aura:attribute name="max" type="String" default="1000"/>
+    <aura:attribute name="step" type="String" default="10"/>
+    
+    <div>
+	    <div aura:id="slider" class="slider"/>
+    </div>
+    
+</aura:component>

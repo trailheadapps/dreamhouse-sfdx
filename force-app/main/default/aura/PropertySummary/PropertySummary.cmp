@@ -1,0 +1,42 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="recordId" type="Id" />
+	<aura:attribute name="property" type="Property__c" /> 
+    
+	<force:recordData aura:id="service" 
+                         recordId="{!v.recordId}"
+                         targetFields="{!v.property}" 
+                         fields="['Id', 'Thumbnail__c', 'Address__c', 'City__c', 'Price__c', 'Beds__c', 'Baths__c', 'Date_Listed__c']" />
+    
+    <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
+
+    <lightning:card >
+        
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:household"/>
+            <span class="title">Summary</span>
+        </aura:set>
+        
+        <aura:set attribute="actions">
+            <lightning:buttonIcon iconName="utility:edit" variant="bare" alternativeText="Edit Record" onclick="{!c.editRecord}" />
+        </aura:set>
+        
+        <aura:if isTrue="{!v.recordId==undefined}">
+            <div aura:id="selectSection" class="select slds-text-color--weak">
+                Select a property
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.recordId!=undefined}">
+            <img src="{!v.property.Thumbnail__c}"/>
+            <div class="summary">
+                <p>{#v.property.Address__c},&nbsp;{!v.property.City__c}</p>
+                <p>{!v.property.Beds__c} bedrooms, {!v.property.Baths__c} bathrooms</p>
+                <p>On the market since <c:FormattedDate value="{!v.property.Date_Listed__c}"/></p>
+                <h3><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD"/></h3>
+            </div>
+        </aura:if>
+        
+    </lightning:card>
+    
+</aura:component>

@@ -1,0 +1,80 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="BotController" >
+
+    <aura:attribute name="question" type="String" default=""/>
+    <aura:attribute name="messages" type="Object[]"/>
+    <aura:attribute name="session" type="Array"/>
+    <aura:attribute name="height" type="String" default="500px"/>
+	<aura:attribute name="files" type="Object[]"/>
+
+    <div style="{#'height: '+v.height}" class="slds-p-vertical--x-small">
+		<div aura:id="content" class="content">
+	        <aura:iteration items="{!v.messages}" var="message">
+
+                <lightning:layout >
+                    <lightning:layoutitem padding="around-small">
+                        <lightning:icon iconName="{#message.author == 'Me' ? 'standard:avatar_loading' : 'standard:custom_notification'}" size="small"/>
+                    </lightning:layoutitem>
+                    
+                    <lightning:layoutitem padding="around-small" flexibility="grow">
+                        <p><strong>{#message.author}</strong></p>
+                        <p class="slds-text-body">{#message.messageText}</p>
+                        
+                        <aura:if isTrue="{!message.imageURL}">
+                            <figure class="slds-image slds-image--card slds-m-top--x-small">
+                                <img src='{#message.imageURL}'/>
+                            </figure>
+                        </aura:if>
+                        
+                        <aura:iteration items="{!message.buttons}" var="button">
+                            <lightning:button label="{#button.label}" name="{#button.value}" onclick="{!c.postbackButtonClickHandler}" class="message-button"/>
+                        </aura:iteration>
+                        
+                        <aura:iteration items="{!message.records}" var="record">
+                            <dl class="slds-list--horizontal slds-wrap">
+                                <aura:iteration items="{!record.fields}" var="field">
+                                    <dt class="slds-item--label slds-text-color--weak slds-truncate">{!field.name}:</dt>
+                                    <dd class="slds-item--detail slds-truncate">
+                                        <aura:if isTrue="{!field.linkURL}">
+                                            <a href="{#field.linkURL}">{#field.value}</a>
+                                            <aura:set attribute="else">
+                                                {#field.value}
+                                            </aura:set>
+                                        </aura:if>
+                                    </dd>
+                                </aura:iteration>
+                            </dl>
+                        </aura:iteration>
+                        
+                        <aura:iteration items="{!message.items}" var="item">
+                            <aura:if isTrue="{!item.linkURL}">
+                                <div class="list-item"><a href="{#item.linkURL}" target="_blank">{#item.name}</a></div>
+                                <aura:set attribute="else">
+                                    <div class="list-item">{#item.name}</div>
+                                </aura:set>
+                            </aura:if>
+                        </aura:iteration>
+                        
+                    </lightning:layoutitem>
+                </lightning:layout>
+                
+            </aura:iteration>
+
+        </div>            
+
+        <div class="footer slds-form-element slds-p-horizontal--x-small">
+            <div class="slds-form-element__control">
+                <input aura:id="utterance" type="text" class="slds-input" placeholder="Ask DreamBot..." onkeypress="{!c.utteranceHandler}" />
+                <lightning:input aura:id="fileInput" 
+                                 type="file" name="file" 
+                                 multiple="false" 
+                                 accept="image/*;capture=camera" 
+                                 files="{!v.files}"
+                                 onchange="{!c.uploadFile}"
+                         		 label="Select a file"/>
+
+            </div>
+        </div>            
+
+    </div>
+
+</aura:component>

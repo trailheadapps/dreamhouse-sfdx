@@ -1,0 +1,4 @@
+<design:component label="Smart Home">
+	<design:attribute name="tabIcons" label="Show Tab Icons" default="false" description="Show tab icons" />
+	<design:attribute name="demoMode" label="Demo Mode" default="true" description="Demo Mode" />
+</design:component>

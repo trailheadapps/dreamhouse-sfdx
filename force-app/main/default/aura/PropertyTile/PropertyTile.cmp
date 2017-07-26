@@ -1,0 +1,20 @@
+<aura:component >
+	
+	<aura:attribute name="property" type="Property__c"/>
+
+    <aura:registerEvent name="navigateToSObject" type="force:navigateToSObject"/>
+    <aura:registerEvent name="selectSObject" type="ltng:selectSObject"/>
+    
+	<a onclick="{!c.propertySelected}">
+    	<div style="{# 'background-image:url(' + v.property.Thumbnail__c + ')'}">
+        	<div class="lower-third">
+            	<h1 class="truncate">{#v.property.Title__c}</h1>
+            	<div>{#v.property.City__c}</div>
+            	<div>Beds: {#v.property.Beds__c}&nbsp;&nbsp;&nbsp;Baths: {#v.property.Baths__c}</div>
+            	<div><lightning:formattedNumber value="{#v.property.Price__c}" style="currency" currencyCode="USD"/></div>
+        	</div>
+	        <lightning:buttonIcon iconName="utility:zoomin" variant="bare-inverse" size="medium" onclick="{!c.navigateToDetailsView}" class="open-button"/>
+    	</div>
+	</a>    
+    
+</aura:component>

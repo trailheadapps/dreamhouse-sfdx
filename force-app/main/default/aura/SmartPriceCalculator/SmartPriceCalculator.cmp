@@ -1,0 +1,52 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes"
+                access="global">
+    
+    <!-- 
+		Component that calculates/predicts the right price for a property. 
+		The prediction service is stubbed in this version of the component.
+	-->
+    
+	<ltng:require scripts="{!$Resource.countup7}" />
+    
+    <aura:attribute name="recordId" type="Id" />
+	<aura:attribute name="property" type="Property__c"/>
+    <aura:attribute name="smartPrice" type="Long"/>
+	<aura:attribute name="waiting" type="Boolean" default="false"/>
+    
+    <force:recordData aura:id="propertyService" 
+                         recordId="{!v.recordId}" 
+                         targetFields="{!v.property}" 
+                         fields="['Id', 'Price__c', 'Assessed_Value__c']"
+                         mode="EDIT"
+                         recordUpdated="{!c.onRecordUpdated}"/>
+    
+    <aura:handler event="ltng:selectSObject" action="{!c.onRecordSelected}"/>
+
+    <lightning:card >
+   		<aura:set attribute="title">
+            <lightning:icon iconName="utility:magicwand" size="small"/>
+            Smart Price Calculator
+        </aura:set>            
+   		<aura:set attribute="actions">
+            <lightning:button label="Save as New Price" onclick="{!c.onSavePriceBtnClicked}"/>
+        </aura:set>            
+        <aura:if isTrue="{!v.property==undefined}">
+            <div aura:id="selectSection" class="select slds-text-color--weak">
+                Select a property
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.property!=undefined}">
+            <div aura:id="calculateSection">
+                <h2>Current Price: <lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD"/></h2>
+                <lightning:button label="Calculate Smart Price" onclick="{!c.onSmartPriceBtnClicked}"/>
+                <h1><span aura:id="currency"/><span aura:id="smartPrice"/></h1>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{! v.waiting }">
+            <lightning:spinner size="large"/>
+        </aura:if>    
+        
+    </lightning:card>
+    
+</aura:component>

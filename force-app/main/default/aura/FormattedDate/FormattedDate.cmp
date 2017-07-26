@@ -1,0 +1,10 @@
+<aura:component >
+	
+    <aura:attribute name="value" type="Object"/>
+    <aura:attribute name="formattedValue" type="String"/>
+	
+    <aura:handler name="change" value="{!v.value}" action="{!c.valueChangeHandler}"/>	
+    
+    {!v.formattedValue}
+    
+</aura:component>

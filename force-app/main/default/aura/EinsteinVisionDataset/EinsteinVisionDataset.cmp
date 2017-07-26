@@ -1,0 +1,85 @@
+<aura:component controller="EinsteinVisionController">
+    
+    <aura:attribute name="dataset" type="Object"/>
+    <aura:attribute name="models" type="Object[]"/>
+    <aura:attribute name="currentTab" type="String" default="labels"/>
+    
+    <aura:registerEvent name="onchange" type="c:EinsteinVisionDatasetEvent"/>
+    
+    <lightning:card title="{!v.dataset.name}" iconName="utility:preview">
+        
+        <aura:set attribute="actions">
+            <aura:if isTrue="{!v.currentTab=='labels'}">
+                <lightning:button label="Train" onclick="{!c.onTrainModel}" />
+                <lightning:button label="Delete" onclick="{!c.onDeleteDataset}" />
+            </aura:if>
+            <aura:if isTrue="{!v.currentTab=='models'}">
+	            <lightning:button label="Refresh Models" onclick="{!c.onRefresh}" />
+            </aura:if>                
+        </aura:set>
+
+        Dataset Id: {!v.dataset.id}
+        <lightning:tabset >
+            <lightning:tab label="Labels" onactive="{!c.onLabelsTab}">                
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Label</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Examples">Examples</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.dataset.labelSummary.labels}" var="label">
+                            <tr>
+                                <td data-label="Account Name">
+                                    <div class="slds-truncate" title="{!label.name}">{!label.name}</div>
+                                </td>
+                                <td data-label="Account Name">
+                                    <div class="slds-truncate" title="{!label.numExamples}">{!label.numExamples}</div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </lightning:tab>
+            <lightning:tab label="Models" onactive="{!c.onModelsTab}">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Model Id">Model Id</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Progress">Progress</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Status">Status</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.models}" var="model">
+                            <tr>
+                                <td data-label="Model Id">
+                                    <div class="slds-truncate" title="{!model.modelId}">{!model.modelId}</div>
+                                </td>
+                                <td data-label="Progress">
+                                    <div class="slds-truncate" title="{!model.progress}">{!model.progress}</div>
+                                </td>
+                                <td data-label="Status">
+                                    <div class="slds-truncate" title="{!model.status}">{!model.status}</div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </lightning:tab>
+        </lightning:tabset>    
+        
+    </lightning:card>
+    
+</aura:component>

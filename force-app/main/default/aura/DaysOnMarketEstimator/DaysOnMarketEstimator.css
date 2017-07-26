@@ -1,0 +1,75 @@
+.THIS {
+    position:relative;
+}
+
+.THIS .slds-card__body {
+	height: 140px;
+}
+
+.THIS h1 {
+    font-weight: 300;
+    color: #0070D2;
+    font-size: 24px;
+}
+
+.THIS .hidden {
+    display: none;
+}
+
+.THIS .container {
+    display: flex;
+    align-items: center;
+}
+
+.THIS .left {
+    text-align: center;
+    width: 160px;
+    margin-right: 20px
+}
+
+.THIS .right {
+    border-left: solid 1px #DDDDDD;
+    text-align: center;
+    flex: 1;
+}
+
+.THIS .slider {
+    display: block;
+    width:100%;
+    margin: 8px 0 16px 0;
+}
+
+.THIS .bar {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    height: 60px;
+    width: 1px;
+    background-color: green;
+    transition: all 2s ease-in-out;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 8px;
+}
+
+.THIS .slds-card__body {
+	padding: 0 20px;
+}
+
+.THIS .slds-icon-standard-solution {
+    background-color: transparent;
+}
+
+.THIS .slds-icon-standard-solution svg {
+    fill: #54698D;
+}
+
+.THIS .select {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.THIS .summary {
+	width: 100%;
+	text-align: left;
+	padding-top: 4px;
+	padding-bottom: 8px;
+}

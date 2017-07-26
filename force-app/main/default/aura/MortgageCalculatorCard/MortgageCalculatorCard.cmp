@@ -1,0 +1,14 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes"
+                access="global">
+    
+    <aura:attribute name="recordId" type="Id"/>
+    
+    <aura:attribute name="principal" type="Integer" default="200000"/>
+    <aura:attribute name="years" type="Integer" default="30"/>
+    <aura:attribute name="rate" type="Integer" default="5"/>
+    
+    <lightning:card iconName="utility:chart" title="Mortgage Calculator">
+        <c:MortgageCalculator recordId="{!v.recordId}" principal="{!v.principal}" years="{!v.years}" rate="{!v.rate}"/>
+    </lightning:card>
+    
+</aura:component>
