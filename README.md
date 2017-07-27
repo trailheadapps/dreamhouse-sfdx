@@ -8,7 +8,7 @@
     cd dreamhouse-sfdx
     ```
 
-1. Create a scratch org and provide it with an alias (nto):
+1. Create a scratch org and provide it with an alias (dh):
     ```
     sfdx force:org:create -s -f config/project-scratch-def.json -a dh
     ```
@@ -23,9 +23,12 @@
     sfdx force:user:permset:assign -n dreamhouse
     ```
 
+1. Import sample data
+    ```
+    sfdx force:data:tree:import -u myscratchorg --plan ./data/Broker__c-Property__c-plan.json
+    ```    
+
 1. Open the scratch org:
     ```
     sfdx force:org:open
     ```
-
-1. Import Data. Select the **DreamHouse** app in App Launcher, click the **Data Import** tab, and click **Initialize Sample Data**.
