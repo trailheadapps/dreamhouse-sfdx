@@ -31,7 +31,7 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
 
 1. Import sample data
     ```
-    sfdx force:data:tree:import -u myscratchorg --plan ./data/Broker__c-Property__c-plan.json
+    sfdx force:data:tree:import -u dh --plan ./data/Broker__c-Property__c-plan.json
     ```    
 
 1. Open the scratch org:
