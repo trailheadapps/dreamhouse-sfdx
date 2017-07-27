@@ -32,3 +32,5 @@
     ```
     sfdx force:org:open
     ```
+
+1. Select **DreamHouse** in the App Launcher    
