@@ -16,6 +16,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.096371,
             "Location__Latitude__s": 42.34389,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian04.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian04sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef1"
@@ -36,6 +37,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.084407,
             "Location__Latitude__s": 42.349693,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house11.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house11sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef1"
@@ -56,6 +58,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.049327,
             "Location__Latitude__s": 42.35695,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house09.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house09sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef1"
@@ -76,6 +79,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.11095,
             "Location__Latitude__s": 42.35663,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house01.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house01sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef1"
@@ -96,6 +100,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.075311,
             "Location__Latitude__s": 42.352466,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house12.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house12sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef2"
@@ -116,6 +121,7 @@
             "Baths__c": 2,
             "Location__Longitude__s": -71.105475,
             "Location__Latitude__s": 42.3474,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house08.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house08sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef2"
@@ -136,6 +142,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.10869,
             "Location__Latitude__s": 42.359103,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house02.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house02sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef2"
@@ -156,6 +163,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.109131,
             "Location__Latitude__s": 42.348087,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian01.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian01sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef3"
@@ -176,6 +184,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.070061,
             "Location__Latitude__s": 42.359986,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house03.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house03sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef3"
@@ -196,6 +205,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.08064,
             "Location__Latitude__s": 42.364772,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian02.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian02sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef4"
@@ -216,6 +226,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.110448,
             "Location__Latitude__s": 42.360642,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house04.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house04sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef4"
@@ -236,6 +247,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.08592,
             "Location__Latitude__s": 42.368269,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian03.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian03sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef5"
@@ -256,6 +268,7 @@
             "Baths__c": 2,
             "Location__Longitude__s": -71.084454,
             "Location__Latitude__s": 42.368168,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house05.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house05sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef5"
@@ -276,6 +289,7 @@
             "Baths__c": 5,
             "Location__Longitude__s": -71.126194,
             "Location__Latitude__s": 42.376511,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian06.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian06sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef6"
@@ -296,6 +310,7 @@
             "Baths__c": 2,
             "Location__Longitude__s": -71.052617,
             "Location__Latitude__s": 42.366855,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house06.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house06sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef6"
@@ -316,6 +331,7 @@
             "Baths__c": 3,
             "Location__Longitude__s": -71.132681,
             "Location__Latitude__s": 42.381437,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian07.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/victorian07sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef7"
@@ -336,6 +352,7 @@
             "Baths__c": 1,
             "Location__Longitude__s": -71.057352,
             "Location__Latitude__s": 42.365003,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house07.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house07sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef7"
@@ -356,6 +373,7 @@
             "Baths__c": 4,
             "Location__Longitude__s": -71.121653,
             "Location__Latitude__s": 42.374117,
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house10.jpg",
             "Thumbnail__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/realty/house10sq.jpg",
             "Description__c": "Lorem ipsum dolor sit amet",
             "Broker__c": "@Broker__cRef8"
