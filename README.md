@@ -34,6 +34,8 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
     sfdx force:org:open
     ```
 
+1. In **Setup**, type **theme** in the quick find box. Click **Themes and Branding**, and flip the toggle to hide background images in Lightning Experience.
+
 1. Select **DreamHouse** in the App Launcher
 
 1. Click the **Data Import** tab and click **Initialize Sample Data**
