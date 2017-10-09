@@ -49,7 +49,7 @@
                 <div class="container">
                     <div class="left">
                         <h1>{!v.formattedPrice}</h1>
-                        <input class="slider" min='{!v.property.Price__c * 0.7}' max='{!v.property.Price__c * 1.3}' type='range' value='{!v.property.Price__c}' 
+                        <input class="slds-slider__range" min='{!v.property.Price__c * 0.7}' max='{!v.property.Price__c * 1.3}' type='range' value='{!v.property.Price__c}' 
                                step="1000" onchange='{!c.onPriceChange}' oninput='{!c.onPriceInput}'/>
                     </div>
                     <div class="right">

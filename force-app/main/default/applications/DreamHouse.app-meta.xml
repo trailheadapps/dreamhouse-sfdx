@@ -21,6 +21,7 @@
     <tab>standard-Event</tab>
     <tab>Heat_Map_Mock</tab>
     <tab>Heat_Map</tab>
+    <tab>Sample_Data_Import</tab>
     <tab>Bot_Command__c</tab>
     <tab>standard-File</tab>
     <uiType>Lightning</uiType>

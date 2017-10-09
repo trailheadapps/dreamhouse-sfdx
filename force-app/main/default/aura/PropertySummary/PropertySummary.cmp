@@ -30,7 +30,7 @@
         <aura:if isTrue="{!v.recordId!=undefined}">
             <img src="{!v.property.Thumbnail__c}"/>
             <div class="summary">
-                <p>{#v.property.Address__c},&nbsp;{!v.property.City__c}</p>
+                <p>{!v.property.Address__c},&nbsp;{!v.property.City__c}</p>
                 <p>{!v.property.Beds__c} bedrooms, {!v.property.Baths__c} bathrooms</p>
                 <p>On the market since <c:FormattedDate value="{!v.property.Date_Listed__c}"/></p>
                 <h3><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD"/></h3>
