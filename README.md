@@ -6,8 +6,18 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
 
 [![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com/)
 
-## Installation Instructions 
-[Detailed Version](https://github.com/dcarroll/dreamhouse-sfdx/blob/master/install.md)
+## Salesforce DX Documentation Links
+[Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
+
+[Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+
+[Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+[Visual Studio Code Extension Pack for Salesforce DX](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)
+
+[Force.com IDE 2 Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_ide2.meta/sfdx_ide2/sfdx_ide2_get_started.htm)
+
+## Installation Instructions
 
 1. Install Salesforce DX. Enable the Dev Hub in your org or sign up for a Dev Hub trial org and install the Salesforce DX CLI. Follow the instructions in the [Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm?search_text=trial%20hub%20org) or in the [App Development with Salesforce DX](https://trailhead.salesforce.com/modules/sfdx_app_dev) Trailhead module.
 
