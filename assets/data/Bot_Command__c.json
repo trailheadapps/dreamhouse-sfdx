@@ -1,0 +1,147 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef1"
+            },
+            "Name": "Find Account",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindAccount",
+            "Pattern__c": "(?i).*account ([A-Za-z0-9]*)",
+            "Sample_Utterance__c": "Account United"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef2"
+            },
+            "Name": "Find Contact",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindContact",
+            "Pattern__c": "(?i).*contact ([A-Za-z0-9]*)",
+            "Sample_Utterance__c": "Contact jo"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef3"
+            },
+            "Name": "Find House",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindProperties",
+            "Pattern__c": "(?i)find house",
+            "Sample_Utterance__c": "Find house"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef4"
+            },
+            "Name": "Find Properties by Bedrooms",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindPropertiesByBedrooms",
+            "Pattern__c": "(?i)([0-9]*) bedrooms in ([A-Za-z]*)",
+            "Sample_Utterance__c": "3 bedrooms in Boston"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef5"
+            },
+            "Name": "Help",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerHelp",
+            "Pattern__c": "(?i)help",
+            "Sample_Utterance__c": "Help"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef6"
+            },
+            "Name": "My Open Cases",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerMyOpenCases",
+            "Pattern__c": "(?i).*open cases.*",
+            "Sample_Utterance__c": "My Open Cases"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef7"
+            },
+            "Name": "Pipeline",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerPipeline",
+            "Pattern__c": "(?i).*pipeline.*",
+            "Sample_Utterance__c": "My Pipeline"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef8"
+            },
+            "Name": "Quarter",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerQuarter",
+            "Pattern__c": "(?i).*quarter.*",
+            "Sample_Utterance__c": "My Quarter"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef9"
+            },
+            "Name": "SOQL",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerSOQL",
+            "Pattern__c": "(?i)select.*",
+            "Sample_Utterance__c": "SELECT Name FROM Contact LIMIT 5"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef10"
+            },
+            "Name": "Top Opportunities",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerTopOpportunities",
+            "Pattern__c": "(?i).*top (d+) opportunities",
+            "Sample_Utterance__c": "Top 3 opportunities"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef11"
+            },
+            "Name": "Travel Approval",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerTravelApproval",
+            "Pattern__c": "(?i)travel approval",
+            "Sample_Utterance__c": "Travel Approval"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef12"
+            },
+            "Name": "Image search",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerImageBasedSearch",
+            "Pattern__c": "(?i)search houses like this",
+            "Sample_Utterance__c": "search houses like this"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef13"
+            },
+            "Name": "File Upload",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFileUpload",
+            "Pattern__c": "(?i)upload",
+            "Sample_Utterance__c": "upload"
+        }
+    ]
+}

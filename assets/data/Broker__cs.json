@@ -1,0 +1,100 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef1"
+            },
+            "Name": "Caroline Kingsley",
+            "Email__c": "caroline@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef2"
+            },
+            "Name": "Michael Jones",
+            "Email__c": "michael@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michael_jones.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef3"
+            },
+            "Name": "Jonathan Bradley",
+            "Email__c": "jonathan@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jonathan_bradley.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef4"
+            },
+            "Name": "Jennifer Wu",
+            "Email__c": "jen@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jennifer_wu.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef5"
+            },
+            "Name": "Olivia Green",
+            "Email__c": "olivia@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/olivia_green.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef6"
+            },
+            "Name": "Miriam Aupont",
+            "Email__c": "miriam@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/miriam_aupont.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef7"
+            },
+            "Name": "Michelle Lambert",
+            "Email__c": "michelle@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michelle_lambert.jpg",
+            "Title__c": "Senior Broker"
+        },
+        {
+            "attributes": {
+                "type": "Broker__c",
+                "referenceId": "Broker__cRef8"
+            },
+            "Name": "Victor Ochoa",
+            "Email__c": "victor@dreamhouse.demo",
+            "Mobile_Phone__c": "617-244-3672",
+            "Phone__c": "617-244-3672",
+            "Picture__c": "https://s3-us-west-1.amazonaws.com/sfdc-demo/people/victor_ochoa.jpg",
+            "Title__c": "Senior Broker"
+        }
+    ]
+}
