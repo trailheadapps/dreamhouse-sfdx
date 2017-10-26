@@ -4,7 +4,7 @@
     <aura:attribute name="recordId" type="Id" />
     <aura:attribute name="property" type="Property__c" />
  	<aura:attribute name="similarProperties" type="Property__c[]" />
-    <aura:attribute name="searchCriteria" type="String" default="Price" />
+    <aura:attribute name="searchCriteria" type="String" default="Price"  access="global" />
     
     <force:recordData aura:id="service" 
                          recordId="{!v.recordId}" 

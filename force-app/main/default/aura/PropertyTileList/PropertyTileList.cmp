@@ -1,8 +1,8 @@
 <aura:component controller="PropertyController"
-                implements="flexipage:availableForAllPageTypes">
+                implements="flexipage:availableForAllPageTypes" access="global">
 	
     <aura:attribute name="properties" type="Property__c[]"/>
-    <aura:attribute name="pageSize" type="integer" default="8"/>
+    <aura:attribute name="pageSize" type="integer" default="8" access="global"/>
     <aura:attribute name="page" type="integer"/>
     <aura:attribute name="pages" type="integer"/>
     <aura:attribute name="total" type="integer"/>

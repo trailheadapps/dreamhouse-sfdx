@@ -1,6 +1,6 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" >
     
-    <aura:attribute name="modelId" type="String"/>
+    <aura:attribute name="modelId" type="String" access="global"/>
 
     <lightning:card title="Image-Based Search" iconName="utility:preview">
 	    <c:EinsteinVision modelId="{!v.modelId}" />

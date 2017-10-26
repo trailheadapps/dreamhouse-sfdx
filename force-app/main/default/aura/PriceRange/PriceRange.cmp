@@ -6,9 +6,9 @@
 
 	<aura:registerEvent name="rangeChange" type="c:RangeChange"/>
 
-    <aura:attribute name="min" type="String" default="0"/>
-    <aura:attribute name="max" type="String" default="1000"/>
-    <aura:attribute name="step" type="String" default="10"/>
+    <aura:attribute name="min" type="String" default="0" access="global"/>
+    <aura:attribute name="max" type="String" default="1000" access="global"/>
+    <aura:attribute name="step" type="String" default="10" access="global"/>
     
     <div>
 	    <div aura:id="slider" class="slider"/>

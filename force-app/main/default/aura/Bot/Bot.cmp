@@ -1,9 +1,9 @@
-<aura:component implements="flexipage:availableForAllPageTypes" controller="BotController" >
+<aura:component implements="flexipage:availableForAllPageTypes" controller="BotController" access="global" >
 
     <aura:attribute name="question" type="String" default=""/>
     <aura:attribute name="messages" type="Object[]"/>
     <aura:attribute name="session" type="Array"/>
-    <aura:attribute name="height" type="String" default="500px"/>
+    <aura:attribute name="height" type="String" default="500px" access="global"/>
 	<aura:attribute name="files" type="Object[]"/>
 
     <div style="{#'height: '+v.height}" class="slds-p-vertical--x-small">

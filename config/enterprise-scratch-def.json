@@ -1,0 +1,12 @@
+{
+  "orgName": "sub1",
+  "edition": "Enterprise",
+  "orgPreferences": {
+    "enabled": [
+      "S1DesktopEnabled","ChatterEnabled"
+    ],
+    "disabled": [
+      
+    ]
+  }
+}

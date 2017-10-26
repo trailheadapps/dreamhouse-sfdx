@@ -12,6 +12,7 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
     ```
     git clone https://github.com/dreamhouseapp/dreamhouse-sfdx
     cd dreamhouse-sfdx
+    git checkout pkg2-beta
     ```
 
 1. Create a scratch org and provide it with an alias (dh):

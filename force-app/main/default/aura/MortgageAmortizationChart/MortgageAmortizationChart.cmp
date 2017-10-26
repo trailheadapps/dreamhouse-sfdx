@@ -1,6 +1,6 @@
-<aura:component implements="flexipage:availableForAllPageTypes">
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
     
-    <aura:attribute name="amortization" type="Object[]"/>
+    <aura:attribute name="amortization" type="Object[]" access="global"/>
 
 	<aura:handler event="c:MortgageChange" action="{!c.mortgageChange}"/>
     

@@ -1,8 +1,8 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
                 access="global" >
 
-    <aura:attribute name="tabIcons" type="Boolean" default="false"/>
-    <aura:attribute name="demoMode" type="Boolean" default="true"/>
+    <aura:attribute name="tabIcons" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="demoMode" type="Boolean" default="true" access="global"/>
 
     <aura:attribute name="recordId" type="Id" />
     <aura:attribute name="property" type="Property__c" />
