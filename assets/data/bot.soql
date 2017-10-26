@@ -1,0 +1,9 @@
+SELECT 
+    Id, 
+    Name, 
+    Active__c, 
+    Apex_Class__c, 
+    Pattern__c, 
+    Sample_Utterance__c 
+FROM 
+    Bot_Command__c
