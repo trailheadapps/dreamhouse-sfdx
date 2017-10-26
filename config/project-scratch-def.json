@@ -1,7 +1,6 @@
 {
     "orgName": "dev1",
     "edition": "Developer",
-    "package2AncestorIds":"",
     "orgPreferences" : {
         "enabled": ["S1DesktopEnabled","ChatterEnabled"]
     }
