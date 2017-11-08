@@ -4,6 +4,7 @@
 
 	<aura:handler event="c:MortgageChange" action="{!c.mortgageChange}"/>
     
+    <div class="slds-card">
     <table>
         <thead>
             <tr>
@@ -31,5 +32,5 @@
             </aura:iteration>
         </tbody>
     </table>
-    
+</div>
 </aura:component>
