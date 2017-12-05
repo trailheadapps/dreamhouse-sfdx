@@ -15,7 +15,7 @@
     
     <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
 
-    <div>
+    <div class="slds-card">
         <lightning:layout >
         	<lightning:layoutitem class="{! 'days-block ' + v.status}">
                 <div class="days">{!v.property.Days_On_Market__c}</div>days
