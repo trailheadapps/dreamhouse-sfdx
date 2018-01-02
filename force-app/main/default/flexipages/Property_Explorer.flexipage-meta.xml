@@ -3,19 +3,15 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
-                <name>max</name>
-                <value>1200000</value>
+                <name>einsteinVisionModelId</name>
+                <value>YQXUQ3NXBEW3MRF5BSJBIA7MSA</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>min</name>
-                <value>200000</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>step</name>
-                <value>50000</value>
-            </componentInstanceProperties>
-            <componentName>PriceRange</componentName>
+            <componentName>PropertyFilters</componentName>
         </componentInstances>
+        <name>left</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
                 <name>pageSize</name>
@@ -23,20 +19,13 @@
             </componentInstanceProperties>
             <componentName>PropertyTileList</componentName>
         </componentInstances>
-        <name>region1</name>
+        <name>center</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>PropertySummary</componentName>
-        </componentInstances>
         <componentInstances>
             <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
-        <name>region2</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
                 <name>latField</name>
@@ -52,12 +41,19 @@
             </componentInstanceProperties>
             <componentName>MapCard</componentName>
         </componentInstances>
-        <name>region3</name>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>searchCriteria</name>
+                <value>Price</value>
+            </componentInstanceProperties>
+            <componentName>SimilarProperties</componentName>
+        </componentInstances>
+        <name>right</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Property Explorer</masterLabel>
     <template>
-        <name>flexipage:appHomeTemplateTwoColumnsStacked</name>
+        <name>PageTemplate_2_7_3</name>
     </template>
     <type>AppPage</type>
 </FlexiPage>

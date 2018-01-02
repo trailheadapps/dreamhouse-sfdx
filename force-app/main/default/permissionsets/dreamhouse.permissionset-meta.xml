@@ -165,7 +165,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PropertyPagedResult</apexClass>
+        <apexClass>PropertyListPage</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -240,12 +240,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Favorite__c.Property__c</field>
+        <field>Property_Favorite__c.Property__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Favorite__c.User__c</field>
+        <field>Property_Favorite__c.User__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -399,7 +399,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Favorite__c</object>
+        <object>Property_Favorite__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -445,10 +445,6 @@
     </tabSettings>
     <tabSettings>
         <tab>Heat_Map_Mock</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Property_Explorer1</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

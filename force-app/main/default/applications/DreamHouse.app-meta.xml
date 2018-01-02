@@ -10,10 +10,11 @@
     <label>DreamHouse</label>
     <navType>Standard</navType>
     <tab>standard-home</tab>
+    <tab>Property_Finder</tab>
+    <tab>Property_Explorer</tab>
     <tab>Property__c</tab>
     <tab>Broker__c</tab>
     <tab>standard-Contact</tab>
-    <tab>Property_Explorer1</tab>
     <tab>Command_Center</tab>
     <tab>Einstein_Vision</tab>
     <tab>standard-report</tab>

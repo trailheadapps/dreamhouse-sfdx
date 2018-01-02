@@ -1,12 +1,25 @@
 @isTest
 public class PropertyControllerTest {
     
-    static testMethod void testFindAll() {
+    static testMethod void testgetPropertyList() {
         Boolean success = true;
         try {
             Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);
             insert p;
-	        PropertyPagedResult r = PropertyController.findAll('', 0, 1000000, 8, 1);
+	        PropertyController.getPropertyList('', 0, 1000000, 0, 0, '');
+        } catch (Exception e) {
+            success = false;
+        } finally {
+	        System.assert(success);
+        }
+    }
+
+    static testMethod void testgetPropertyListPage() {
+        Boolean success = true;
+        try {
+            Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);
+            insert p;
+	        PropertyListPage page = PropertyController.getPropertyListPage('', 0, 1000000, 0, 0, '', 8, 1);
         } catch (Exception e) {
             success = false;
         } finally {

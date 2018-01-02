@@ -11,6 +11,7 @@
     <aura:attribute name="step" type="String" default="10"/>
     
     <div>
+        <p class="slds-form-element__label">Price range</p>
 	    <div aura:id="slider" class="slider"/>
     </div>
     
