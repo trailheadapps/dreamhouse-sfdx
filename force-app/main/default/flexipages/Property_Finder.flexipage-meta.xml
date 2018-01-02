@@ -27,10 +27,10 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>animations</name>
-                <value>true</value>
+                <name>searchCriteria</name>
+                <value>Price</value>
             </componentInstanceProperties>
-            <componentName>PictureGalleryCard</componentName>
+            <componentName>SimilarProperties</componentName>
         </componentInstances>
         <name>right</name>
         <type>Region</type>

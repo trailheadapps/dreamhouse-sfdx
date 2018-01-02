@@ -41,3 +41,31 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
 1. Select **DreamHouse** in the App Launcher
 
 1. Click the **Data Import** tab and click **Initialize Sample Data**
+
+## Enabling Viual Search
+
+1. Get an Einstein Platform Services account. Follow the instructions [here](https://github.com/dreamhouseapp/dreamhouse-sfdx/tree/spring18)
+
+1. In Salesforce, click the **Files** tab and upload **einstein_platform.pem**
+
+1. In Setup, type **Custom** in the Quick Find box and click the **Custom Settings** link
+
+1. Click the first **New** Button (at the top of the screen)
+
+1. For **Einstein Vision Email**, specify the email address you used when you created your Einstein Platform Services account (step 1) and click **Save**.
+
+1. In the DreamHouse app, click the **Einstein Vision** tab
+
+1. Click the **Create Dataset** button
+
+1. In the **houses** tile, click the **Train** button and click the **Models** tab
+
+1. Click the **Refresh Models** button until the Progress column indicates 100%
+
+1. Copy the **Model Id** in your clipboard
+
+1. Click the **Property Finder** Tab, click the gear icon, and select **Edit Page**. Click the **Filters** component and paste the Model Id in the **Einstein Model Id** field in the right sidebar. Save the page.
+
+1. Repeat the last step for the **Property Explorer** page.
+
+You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters component on the **Property Finder** and **Property Explorer** pages. 
