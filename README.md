@@ -44,27 +44,29 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
 
 ## Enabling Viual Search
 
-1. Get an Einstein Platform Services account. Follow the instructions [here](https://github.com/dreamhouseapp/dreamhouse-sfdx/tree/spring18)
+Optional instruction to enable visual search in the **Property Finder** and **Property Explorer** pages:
 
-1. In Salesforce, click the **Files** tab and upload **einstein_platform.pem**
+1. Get an **Einstein Platform Services** account. Follow the instructions [here](https://github.com/dreamhouseapp/dreamhouse-sfdx/tree/spring18).
 
-1. In Setup, type **Custom** in the Quick Find box and click the **Custom Settings** link
+1. In Salesforce, click the **Files** tab and upload **einstein_platform.pem**.
 
-1. Click the first **New** Button (at the top of the screen)
+1. In **Setup**, type **Custom** in the Quick Find box and click the **Custom Settings** link.
 
-1. For **Einstein Vision Email**, specify the email address you used when you created your Einstein Platform Services account (step 1) and click **Save**.
+1. Click the first **New** Button (at the top of the screen).
 
-1. In the DreamHouse app, click the **Einstein Vision** tab
+1. For **Einstein Vision Email**, specify the email address you used when you created your Einstein Platform Services account (step 1), and click **Save**.
 
-1. Click the **Create Dataset** button
+1. In the DreamHouse app, click the **Einstein Vision** tab.
 
-1. In the **houses** tile, click the **Train** button and click the **Models** tab
+1. Click the **Create Dataset** button.
 
-1. Click the **Refresh Models** button until the Progress column indicates 100%
+1. In the **houses** tile, click the **Train** button, the click the **Models** tab.
 
-1. Copy the **Model Id** in your clipboard
+1. Click the **Refresh Models** button until the Progress column indicates **100%**.
 
-1. Click the **Property Finder** Tab, click the gear icon, and select **Edit Page**. Click the **Filters** component and paste the Model Id in the **Einstein Model Id** field in the right sidebar. Save the page.
+1. Copy the **Model Id** in your clipboard.
+
+1. Click the **Property Finder** Tab, click the gear icon (upper right corner), and click **Edit Page**. Click the **Filters** component and paste the Model Id in the **Einstein Model Id** field in the right sidebar. Save the page.
 
 1. Repeat the last step for the **Property Explorer** page.
 
