@@ -12,10 +12,14 @@
         
     <lightning:card title="Filters" iconName="utility:rating">
 
+        <aura:set attribute="actions">
+                <lightning:button label="Reset" onclick="{!c.onReset}" />
+        </aura:set>
+
         <lightning:input label="Search" 
                 onchange="{!c.onFilterChange}" value="{!v.searchKey}"/>
 
-        <c:PriceRange min="200000" max="1200000" step="50000"
+        <c:PriceRange aura:id="priceRange" min="200000" max="1200000" step="50000"
                 rangeChange="{!c.onPriceRangeChange}"/>
         
         <lightning:slider label="Bedrooms" step="1" min="0" max="6" value="{!v.numberBedrooms}"

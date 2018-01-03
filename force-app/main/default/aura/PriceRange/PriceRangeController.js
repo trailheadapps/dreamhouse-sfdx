@@ -48,5 +48,14 @@
             });
 			rangeChangeEvent.fire();
         }));
+    },
+
+    setValues : function(component, event) {
+        var slider = component.find('slider').getElement();
+        var params = event.getParam('arguments');
+        if (params) {
+            slider.noUiSlider.set([params.min, params.max]);
+        }
     }
+
 })
