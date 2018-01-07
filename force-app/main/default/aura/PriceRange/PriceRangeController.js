@@ -54,7 +54,7 @@
         var slider = component.find('slider').getElement();
         var params = event.getParam('arguments');
         if (params) {
-            slider.noUiSlider.set([params.min, params.max]);
+                slider.noUiSlider.set([params.min, params.max]);
         }
     }
 

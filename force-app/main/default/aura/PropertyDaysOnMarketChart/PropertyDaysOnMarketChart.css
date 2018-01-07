@@ -1,5 +1,6 @@
 .THIS .slds-card__body {
-    padding: 0 12px;
+    padding: 12px 12px 0 12px;
+    line-height: 1rem;
 }
 
 .THIS .days-block {
@@ -25,8 +26,8 @@
 } 
 
 .THIS .days {
-	font-size: 32px;
-	line-height: 32px;
+	font-size: 28px;
+	line-height: 28px;
 	font-weight: 300;
     margin-right: 12px;
     margin: 0;
@@ -80,4 +81,8 @@
 
 .THIS .axis .legend {
     margin-top: 36px;
+}
+
+.THIS .slds-card__header {
+    display: none;
 }

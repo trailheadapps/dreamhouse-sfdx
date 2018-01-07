@@ -70,5 +70,22 @@ global with sharing class PropertyController {
         }
     }
 
+    @AuraEnabled
+    public static List<ContentVersion> getPictures (Id propertyId) {
+
+        List<ContentDocumentLink> links = [select id, LinkedEntityId, ContentDocumentId from ContentDocumentLink where LinkedEntityId=:propertyId];
+
+        if (links.isEmpty()) {
+            return null;
+        }
+
+        Set<Id> contentIds = new Set<Id>();
+
+        for (ContentDocumentLink link :links) {
+            contentIds.add(link.ContentDocumentId);
+        }
+
+        return [SELECT Id, Title FROM ContentVersion WHERE ContentDocumentId IN :contentIds AND IsLatest=true];
+    }
 
 }

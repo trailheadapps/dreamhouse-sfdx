@@ -4,6 +4,9 @@
 	},
 
     recordUpdated : function(component) {
-        component.set("v.principal", component.get("v.property").Price__c);
+        var property = component.get("v.property");
+        if (property) {
+            component.set("v.principal", property.Price__c);
+        }
 	}
 })

@@ -33,7 +33,7 @@
                         <div>
                         <p>Bedrooms: {!v.property.Beds__c}</p>
                         <p>Bathrooms: {!v.property.Baths__c}</p>
-                        <p>Date Listed: <c:FormattedDate value="{!v.property.Date_Listed__c}" /></p>
+                        <p>Date Listed: <lightning:FormattedDateTime value="{!v.property.Date_Listed__c}" year="numeric" month="short" day="2-digit" weekday="long"/></p>
                         <h3><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0" /></h3>
                     </div>
                 </lightning:layoutItem>
@@ -45,7 +45,7 @@
                     </aura:if>    
                 </lightning:layoutItem>
                 <lightning:layoutItem>
-                    <div>
+                    <div class="broker">
                         <p><a onclick="{!c.navigateToRecord}">{!v.property.Broker__r.Name}</a></p>
                         <p>{!v.property.Broker__r.Title__c}</p>
                         <p>{!v.property.Broker__r.Mobile_Phone__c}</p>

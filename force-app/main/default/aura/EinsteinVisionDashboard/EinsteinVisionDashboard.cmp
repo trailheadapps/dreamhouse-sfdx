@@ -8,7 +8,7 @@
 
     <div>
 
-        <lightning:card title="Create Dataset" iconName="utility:setup" class="slds-m-horizontal_small">
+        <lightning:card title="Create Dataset" iconName="utility:setup">
             <lightning:layout verticalAlign="end" class="path-to-zip slds-m-around--small">
                 <lightning:layoutitem flexibility="grow">
                     <lightning:input label="ZIP file URL:" value="{!v.pathToZip}" />

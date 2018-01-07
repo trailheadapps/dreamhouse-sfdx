@@ -109,6 +109,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>PropertyCarousel</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
         <componentInstances>
@@ -125,13 +128,6 @@
                 <value>Name</value>
             </componentInstanceProperties>
             <componentName>MapCard</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>animations</name>
-                <value>true</value>
-            </componentInstanceProperties>
-            <componentName>PictureGalleryCard</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

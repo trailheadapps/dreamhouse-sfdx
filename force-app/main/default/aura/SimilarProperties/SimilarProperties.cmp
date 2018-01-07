@@ -30,7 +30,7 @@
                                 <ul class="slds-grid slds-wrap">
                                     <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Bedrooms:</span> {!item.Beds__c}</li>
                                     <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Bathrooms:</span> {!item.Baths__c}</li>
-                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Price:</span> <lightning:formattedNumber value="{!item.Price__c}" style="currency" currencyCode="USD"/></li>
+                                    <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Price:</span> <lightning:formattedNumber value="{!item.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0" /></li>
                                     <li class="slds-item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Status:</span> {!item.Status__c}</li>
                                 </ul>                                
                             </div>
