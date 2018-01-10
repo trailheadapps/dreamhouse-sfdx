@@ -6,11 +6,11 @@
     <force:recordData aura:id="propertyService" 
         recordId="{!v.recordId}" 
         targetFields="{!v.property}" 
-        fields="['Id', 'Thumbnail__c', 'Address__c', 'City__c', 'Price__c', 'Beds__c', 'Baths__c', 'Date_Listed__c', 'Broker__c', 'Broker__r.Name', 'Broker__r.Title__c', 'Broker__r.Mobile_Phone__c', 'Broker__r.Picture__c']"/>
+        fields="['Id', 'Thumbnail__c', 'Address__c', 'City__c', 'State__c', 'Zip__c', 'Price__c', 'Beds__c', 'Baths__c', 'Date_Listed__c', 'Broker__c', 'Broker__r.Name', 'Broker__r.Title__c', 'Broker__r.Mobile_Phone__c', 'Broker__r.Picture__c']"/>
 
     <aura:handler event="ltng:selectSObject" action="{!c.onPropertySelected}" />
 
-    <lightning:card title="{! v.property.Address__c + ' ' + v.property.City__c}" iconName="utility:checkin">
+    <lightning:card title="Property Summary" iconName="utility:home">
 
         <aura:set attribute="actions">
             <lightning:buttonIcon iconName="utility:edit" variant="bare" alternativeText="Edit Record" onclick="{!c.editRecord}" />
@@ -31,9 +31,14 @@
                 </lightning:layoutItem>
                 <lightning:layoutItem>
                         <div>
-                        <p>Bedrooms: {!v.property.Beds__c}</p>
-                        <p>Bathrooms: {!v.property.Baths__c}</p>
-                        <p>Date Listed: <lightning:FormattedDateTime value="{!v.property.Date_Listed__c}" year="numeric" month="short" day="2-digit" weekday="long"/></p>
+                        <lightning:formattedAddress
+                                street="{!v.property.Address__c}"
+                                city="{!v.property.City__c}"
+                                province="{!v.property.State__c}"
+                                postalCode="{!v.property.Zip__c}"/>    
+                        <p>Bedrooms: {!v.property.Beds__c}
+                        Bathrooms: {!v.property.Baths__c}</p>
+                        <!-- <p>Date Listed: <lightning:FormattedDateTime value="{!v.property.Date_Listed__c}" year="numeric" month="short" day="2-digit" weekday="long"/></p> -->
                         <h3><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0" /></h3>
                     </div>
                 </lightning:layoutItem>

@@ -29,3 +29,8 @@
 .THIS .broker {
     line-height: 1rem;
 }
+
+.THIS .slds-icon--small {
+    height: 1.3rem;
+    width: 1.3rem;
+}
