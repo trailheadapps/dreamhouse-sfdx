@@ -55,6 +55,13 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>MortgageCalcWithAmortization</componentName>
+        </componentInstances>
+        <name>facet-10e2e3cd-2f87-49df-8e5d-58d632b4c7d3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
                 <value>relatedTabContent</value>
@@ -88,6 +95,17 @@
             <componentInstanceProperties>
                 <name>title</name>
                 <value>Standard.Tab.collaborate</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>facet-10e2e3cd-2f87-49df-8e5d-58d632b4c7d3</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Mortgage</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
