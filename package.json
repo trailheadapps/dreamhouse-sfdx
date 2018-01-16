@@ -1,0 +1,8 @@
+{
+    "name": "testing",
+    "version": "0.0.0",
+    "scripts": {
+        "install": "./install.sh",
+        "start": "sfdx force:org:open"
+    }
+}
