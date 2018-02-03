@@ -42,7 +42,7 @@ Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more info
 
 1. Click the **Data Import** tab and click **Initialize Sample Data**
 
-## Enabling Viual Search
+## Enabling Visual Search
 
 Optional instruction to enable visual search in the **Property Finder** and **Property Explorer** pages:
 
