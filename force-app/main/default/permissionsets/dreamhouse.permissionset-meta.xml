@@ -415,14 +415,6 @@
         <apexPage>DreamHouseSampleData</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
-    <pageAccesses>
-        <apexPage>HeatMap</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>HeatMapMock</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
     <tabSettings>
         <tab>Bot_Command__c</tab>
         <visibility>Visible</visibility>
@@ -437,14 +429,6 @@
     </tabSettings>
     <tabSettings>
         <tab>Einstein_Vision</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Heat_Map</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Heat_Map_Mock</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
