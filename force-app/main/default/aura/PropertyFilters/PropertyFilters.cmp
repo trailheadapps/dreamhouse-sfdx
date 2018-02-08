@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+
+    <aura:attribute name="einsteinVisionModelId" type="String" access="global"/>
+    <aura:attribute name="searchKey" type="String" default=""/>
+    <aura:attribute name="minPrice" type="Decimal" default="0"/>
+    <aura:attribute name="maxPrice" type="Decimal" default="2000000"/>
+    <aura:attribute name="numberBedrooms" type="Integer" default="0"/>
+    <aura:attribute name="numberBathrooms" type="Integer" default="0"/>
+    <aura:attribute name="visualSearchKey" type="String" default=""/>
+    
+    <aura:registerEvent name="propertyFilterChange" type="c:PropertyFilterChange"/>
+        
+    <lightning:card title="Filters" iconName="utility:rating">
+
+        <aura:set attribute="actions">
+                <lightning:button label="Reset" onclick="{!c.onReset}" />
+        </aura:set>
+
+        <lightning:input label="Search" 
+                onchange="{!c.onFilterChange}" value="{!v.searchKey}"/>
+
+        <c:PriceRange aura:id="priceRange" min="200000" max="1200000" step="50000"
+                rangeChange="{!c.onPriceRangeChange}"/>
+        
+        <lightning:slider label="Bedrooms" step="1" min="0" max="6" value="{!v.numberBedrooms}"
+                onchange="{!c.onFilterChange}"/>
+
+        <lightning:slider label="Bathrooms" step="1" min="0" max="6" value="{!v.numberBathrooms}"
+                onchange="{!c.onFilterChange}"/>
+
+        <c:VisualSearchBox modelId="{!v.einsteinVisionModelId}" onPrediction="{!c.onPrediction}" />
+        
+    </lightning:card>
+
+</aura:component>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Property__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Property Status</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Date_Listed__c</fieldNames>
+        <fieldNames>Price__c</fieldNames>
+        <picklistValueName>Available</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_Closed__c</fieldNames>
+        <fieldNames>Price_Sold__c</fieldNames>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_Contracted__c</fieldNames>
+        <fieldNames>Price__c</fieldNames>
+        <picklistValueName>Contracted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_Pre_Market__c</fieldNames>
+        <fieldNames>Price__c</fieldNames>
+        <picklistValueName>Pre Market</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Price_Sold__c</fieldNames>
+        <fieldNames>Date_Agreement__c</fieldNames>
+        <fieldNames>Date_Closed__c</fieldNames>
+        <picklistValueName>Under Agreement</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

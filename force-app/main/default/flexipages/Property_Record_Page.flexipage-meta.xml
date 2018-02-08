@@ -55,6 +55,13 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>MortgageCalcWithAmortization</componentName>
+        </componentInstances>
+        <name>facet-10e2e3cd-2f87-49df-8e5d-58d632b4c7d3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
                 <value>relatedTabContent</value>
@@ -91,6 +98,17 @@
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>facet-10e2e3cd-2f87-49df-8e5d-58d632b4c7d3</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Mortgage</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>maintabs</name>
         <type>Facet</type>
@@ -109,6 +127,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>PropertyCarousel</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
         <componentInstances>
@@ -125,13 +146,6 @@
                 <value>Name</value>
             </componentInstanceProperties>
             <componentName>MapCard</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>animations</name>
-                <value>true</value>
-            </componentInstanceProperties>
-            <componentName>PictureGalleryCard</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

@@ -1,40 +1,36 @@
-.THIS .slds-card__body {
-    padding: 0 16px 0 12px;
-    display: flex;
-    height: 100px;
+.THIS {
+    min-height: 226px;
 }
 
-.THIS .slds-card__body > div {
- 	flex: 1;
-    padding: 8px 16px 0 16px;
-}
-
-.THIS .slds-card__body .summary {
-	text-align: left;
-}
-
-.THIS img {
+.THIS .property-pic {
     height: 90px;
     width: 90px;
+    border: none;
+}
+
+.THIS .broker-pic {
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     border: none;
 }
 
-.THIS .slds-icon-standard-household {
-    background-color: transparent;
-}
-
-.THIS .slds-icon-standard-household svg {
-    fill: #54698D;
-}
-
 .THIS h3 {
-    font-size: 18px;
+    font-size: 16px;
     color: #0070D2;
-    font-weight: 300;
+    margin-top: 2px;
 }
 
 .THIS .select {
-    margin-top: 20px;
     text-align: center;
+    margin-top: 60px;
+}
+
+.THIS .broker {
+    line-height: 1rem;
+}
+
+.THIS .slds-icon--small {
+    height: 1.3rem;
+    width: 1.3rem;
 }

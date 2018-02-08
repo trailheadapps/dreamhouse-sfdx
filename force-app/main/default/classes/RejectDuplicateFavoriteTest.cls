@@ -20,7 +20,7 @@ public class RejectDuplicateFavoriteTest {
             insert p;
             User u = getTestUser();
             insert u;
-            Favorite__c f1 = new Favorite__c(property__c=p.Id, user__c=u.Id);
+            Property_Favorite__c f1 = new Property_Favorite__c(property__c=p.Id, user__c=u.Id);
 			insert f1;
         } catch (Exception e) {
             System.debug(e);
@@ -37,9 +37,9 @@ public class RejectDuplicateFavoriteTest {
             insert p;
             User u = getTestUser();
             insert u;
-            Favorite__c f1 = new Favorite__c(property__c=p.Id, user__c=u.Id);
+            Property_Favorite__c f1 = new Property_Favorite__c(property__c=p.Id, user__c=u.Id);
 			insert f1;
-            Favorite__c f2 = new Favorite__c(property__c=p.Id, user__c=u.Id);
+            Property_Favorite__c f2 = new Property_Favorite__c(property__c=p.Id, user__c=u.Id);
 			insert f2;
         } catch (Exception e) {
             success = false;

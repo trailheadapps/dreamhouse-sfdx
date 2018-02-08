@@ -2,10 +2,13 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "id": "0HoB00000008OhnKAE",
+      "versionName": "Spring 18",
+      "versionNumber": "2.0.0.NEXT"
     }
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "40.0"
+  "sourceApiVersion": "42.0"
 }

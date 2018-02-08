@@ -18,8 +18,8 @@ public with sharing class PushPriceChangeNotification {
         
         Set<String> userIds = new Set<String>();
 
-        List<Favorite__c> favorites = [SELECT user__c from favorite__c WHERE property__c=:propId];
-        for (Favorite__c favorite : favorites) {
+        List<Property_Favorite__c> favorites = [SELECT user__c from Property_Favorite__c WHERE property__c=:propId];
+        for (Property_Favorite__c favorite : favorites) {
         	userIds.add(favorite.user__c);	    
         }
         

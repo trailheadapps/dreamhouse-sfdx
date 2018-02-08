@@ -15,10 +15,10 @@
     
     <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
 
-    <div>
+    <lightning:card>
         <lightning:layout >
         	<lightning:layoutitem class="{! 'days-block ' + v.status}">
-                <div class="days">{!v.property.Days_On_Market__c}</div>days
+                <div class="days">{!v.property.Days_On_Market__c}</div>days on<br/>the market
             </lightning:layoutitem>
             <lightning:layoutitem flexibility="grow" class="chart">
                 <div class="{! 'bar ' + v.status }" style="{! 'width:' + v.property.Days_On_Market__c / 90 * 100 + '%' }"/>
@@ -29,6 +29,6 @@
                 </div>
             </lightning:layoutitem>
         </lightning:layout>
-    </div>
+    </lightning:card>
     
 </aura:component>

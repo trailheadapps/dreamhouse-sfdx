@@ -1,24 +1,44 @@
 global with sharing class PropertyController {
 
     @AuraEnabled
-    public static PropertyPagedResult findAll(String searchKey, Decimal minPrice, Decimal maxPrice, Decimal pageSize, Decimal pageNumber) {
-		Integer pSize = (Integer)pageSize;
+    public static Property__c[] getPropertyList(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey) {
         String key = '%' + searchKey + '%';
-        Integer offset = ((Integer)pageNumber - 1) * pSize;
-        PropertyPagedResult r =  new PropertyPagedResult();
-        r.pageSize = pSize;
-        r.page = (Integer) pageNumber;
-        r.total = [SELECT count() FROM property__c 
+        String visualKey = '%' + visualSearchKey + '%';
+        return [SELECT Id, address__c, city__c, state__c, description__c, price__c, baths__c, beds__c, thumbnail__c, location__latitude__s, location__longitude__s FROM property__c
                       WHERE (title__c LIKE :key OR city__c LIKE :key OR tags__c LIKE :key)
-                      AND price__c >= :minPrice
-                  	  AND price__c <= :maxPrice];
-        r.properties = [SELECT Id, title__c, city__c, description__c, price__c, baths__c, beds__c, thumbnail__c FROM property__c 
-                      WHERE (title__c LIKE :key OR city__c LIKE :key OR tags__c LIKE :key)
+                      AND (title__c LIKE :visualKey OR city__c LIKE :visualKey OR tags__c LIKE :visualKey)
                       AND price__c >= :minPrice
 					  AND price__c <= :maxPrice
+                      AND beds__c >= :numberBedrooms
+                      AND baths__c >= :numberBathrooms
+                      ORDER BY price__c LIMIT 100];
+    }
+
+    @AuraEnabled
+    public static PropertyListPage getPropertyListPage(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey, Decimal pageSize, Decimal pageNumber) {
+		Integer pSize = (Integer)pageSize;
+        String key = '%' + searchKey + '%';
+        String visualKey = '%' + visualSearchKey + '%';
+        Integer offset = ((Integer)pageNumber - 1) * pSize;
+        PropertyListPage page =  new PropertyListPage();
+        page.pageSize = pSize;
+        page.pageNumber = (Integer) pageNumber;
+        page.total = [SELECT count() FROM property__c 
+                      WHERE (title__c LIKE :key OR city__c LIKE :key OR tags__c LIKE :key)
+                      AND (title__c LIKE :visualKey OR city__c LIKE :visualKey OR tags__c LIKE :visualKey)
+                      AND price__c >= :minPrice
+                  	  AND price__c <= :maxPrice
+                      AND beds__c >= :numberBedrooms
+                      AND baths__c >= :numberBathrooms];
+          page.properties = [SELECT Id, address__c, city__c, state__c, description__c, price__c, baths__c, beds__c, thumbnail__c FROM property__c 
+                      WHERE (title__c LIKE :key OR city__c LIKE :key OR tags__c LIKE :key)
+                      AND (title__c LIKE :visualKey OR city__c LIKE :visualKey OR tags__c LIKE :visualKey)
+                      AND price__c >= :minPrice
+					  AND price__c <= :maxPrice
+                      AND beds__c >= :numberBedrooms
+                      AND baths__c >= :numberBathrooms
                       ORDER BY price__c LIMIT :pSize OFFSET :offset];
-        System.debug(r);
-        return r;
+        return page;
     }
 
     @AuraEnabled
@@ -50,5 +70,22 @@ global with sharing class PropertyController {
         }
     }
 
+    @AuraEnabled
+    public static List<ContentVersion> getPictures (Id propertyId) {
+
+        List<ContentDocumentLink> links = [select id, LinkedEntityId, ContentDocumentId from ContentDocumentLink where LinkedEntityId=:propertyId];
+
+        if (links.isEmpty()) {
+            return null;
+        }
+
+        Set<Id> contentIds = new Set<Id>();
+
+        for (ContentDocumentLink link :links) {
+            contentIds.add(link.ContentDocumentId);
+        }
+
+        return [SELECT Id, Title FROM ContentVersion WHERE ContentDocumentId IN :contentIds AND IsLatest=true];
+    }
 
 }

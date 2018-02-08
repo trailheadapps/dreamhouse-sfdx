@@ -1,10 +1,23 @@
 ({
+    onInit: function(component, event, helper) {
+        component.set('v.datasetColumns', [
+            {label: 'Label', fieldName: 'name', type: 'text'},
+            {label: 'Examples', fieldName: 'numExamples', type: 'number'}
+        ]);
+        component.set('v.modelColumns', [
+            {label: 'Model Id', fieldName: 'modelId', type: 'text'},
+            {label: 'Progress', fieldName: 'progress', type: 'text'},
+            {label: 'Status', fieldName: 'status', type: 'text'}
+        ]);
+    },
+
     onModelsTab: function(component, event, helper) {
         helper.getModelsByDataset(component);
         component.set('v.currentTab', 'models');
     },
     
     onLabelsTab: function(component, event, helper) {
+        console.log(JSON.stringify(component.get("v.dataset")));
         component.set('v.currentTab', 'labels');
     },
 

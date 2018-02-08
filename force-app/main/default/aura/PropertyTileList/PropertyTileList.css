@@ -1,3 +1,7 @@
+.THIS .slds-card__body {
+    padding: 0 8px;
+}
+
 .THIS .slds-p-around--small {
     padding-left: 6px;
     padding-right: 6px;

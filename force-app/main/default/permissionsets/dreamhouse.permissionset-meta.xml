@@ -165,7 +165,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PropertyPagedResult</apexClass>
+        <apexClass>PropertyListPage</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -240,12 +240,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Favorite__c.Property__c</field>
+        <field>Property_Favorite__c.Property__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Favorite__c.User__c</field>
+        <field>Property_Favorite__c.User__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -399,7 +399,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Favorite__c</object>
+        <object>Property_Favorite__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -413,14 +413,6 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>DreamHouseSampleData</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>HeatMap</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>HeatMapMock</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <tabSettings>
@@ -440,15 +432,11 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Heat_Map</tab>
+        <tab>Property_Explorer</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Heat_Map_Mock</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Property_Explorer1</tab>
+        <tab>Property_Finder</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

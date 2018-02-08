@@ -35,6 +35,10 @@
                 <behavior>Edit</behavior>
                 <field>Tags__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Price_Sold__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -236,9 +240,12 @@
         <fields>NAME</fields>
         <fields>User__c</fields>
         <fields>CREATED_DATE</fields>
-        <relatedList>Favorite__c.Property__c</relatedList>
+        <relatedList>Property_Favorite__c.Property__c</relatedList>
         <sortField>CREATED_DATE</sortField>
         <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -246,7 +253,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0S000000J8Mn</masterLabel>
+        <masterLabel>00h9A000000Lvvd</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

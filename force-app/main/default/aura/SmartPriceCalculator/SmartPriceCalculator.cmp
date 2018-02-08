@@ -24,7 +24,7 @@
 
     <lightning:card >
    		<aura:set attribute="title">
-            <lightning:icon iconName="utility:magicwand" size="small"/>
+            <lightning:icon iconName="utility:setup_assistant_guide" size="small"/>
             Smart Price Calculator
         </aura:set>            
    		<aura:set attribute="actions">

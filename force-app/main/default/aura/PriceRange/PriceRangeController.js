@@ -30,7 +30,7 @@
             }
         });
         
-		slider.noUiSlider.on('change', $A.getCallback(function(range) {
+		slider.noUiSlider.on('update', $A.getCallback(function(range) {
             
             function convert(value) {
                 if (value.indexOf('M') > 0) {
@@ -41,12 +41,21 @@
                 }
             }
 
-            var myEvent = $A.get("e.c:RangeChange");
-        	myEvent.setParams({
+            var rangeChangeEvent = component.getEvent("rangeChange");
+        	rangeChangeEvent.setParams({
             	"minValue": convert(range[0]),
             	"maxValue": convert(range[1])
             });
-			myEvent.fire();
+			rangeChangeEvent.fire();
         }));
+    },
+
+    setValues : function(component, event) {
+        var slider = component.find('slider').getElement();
+        var params = event.getParam('arguments');
+        if (params) {
+                slider.noUiSlider.set([params.min, params.max]);
+        }
     }
+
 })
