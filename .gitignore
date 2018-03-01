@@ -10,3 +10,4 @@ node_modules
 .settings
 selenium-client-jars/
 test/artifacts
+.vscode
