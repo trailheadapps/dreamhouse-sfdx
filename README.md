@@ -1,5 +1,7 @@
 # DreamHouse Sample Application
 
+<a href="https://deploy-to-sfdx.com" rel="nofollow"><img src="https://camo.githubusercontent.com/9edf80918d1d3b365e5ae6971302f767e7ed3dd4/68747470733a2f2f6465706c6f792d746f2d736664782e636f6d2f646973742f6173736574732f696d616765732f4465706c6f79546f534644582e737667" alt="Deploy" data-canonical-src="https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg" style="max-width:100%;"></a>
+
 DreamHouse is a sample application that demonstrates the unique value proposition of the Salesforce App Cloud for building Employee Productivity and Customer Engagement apps.
 
 Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more information.
