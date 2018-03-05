@@ -9,21 +9,21 @@
     <formFactors>Large</formFactors>
     <label>DreamHouse</label>
     <navType>Standard</navType>
-    <tab>standard-home</tab>
-    <tab>Property__c</tab>
-    <tab>Broker__c</tab>
-    <tab>standard-Contact</tab>
-    <tab>Property_Explorer1</tab>
-    <tab>Command_Center</tab>
-    <tab>Einstein_Vision</tab>
-    <tab>standard-report</tab>
-    <tab>standard-Dashboard</tab>
-    <tab>standard-Event</tab>
-    <tab>Heat_Map_Mock</tab>
-    <tab>Heat_Map</tab>
-    <tab>Sample_Data_Import</tab>
-    <tab>Bot_Command__c</tab>
-    <tab>standard-File</tab>
+    <tabs>standard-home</tabs>
+    <tabs>Property__c</tabs>
+    <tabs>Broker__c</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Property_Explorer1</tabs>
+    <tabs>Command_Center</tabs>
+    <tabs>Einstein_Vision</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>Heat_Map_Mock</tabs>
+    <tabs>Heat_Map</tabs>
+    <tabs>Sample_Data_Import</tabs>
+    <tabs>Bot_Command__c</tabs>
+    <tabs>standard-File</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>dreamhouseApplicationUtilityBar</utilityBar>
 </CustomApplication>
