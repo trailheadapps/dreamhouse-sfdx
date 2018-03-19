@@ -1,0 +1,33 @@
+.THIS {
+    height: 400px;
+}
+
+.THIS header {
+    padding-bottom: 8px;
+}
+
+.THIS .content {
+    padding-left: 24px;
+}
+
+.THIS .slds-progress {
+    margin-top: 8px;
+    margin-bottom: 36px;
+}
+
+.THIS .slider > .slds-form-element {
+    width: 450px;
+}
+
+.THIS .slds-slider__value {
+    font-size: 1.2rem;
+    color: #1A4F93;
+}
+
+.THIS .slds-slider__value::before { 
+    content: "$";
+}
+
+.THIS .title {
+    padding-top: 8px;
+}
