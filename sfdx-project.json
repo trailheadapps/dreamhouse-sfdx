@@ -3,9 +3,9 @@
     {
       "path": "force-app",
       "default": true,
-      "id": "0HoB00000008OhnKAE",
+      "id": "0Ho0Y000000000fSAA",
       "versionName": "Spring 18",
-      "versionNumber": "2.0.0.NEXT"
+      "versionNumber": "1.0.0.NEXT"
     }
   ],
   "namespace": "",
