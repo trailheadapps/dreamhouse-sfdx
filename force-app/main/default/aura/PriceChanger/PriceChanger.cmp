@@ -1,0 +1,38 @@
+<aura:component implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes" access="global">
+
+    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
+
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="property" type="Property__c" />
+
+    <force:recordData aura:id="propertyService" recordId="{!v.recordId}" targetFields="{!v.property}" fields="['Id','Monthly_Rent__c']" mode="EDIT"/>
+
+    <div>
+
+        <div class="slds-text-heading_small slds-align_absolute-center title">Step 2: Adjust Price</div>
+
+        <lightning:progressIndicator currentStep="step2">
+            <lightning:progressStep label="Comparable Rentals" value="step1" />
+            <lightning:progressStep label="Adjust Price" value="step2" />
+            <lightning:progressStep label="Add Pictures" value="step3" />
+            <lightning:progressStep label="Complete" value="step4" />
+        </lightning:progressIndicator>
+
+        <lightning:layout>
+            <lightning:layoutItem>
+                <c:PropertyWidget recordId="{!v.recordId}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="grow" class="content">
+                <header>This apartment doesn't compare favorably with similar apartments in the same neighborhood. We recommend you adjust the price to increase the appeal of the listing.</header>
+                <div class="slds-align_absolute-center">
+                    <c:RentalChart price="{!v.property.Monthly_Rent__c}" />
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning:slider label="price" step="50" min="500" max="2500" value="{!v.property.Monthly_Rent__c}" onchange="{!c.onPriceChange}" class="slider"/>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+    </div>
+
+</aura:component>
