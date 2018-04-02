@@ -59,12 +59,12 @@ global with sharing class PropertyController {
     public static List<Property__c> getSimilarProperties (Id propertyId, Decimal bedrooms, Decimal price, String searchCriteria) {
         if (searchCriteria == 'Bedrooms') {
             return [
-                SELECT Id, Name, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
+                SELECT Id, Name, Address__c, City__c, State__c, Zip__c, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
                 FROM Property__c WHERE Id != :propertyId AND Beds__c = :bedrooms
             ];
         } else {
             return [
-                SELECT Id, Name, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
+                SELECT Id, Name, Address__c, City__c, State__c, Zip__c, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
                 FROM Property__c WHERE Id != :propertyId AND Price__c > :price - 100000 AND Price__c < :price + 100000
             ];
         }

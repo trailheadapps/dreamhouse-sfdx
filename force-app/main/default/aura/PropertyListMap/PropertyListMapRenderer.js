@@ -27,12 +27,15 @@
         }
 
         var properties = component.get("v.properties");
+        if (!properties) {
+            return nodes;
+        }
         var markers = [];
         properties.forEach(function(property) {
             var latLng = [property.Location__Latitude__s, property.Location__Longitude__s];
             var myIcon = L.divIcon({
                 className: 'my-div-icon',
-                html: '<svg width="28" height="28" viewBox="0 0 100 100"><g><path fill="#235493" d="m78.8 51.2h-6.3v27.5c0 0.8-0.5 1.2-1.3 1.2h-12.4c-0.8 0-1.3-0.5-1.3-1.2v-21.2h-15v21.2c0 0.8-0.5 1.2-1.3 1.2h-12.4c-0.8 0-1.3-0.5-1.3-1.2v-27.5h-6.3c-0.5 0-1-0.2-1.1-0.8-0.3-0.5-0.1-1 0.3-1.4l28.8-28.8c0.5-0.5 1.4-0.5 1.8 0l28.8 28.8c0.4 0.4 0.4 0.9 0.3 1.4s-0.8 0.8-1.3 0.8z"></path></g>'
+                html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 52 52"><path fill="#DB4437" d="m26 2c-10.5 0-19 8.5-19 19.1 0 13.2 13.6 25.3 17.8 28.5 0.7 0.6 1.7 0.6 2.5 0 4.2-3.3 17.7-15.3 17.7-28.5 0-10.6-8.5-19.1-19-19.1z m0 27c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"></path></svg>'
             });
             var marker = window.L.marker(latLng, {icon: myIcon});
             marker.propertyId = property.Id;
@@ -51,3 +54,4 @@
 
     }
 })
+

@@ -21,11 +21,7 @@
     
     <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
     
-    <lightning:card >
-        <aura:set attribute="title">
-            <lightning:icon iconName="utility:checkin" size="small" />
-            <span class="title">{!v.title}</span>
-        </aura:set>
+    <lightning:card title="{!v.title}" iconName="custom:custom106">
         <aura:set attribute="actions">
             <lightning:buttonIcon onclick="{!c.fullScreen}" size="large" iconName="utility:expand" />
         </aura:set>

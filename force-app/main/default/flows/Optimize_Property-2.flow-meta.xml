@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Optimize Property {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Optimize Property</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Comp_List</name>
+        <label>Comp List</label>
+        <locationX>329</locationX>
+        <locationY>83</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Price_Change</targetReference>
+        </connector>
+        <fields>
+            <name>compList</name>
+            <extensionName>c:FlowScreenCompList</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Complete</name>
+        <label>Complete</label>
+        <locationX>323</locationX>
+        <locationY>449</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>processComplete</name>
+            <extensionName>c:FlowScreenComplete</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Price_Change</name>
+        <label>Price Change</label>
+        <locationX>353</locationX>
+        <locationY>197</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Upload_Pictures</targetReference>
+        </connector>
+        <fields>
+            <name>priceChange</name>
+            <extensionName>c:FlowScreenPriceChange</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Upload_Pictures</name>
+        <label>Upload Pictures</label>
+        <locationX>380</locationX>
+        <locationY>351</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Complete</targetReference>
+        </connector>
+        <fields>
+            <name>imageUpload</name>
+            <extensionName>c:FlowScreenImageUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Comp_List</startElementReference>
+</Flow>

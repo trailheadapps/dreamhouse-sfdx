@@ -1,0 +1,32 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="sObject" type="SObject" />
+    <aura:attribute name="fullScreen" type="Boolean" default="false" />
+    <aura:attribute name="fields" type="String[]" default="['Id']" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <force:recordData aura:id="service" 
+                         recordId="{!v.recordId}" 
+                         targetFields="{!v.sObject}" 
+                         fields="{!v.fields}"
+                         recordUpdated="{!c.onRecordUpdated}"/>
+    
+    <div>
+        <!-- <lightning:buttonIcon onclick="{!c.fullScreen}" size="large" variant="bare" class="btn-expand" iconName="utility:expand" /> -->
+        <c:Viewer360Base onmaximize="{!c.onMaximize}"/>
+        <aura:if isTrue="{!v.fullScreen==true}">
+            <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container slds-card">
+                    <c:Viewer360Base onminimize="{!c.onMinimize}"/>
+                </div>
+                <!-- <div class="btn slds-modal__close close x-large">
+                    <lightning:buttonIcon variant="bare" onclick="{!c.closeDialog}" size="large" iconName="utility:close" />
+                </div> -->
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+    </div>  
+
+</aura:component>

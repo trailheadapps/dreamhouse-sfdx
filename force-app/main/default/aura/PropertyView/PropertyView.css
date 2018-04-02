@@ -1,0 +1,9 @@
+.THIS img {
+    width: 210px;
+    max-width: inherit;
+    margin-bottom: 8px;
+}
+
+.THIS .price {
+    margin-top: 4px;
+}

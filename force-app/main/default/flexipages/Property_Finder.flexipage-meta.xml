@@ -13,6 +13,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>VoiceInputCard</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentName>PropertyListMap</componentName>
         </componentInstances>
         <name>center</name>

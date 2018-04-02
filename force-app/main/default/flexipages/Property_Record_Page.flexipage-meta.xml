@@ -127,12 +127,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>PropertyCarousel</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>PropertyDaysOnMarketChart</componentName>
-        </componentInstances>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>latField</name>
                 <value>Location__Latitude__s</value>
@@ -146,6 +140,15 @@
                 <value>Name</value>
             </componentInstanceProperties>
             <componentName>MapCard</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>Viewer360</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>PropertyCarousel</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

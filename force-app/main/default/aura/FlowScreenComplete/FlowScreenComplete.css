@@ -1,0 +1,28 @@
+.THIS {
+    height: 380px;
+}
+
+.THIS header {
+    padding-bottom: 20px;
+}
+
+.THIS .content {
+    padding-left: 24px;
+}
+
+.THIS .slds-progress {
+    margin-top: 8px;
+    margin-bottom: 36px;
+}
+
+.THIS .icon-container {
+    padding-bottom: 20px;
+}
+
+.THIS .footer {
+    padding-top: 12px;
+}
+
+.THIS .title {
+    padding-top: 4px;
+}

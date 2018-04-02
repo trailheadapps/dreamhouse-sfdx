@@ -1,0 +1,21 @@
+<aura:component access="global">
+
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="property" type="Property__c" />
+
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.onRecordChange}"/>
+
+    <force:recordData aura:id="propertyService" recordId="{!v.recordId}" 
+        targetFields="{!v.property}" fields="['Id', 'Picture__c', 'Address__c', 'City__c', 'State__c', 'Zip__c', 'Price__c', 'Beds__c', 'Baths__c', 'Date_Listed__c', 'Broker__c', 'Broker__r.Name', 'Broker__r.Title__c', 'Broker__r.Mobile_Phone__c', 'Broker__r.Picture__c']"
+    />
+
+    <div>
+        <!-- <img src="{!v.property.Picture__c}" class="pic" /> -->
+        <img src="https://s3-us-west-1.amazonaws.com/sfdc-demo/apt/121chestnut.jpg" class="pic" />
+        <lightning:formattedAddress street="{!v.property.Address__c}" city="{!v.property.City__c}" province="{!v.property.State__c}"
+            postalCode="{!v.property.Zip__c}" />
+        <p>Bedrooms: {!v.property.Beds__c} Bathrooms: {!v.property.Baths__c}</p>
+        <div class="price">Price: <lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></div>
+    </div>
+
+</aura:component>

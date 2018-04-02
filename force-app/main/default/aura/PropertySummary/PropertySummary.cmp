@@ -1,16 +1,29 @@
 <aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
-
+    
     <aura:attribute name="recordId" type="Id" />
-    <aura:attribute name="property" type="Property__c" />
+	<aura:attribute name="property" type="Property__c" /> 
+    
+    <force:recordData aura:id="service" 
+                      recordId="{!v.recordId}" 
+                      targetFields="{!v.property}" 
+				      fields="['Id', 
+                              'Thumbnail__c',
+                              'Address__c',
+                              'City__c',
+                              'State__c',
+                              'Zip__c',
+                              'Price__c',
+                              'Beds__c',
+                              'Baths__c',
+                              'Broker__r.Name',
+                              'Broker__r.Title__c',
+                              'Broker__r.Mobile_Phone__c',
+                              'Broker__r.Email__c',
+                              'Broker__r.Picture__c']" />    
 
-    <force:recordData aura:id="propertyService" 
-        recordId="{!v.recordId}" 
-        targetFields="{!v.property}" 
-        fields="['Id', 'Thumbnail__c', 'Address__c', 'City__c', 'State__c', 'Zip__c', 'Price__c', 'Beds__c', 'Baths__c', 'Date_Listed__c', 'Broker__c', 'Broker__r.Name', 'Broker__r.Title__c', 'Broker__r.Mobile_Phone__c', 'Broker__r.Picture__c']"/>
+    <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
 
-    <aura:handler event="ltng:selectSObject" action="{!c.onPropertySelected}" />
-
-    <lightning:card title="Property Summary" iconName="utility:home">
+	<lightning:card title="Property Summary" iconName="custom:custom85">
 
         <aura:set attribute="actions">
             <lightning:buttonIcon iconName="utility:edit" variant="bare" alternativeText="Edit Record" onclick="{!c.editRecord}" />
@@ -29,17 +42,15 @@
                         <img src="{!v.property.Thumbnail__c}" class="property-pic" />
                     </aura:if>
                 </lightning:layoutItem>
-                <lightning:layoutItem>
+                <lightning:layoutItem >
                         <div>
-                        <lightning:formattedAddress
-                                street="{!v.property.Address__c}"
+                        <lightning:formattedAddress street="{!v.property.Address__c}"
                                 city="{!v.property.City__c}"
                                 province="{!v.property.State__c}"
                                 postalCode="{!v.property.Zip__c}"/>    
-                        <p>Bedrooms: {!v.property.Beds__c}
-                        Bathrooms: {!v.property.Baths__c}</p>
-                        <!-- <p>Date Listed: <lightning:FormattedDateTime value="{!v.property.Date_Listed__c}" year="numeric" month="short" day="2-digit" weekday="long"/></p> -->
-                        <h3><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0" /></h3>
+                        <p>Beds: {!v.property.Beds__c}
+                        Baths: {!v.property.Baths__c}</p>
+                        <p><lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0" /></p>
                     </div>
                 </lightning:layoutItem>
             </lightning:layout>
@@ -49,16 +60,16 @@
                         <img src="{!v.property.Broker__r.Picture__c}" class="broker-pic" />
                     </aura:if>    
                 </lightning:layoutItem>
-                <lightning:layoutItem>
+                <lightning:layoutItem >
                     <div class="broker">
                         <p><a onclick="{!c.navigateToRecord}">{!v.property.Broker__r.Name}</a></p>
                         <p>{!v.property.Broker__r.Title__c}</p>
                         <p>{!v.property.Broker__r.Mobile_Phone__c}</p>
+                        <p>{!v.property.Broker__r.Email__c}</p>
                     </div>
                 </lightning:layoutItem>
             </lightning:layout>
         </aura:if>
 
-    </lightning:card>
-
+    </lightning:card>    
 </aura:component>

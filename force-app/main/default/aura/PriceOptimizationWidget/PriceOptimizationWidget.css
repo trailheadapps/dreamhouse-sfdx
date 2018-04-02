@@ -1,0 +1,75 @@
+.THIS {
+    position: relative;
+    height: 160px;
+    width: 300px;
+}
+
+.THIS .bar {
+    position: absolute;
+    bottom: 0;
+    background-color: #DDDBDA;
+    width: 30px;
+}
+
+.THIS .bar1 {
+    height: 50px;
+    left: 0;
+}
+.THIS .bar2 {
+    height: 100px;
+    left: 30px;
+}
+.THIS .bar3 {
+    height: 140px;
+    left: 60px;
+}
+.THIS .bar4 {
+    height: 80px;
+    left: 90px;
+}
+.THIS .bar5 {
+    height: 155px;
+    left: 120px;
+}
+.THIS .bar6 {
+    height: 130px;
+    left: 150px;
+}
+.THIS .bar7 {
+    height: 90px;
+    left: 180px;
+}
+.THIS .bar8 {
+    height: 160px;
+    left: 210px;
+}
+.THIS .bar9 {
+    height: 120px;
+    left: 240px;
+}
+.THIS .bar10 {
+    height: 70px;
+    left: 270px;
+}
+
+.THIS .line {
+    position: absolute;
+    bottom: 0;
+    left: 270px;
+    background-color: #1A4F93;
+    z-index: 20;
+    opacity: .5;
+    height: 160px;
+}
+
+.THIS .line.current {
+    left: 270px;
+    background-color: #1A4F93;
+    width: 4px;
+}
+
+.THIS .line.high {
+    left: 240px;
+    width: 2px;
+    background-color: #C2384A;
+}

@@ -1,0 +1,34 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+
+    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
+
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="properties" type="List" />
+
+    <div>
+
+        <div class="slds-text-heading_medium slds-align_absolute-center title">Let's get this property moving!</div>
+        <div class="slds-text-heading_small slds-align_absolute-center title">Step 1: Compare Similar Properties</div>
+        
+        <lightning:progressIndicator currentStep="step1">
+            <lightning:progressStep label="Comparable Listings" value="step1" />
+            <lightning:progressStep label="Adjust Price" value="step2" />
+            <lightning:progressStep label="Add Pictures" value="step3" />
+            <lightning:progressStep label="Complete" value="step4" />
+        </lightning:progressIndicator>
+
+        <lightning:layout >
+            <lightning:layoutItem >
+                <c:PropertyView recordId="{!v.recordId}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="content">
+                <header>This listing doesn't compare favorably with similar properties in the same neighborhood. Take a look at
+                    the most competitive properties below:</header>
+                <lightning:datatable data="{!v.properties}" columns="{!v.columns}" keyField="Id" hideCheckboxColumn="true" />
+            </lightning:layoutItem>
+        </lightning:layout>
+
+    </div>
+
+</aura:component>

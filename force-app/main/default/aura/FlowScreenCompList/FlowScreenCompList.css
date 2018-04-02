@@ -1,0 +1,28 @@
+.THIS {
+    height: 380px;
+}
+
+.THIS header {
+    padding-bottom: 8px;
+}
+
+.THIS .content {
+    position: relative;
+    width: 100%;
+    padding-left: 24px;
+}
+
+.THIS .slds-progress {
+    margin-top: 8px;
+    margin-bottom: 36px;
+}
+
+.THIS lightning-datatable {
+    position: absolute;
+    left: 24px;
+    right: 0;
+}
+
+.THIS .title {
+    padding-top: 4px;
+}

@@ -1,0 +1,48 @@
+<aura:component implements="lightning:availableForFlowScreens" controller="PropertyController" access="global">
+
+    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
+
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="files" type="Object[]" />
+
+    <div>
+
+        <div class="slds-text-heading_medium slds-align_absolute-center title">Let's get this property moving!</div>
+        <div class="slds-text-heading_small slds-align_absolute-center title">Step 3: Add More Pictures</div>
+
+        <lightning:progressIndicator currentStep="step3">
+            <lightning:progressStep label="Comparable Rentals" value="step1" />
+            <lightning:progressStep label="Adjust Price" value="step2" />
+            <lightning:progressStep label="Add Pictures" value="step3" />
+            <lightning:progressStep label="Complete" value="step4" />
+        </lightning:progressIndicator>
+
+        <lightning:layout >
+            <lightning:layoutItem >
+                <c:PropertyView recordId="{!v.recordId}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="grow" class="content">
+                <header>This property has only one picture. Properties that have three pictures or more sell faster. Use this screen to add pictures.</header>
+
+                <aura:if isTrue="{!v.files.length > 0}">
+                    <lightning:carousel disableAutoRefresh="false" disableAutoScroll="true" class="slds-align_absolute-center">
+                        <aura:iteration items="{!v.files}" var="file" indexVar="index">
+                            <lightning:carouselImage src="{! '/sfc/servlet.shepherd/version/download/' + file.Id}" />
+                        </aura:iteration>
+                    </lightning:carousel>
+                    <aura:set attribute="else">
+                        <div class="slds-align_absolute-center">
+                            <lightning:icon iconName="utility:photo" size="large" />
+                            <p>There are currently no pictures for this property.</p>
+                            </div>
+                    </aura:set>
+                </aura:if>
+
+                <lightning:fileUpload label="Add picture" multiple="true" accept=".jpg, .png, .gif" recordId="{!v.recordId}" onuploadfinished="{!c.onUploadFinished}" class="slds-align_absolute-center"/>
+
+            </lightning:layoutItem>
+        </lightning:layout>
+
+    </div>
+
+</aura:component>

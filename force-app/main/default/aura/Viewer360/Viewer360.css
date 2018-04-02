@@ -1,0 +1,33 @@
+.THIS {
+    position: relative;
+    height: 220px;
+}
+
+.THIS .slds-modal__container {
+    margin-top: 120px;
+    height: 75%;
+    width: 90%;
+    max-width: initial;
+    padding: 0;
+}
+
+.THIS .slds-modal {
+}
+
+.THIS .slds-modal__close {
+    position: absolute;
+    top: 100px;
+    right: 5%;
+}
+
+.THIS .title {
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+.THIS .btn-expand {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    z-index: 20;
+}

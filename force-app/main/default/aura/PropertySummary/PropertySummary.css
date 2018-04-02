@@ -3,20 +3,21 @@
 }
 
 .THIS .property-pic {
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
     border: none;
+    border-radius: 4px;
 }
 
 .THIS .broker-pic {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    border-radius: 4px;
     border: none;
 }
 
 .THIS h3 {
-    font-size: 16px;
+    font-size: 14px;
     color: #0070D2;
     margin-top: 2px;
 }
@@ -27,7 +28,7 @@
 }
 
 .THIS .broker {
-    line-height: 1rem;
+    /*line-height: 1rem;*/
 }
 
 .THIS .slds-icon--small {
