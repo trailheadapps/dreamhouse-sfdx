@@ -13,33 +13,20 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>8</value>
-            </componentInstanceProperties>
-            <componentName>PropertyTileList</componentName>
+            <componentName>VoiceInputCard</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>PropertyListMap</componentName>
         </componentInstances>
         <name>center</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>PropertyDaysOnMarketChart</componentName>
+            <componentName>PropertySummary</componentName>
         </componentInstances>
         <componentInstances>
-            <componentInstanceProperties>
-                <name>latField</name>
-                <value>Location__Latitude__s</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>longField</name>
-                <value>Location__Longitude__s</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>titleField</name>
-                <value>Name</value>
-            </componentInstanceProperties>
-            <componentName>MapCard</componentName>
+            <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

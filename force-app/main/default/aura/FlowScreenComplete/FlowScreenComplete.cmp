@@ -1,8 +1,6 @@
 <aura:component implements="lightning:availableForFlowScreens" access="global">
 
-    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
-
-    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="recordId" type="String" default="" access="global" />
     <aura:attribute name="property" type="Property__c" />
 
     <force:recordData aura:id="propertyService" recordId="{!v.recordId}" 
@@ -32,9 +30,9 @@
                 <div class="slds-align_absolute-center">
                     <ul class="slds-list_dotted">
                         <li>You compared this listing to comparable rentals in the neighborhood.</li>
-                        <li>You reduced the price to <lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></li>
+                        <li>You set the price to <lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></li>
                         <li>Interested renters have been notified of the new price.</li>
-                        <li>You have added 2 pictures to the listing.</li>
+                        <li>You have added pictures to the listing.</li>
                     </ul>
                 </div>
                 <div class="footer slds-align_absolute-center">This listing now compares favorably with similar properties in the neighborhood.</div>

@@ -1,5 +1,5 @@
 .THIS {
-    height: 380px;
+    height: 400px;
 }
 
 .THIS .slds-carousel {
@@ -31,4 +31,8 @@
 
 .THIS .title {
     padding-top: 4px;
+}
+
+.THIS .no-pic-msg {
+    margin: 12px 0 24px 0;
 }

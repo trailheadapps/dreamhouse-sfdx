@@ -1,0 +1,52 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="PropertyController" access="global">
+
+    <aura:attribute name="fullScreen" type="Boolean" default="false" />
+    <aura:attribute name="atRiskProperties" type="Property__c[]" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }"/>
+
+    <article class="slds-card">
+        <div class="slds-grid slds-einstein-header slds-card__header">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+                    <div class="slds-media__body">
+                        <h2 class="slds-truncate" title="Einstein (10+)">
+                            <a href="javascript:void(0);" class="slds-card__header-link" title="Einstein (10+)">
+                                <span class="slds-text-heading_small">Action List</span>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            Einstein predicts the following properties are at risk and will stay on the market for too long. Click Optimize to fix the issues.
+            <aura:iteration items="{!v.atRiskProperties}" var="property" indexVar="i">
+                <lightning:layout verticalAlign="center" class="row">
+                    <lightning:layoutItem flexibility="grow">
+                        {!property.Address__c}, {!property.City__c}
+                        <p><lightning:formattedNumber value="{!property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></p>
+                        {!property.Predicted_Days_On_Market__c}
+                    </lightning:layoutItem>
+                    <lightning:layoutItem>
+                        <lightning:button label="Optimize" onclick="{!c.optimize}" name="{!property.Id}"/>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </aura:iteration>
+        </div>
+    </article>
+    <aura:if isTrue="{!v.fullScreen==true}">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container slds-card">
+                <lightning:flow aura:id="flow" onstatuschange="{!c.flowStatusChange}"/>
+            </div>
+            <!-- <div class="btn slds-modal__close close x-large">
+                <lightning:buttonIcon variant="bare" onclick="{!c.closeDialog}" size="large" iconName="utility:close" />
+            </div> -->
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+
+
+</aura:component>

@@ -11,7 +11,7 @@
 
     <div>
         <!-- <img src="{!v.property.Picture__c}" class="pic" /> -->
-        <img src="https://s3-us-west-1.amazonaws.com/sfdc-demo/apt/121chestnut.jpg" class="pic" />
+        <img src="{!v.property.Picture__c}" class="pic" />
         <lightning:formattedAddress street="{!v.property.Address__c}" city="{!v.property.City__c}" province="{!v.property.State__c}"
             postalCode="{!v.property.Zip__c}" />
         <p>Bedrooms: {!v.property.Beds__c} Bathrooms: {!v.property.Baths__c}</p>

@@ -29,7 +29,7 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>ActivityList</componentName>
+            <componentName>ActionList</componentName>
         </componentInstances>
         <componentInstances>
             <componentName>home:recentRecordContainer</componentName>

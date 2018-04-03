@@ -1,4 +1,8 @@
-.THIS img {
+.THIS {
+    width: 210px;
+}
+
+.THIS .pic {
     width: 210px;
     max-width: inherit;
     margin-bottom: 8px;

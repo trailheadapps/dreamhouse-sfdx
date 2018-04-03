@@ -127,6 +127,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>PredictedDaysOnMarket</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>latField</name>
                 <value>Location__Latitude__s</value>
@@ -146,9 +149,6 @@
         </componentInstances>
         <componentInstances>
             <componentName>PropertyCarousel</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>PropertyDaysOnMarketChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

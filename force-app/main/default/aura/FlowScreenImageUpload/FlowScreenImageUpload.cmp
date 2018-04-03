@@ -1,9 +1,9 @@
 <aura:component implements="lightning:availableForFlowScreens" controller="PropertyController" access="global">
 
-    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
-
-    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="recordId" type="String" default="" access="global" />
     <aura:attribute name="files" type="Object[]" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }"/>
 
     <div>
 
@@ -22,7 +22,7 @@
                 <c:PropertyView recordId="{!v.recordId}"/>
             </lightning:layoutItem>
             <lightning:layoutItem flexibility="grow" class="content">
-                <header>This property has only one picture. Properties that have three pictures or more sell faster. Use this screen to add pictures.</header>
+                <header>This property has {!v.files.length} pictures. Properties that have more pictures sell faster. Use this screen to add pictures.</header>
 
                 <aura:if isTrue="{!v.files.length > 0}">
                     <lightning:carousel disableAutoRefresh="false" disableAutoScroll="true" class="slds-align_absolute-center">
@@ -31,10 +31,10 @@
                         </aura:iteration>
                     </lightning:carousel>
                     <aura:set attribute="else">
-                        <div class="slds-align_absolute-center">
-                            <lightning:icon iconName="utility:photo" size="large" />
-                            <p>There are currently no pictures for this property.</p>
-                            </div>
+                        <div class="no-pic-msg">
+                        <div class="slds-align_absolute-center"><lightning:icon iconName="utility:photo" size="large" /></div>
+                        <div class="slds-align_absolute-center">There are currently no pictures for this property.</div>
+                        </div>
                     </aura:set>
                 </aura:if>
 

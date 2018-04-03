@@ -3,12 +3,16 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>flowArguments</name>
+                <value>[{"label":"recordId","dataType":"String","supportsRecordId":false,"value":"{!recordId}"}]</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>flowLayout</name>
                 <value>oneColumn</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>flowName</name>
-                <value>Optimize_Property</value>
+                <value>Optimize_Listing</value>
             </componentInstanceProperties>
             <componentName>flowruntime:interview</componentName>
         </componentInstances>

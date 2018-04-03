@@ -1,19 +1,24 @@
 ({
-    onJSLoaded: function(component, event, helper) {
-
-        component.set("v.recordId", window.recordId);
+    onInit: function(component, event, helper) {
 
         component.set('v.columns', [
         	{label: 'Address', fieldName: 'Address__c', type: 'text', initialWidth: 150},
             {label: 'City', fieldName: 'City__c', type: 'text'},
-            {label: 'Price', fieldName: 'Price__c', type: 'currency'},
             {label: 'Beds', fieldName: 'Beds__c', type: 'number'},
             {label: 'Baths', fieldName: 'Baths__c', type: 'number'},
-            {label: 'SQFT', fieldName: 'Sqft__c', type: 'number'},
-            {label: 'Predicted Days', fieldName: 'Days_Prediction__c', type: 'number', initialWidth: 160}
+            {label: 'Price', fieldName: 'Price__c', type: 'currency'},
+            {label: 'Predicted Days', fieldName: 'Predicted_Days_On_Market__c', type: 'number', initialWidth: 160}
         ]);
 
-        helper.loadComparableRentals(component);
+        var action = component.get("c.getComparableProperties");
+        action.setStorable();
+        action.setParams({
+            propertyId: component.get("v.recordId")
+        });
+        action.setCallback(this, function(response){
+            component.set("v.comparableProperties", response.getReturnValue());
+        });
+        $A.enqueueAction(action);
 
     },
 

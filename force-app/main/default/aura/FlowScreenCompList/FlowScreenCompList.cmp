@@ -1,10 +1,10 @@
-<aura:component implements="lightning:availableForFlowScreens" access="global">
+<aura:component implements="lightning:availableForFlowScreens" controller="PropertyController" access="global">
 
-    <ltng:require scripts="{!$Resource.cache}" afterScriptsLoaded="{!c.onJSLoaded}" />
-
-    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="recordId" type="String" access="global" />
     <aura:attribute name="columns" type="List" />
-    <aura:attribute name="properties" type="List" />
+    <aura:attribute name="comparableProperties" type="List" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }"/>
 
     <div>
 
@@ -23,9 +23,8 @@
                 <c:PropertyView recordId="{!v.recordId}"/>
             </lightning:layoutItem>
             <lightning:layoutItem class="content">
-                <header>This listing doesn't compare favorably with similar properties in the same neighborhood. Take a look at
-                    the most competitive properties below:</header>
-                <lightning:datatable data="{!v.properties}" columns="{!v.columns}" keyField="Id" hideCheckboxColumn="true" />
+                <header>First, examine how your listing stacks up against comprable properties nearby. Here is a list of competitive listings:</header>
+                <lightning:datatable data="{!v.comparableProperties}" columns="{!v.columns}" keyField="Id" hideCheckboxColumn="true" />
             </lightning:layoutItem>
         </lightning:layout>
 

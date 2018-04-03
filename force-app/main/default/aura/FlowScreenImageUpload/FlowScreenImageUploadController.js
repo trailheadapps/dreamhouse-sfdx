@@ -1,6 +1,5 @@
 ({
-    onJSLoaded: function (component, event, helper) {
-        component.set("v.recordId", window.recordId);
+    onInit: function (component, event, helper) {
         helper.loadPictures(component);
     },
 

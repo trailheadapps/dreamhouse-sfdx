@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <interviewLabel>Optimize Property {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Optimize Property</label>
+    <interviewLabel>Optimize Listing {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Optimize Listing</label>
     <processType>Flow</processType>
     <screens>
         <name>Comp_List</name>
         <label>Comp List</label>
-        <locationX>329</locationX>
-        <locationY>83</locationY>
+        <locationX>378</locationX>
+        <locationY>98</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -18,6 +18,12 @@
             <name>compList</name>
             <extensionName>c:FlowScreenCompList</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -26,15 +32,21 @@
     <screens>
         <name>Complete</name>
         <label>Complete</label>
-        <locationX>323</locationX>
-        <locationY>449</locationY>
+        <locationX>363</locationX>
+        <locationY>602</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>processComplete</name>
+            <name>compl</name>
             <extensionName>c:FlowScreenComplete</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -43,28 +55,34 @@
     <screens>
         <name>Price_Change</name>
         <label>Price Change</label>
-        <locationX>353</locationX>
-        <locationY>197</locationY>
+        <locationX>376</locationX>
+        <locationY>236</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Upload_Pictures</targetReference>
+            <targetReference>Upload_Pics</targetReference>
         </connector>
         <fields>
             <name>priceChange</name>
             <extensionName>c:FlowScreenPriceChange</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Upload_Pictures</name>
-        <label>Upload Pictures</label>
-        <locationX>380</locationX>
-        <locationY>351</locationY>
+        <name>Upload_Pics</name>
+        <label>Upload Pics</label>
+        <locationX>377</locationX>
+        <locationY>430</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -75,10 +93,23 @@
             <name>imageUpload</name>
             <extensionName>c:FlowScreenImageUpload</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>Comp_List</startElementReference>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
