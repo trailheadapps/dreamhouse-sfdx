@@ -1,0 +1,28 @@
+.THIS {
+    width: 100%;
+}
+
+.THIS .noUi-handle {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.THIS .slds-card .cPropertyTileList {
+    padding: 4px !important;
+}
+
+.THIS .slds-card {
+    padding: 4px;
+}
+
+.THIS .left {
+    padding: 16px 8px 8px 16px;
+}
+
+.THIS .center {
+    padding: 16px 8px 8px 8px;
+}
+
+.THIS .right {
+    padding: 16px 16px 8px 8px;
+}

@@ -26,3 +26,7 @@
 .THIS .title {
     padding-top: 4px;
 }
+
+.THIS .slds-grid {
+    margin-top: 0 !important;
+}

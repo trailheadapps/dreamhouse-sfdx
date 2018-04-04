@@ -27,7 +27,7 @@
                     <c:PriceOptimizationWidget price="{!v.property.Price__c}" />
                 </div>
                 <div class="slds-align_absolute-center">
-                    <lightning:slider label="Price" step="5000" min="500000" max="700000" value="{!v.property.Price__c}" onchange="{!c.onPriceChange}" class="slider"/>
+                    <lightning:slider label="Price" step="5000" min="400000" max="650000" value="{!v.property.Price__c}" onchange="{!c.onPriceChange}" class="slider"/>
                     <lightning:buttonIcon iconName="utility:check" onclick="{!c.savePrice}" class="check-btn"/>
                 </div>
             </lightning:layoutItem>

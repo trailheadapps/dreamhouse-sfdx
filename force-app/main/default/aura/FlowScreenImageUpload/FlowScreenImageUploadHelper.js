@@ -4,6 +4,7 @@
         if (!propertyId) {
             return;
         }
+        component.set("v.files", []);
         var action = component.get("c.getPictures");
         action.setParams({
             "propertyId": propertyId,

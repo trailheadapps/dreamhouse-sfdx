@@ -29,9 +29,9 @@
                 <header class="slds-text-heading_small slds-align_absolute-center">Congratulations! You fixed several issues related to this listing.</header>
                 <div class="slds-align_absolute-center">
                     <ul class="slds-list_dotted">
-                        <li>You compared this listing to comparable rentals in the neighborhood.</li>
+                        <li>You compared this listing to comparable properties in the neighborhood.</li>
                         <li>You set the price to <lightning:formattedNumber value="{!v.property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></li>
-                        <li>Interested renters have been notified of the new price.</li>
+                        <li>Interested buyers have been notified of the new price.</li>
                         <li>You have added pictures to the listing.</li>
                     </ul>
                 </div>
