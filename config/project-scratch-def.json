@@ -1,7 +1,8 @@
 {
+    "country": "US",
     "orgName": "Whizhouse",
     "edition": "Developer",
-    "orgPreferences" : {
+    "orgPreferences": {
         "enabled": ["S1DesktopEnabled"]
-    }
+  }
 }

@@ -50,7 +50,7 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
+    <enableSharing>false</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <!--externalSharingModel>ReadWrite</externalSharingModel-->
     <label>Property Favorite</label>

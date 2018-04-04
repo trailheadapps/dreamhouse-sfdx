@@ -50,7 +50,7 @@
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
+    <enableSharing>false</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <label>Broker</label>
     <nameField>
@@ -58,7 +58,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Brokers</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts/>  
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
