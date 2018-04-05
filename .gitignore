@@ -11,3 +11,5 @@ node_modules
 selenium-client-jars/
 test/artifacts
 .vscode
+server.crt
+server.key
