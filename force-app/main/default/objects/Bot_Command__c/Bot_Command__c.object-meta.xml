@@ -50,7 +50,7 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>false</enableSharing>
+    <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <label>Bot Command</label>
     <nameField>

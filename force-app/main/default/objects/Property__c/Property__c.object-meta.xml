@@ -53,7 +53,7 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>false</enableSharing>
+    <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <!--externalSharingModel>ReadWrite</externalSharingModel-->
     <label>Property</label>
