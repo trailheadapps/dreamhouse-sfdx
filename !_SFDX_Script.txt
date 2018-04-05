@@ -1,5 +1,6 @@
 
 UI: Authorize Dev Hub
+sfdx help force:auth:web:login
 sfdx force:auth:web:login --setdefaultdevhubusername
 
 sfdx force:config:list
@@ -46,4 +47,26 @@ https://<DOAMIN_PREFIX>.lightning.force.com/packagingSetupUI/ipLanding.app?apvId
 https://jwsdh-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04t0Y000002aB3WQAU with apvId is the <04t_id> Package2 Version Id
 
 Next CI: UI Git Push
+
+
+
+NOTES:
+Buildpack added. Next release on dev1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
+Run git push heroku master to create a new release using this buildpack.
+Buildpack added. Next release on staging1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
+Run git push heroku master to create a new release using this buildpack.
+Buildpack added. Next release on prod1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
+Run git push heroku master to create a new release using this buildpack.
+Buildpack added. Next release on dev1522920455 will use:
+  1. https://github.com/heroku/salesforce-cli-buildpack
+  2. https://github.com/heroku/salesforce-buildpack
+Run git push heroku master to create a new release using these buildpacks.
+Buildpack added. Next release on staging1522920455 will use:
+  1. https://github.com/heroku/salesforce-cli-buildpack
+  2. https://github.com/heroku/salesforce-buildpack
+Run git push heroku master to create a new release using these buildpacks.
+Buildpack added. Next release on prod1522920455 will use:
+  1. https://github.com/heroku/salesforce-cli-buildpack
+  2. https://github.com/heroku/salesforce-buildpack
+Run git push heroku master to create a new release using these buildpacks.
 
