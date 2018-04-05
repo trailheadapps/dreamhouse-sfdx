@@ -1,8 +1,9 @@
 {
-    "country": "US",
-    "orgName": "Whizhouse",
-    "edition": "Developer",
-    "orgPreferences": {
-        "enabled": ["S1DesktopEnabled"]
+  "country": "US",
+  "orgName": "Whizhouse",
+  "edition": "Developer",
+  "features": ["Communities"],
+  "orgPreferences": {
+    "enabled": ["S1DesktopEnabled", "ChatterEnabled", "NetworksEnabled"]
   }
 }

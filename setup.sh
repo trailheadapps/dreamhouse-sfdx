@@ -17,7 +17,7 @@ TICKS=$(echo $(date +%s | cut -b1-13))
 HEROKU_TEAM_NAME="emea-hbb"
 
 # Descriptive name for the Heroku app
-HEROKU_APP_NAME="MyDreamhouseApp"
+HEROKU_APP_NAME="dhpackage"
 
 # Name of the Heroku apps you'll use
 # COMMENTED RANDOM NAME GENERATION
