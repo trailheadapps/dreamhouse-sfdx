@@ -20,12 +20,18 @@ HEROKU_TEAM_NAME="emea-hbb"
 HEROKU_APP_NAME="MyDreamhouseApp"
 
 # Name of the Heroku apps you'll use
-HEROKU_DEV_APP_NAME="dev$TICKS"
-HEROKU_STAGING_APP_NAME="staging$TICKS"
-HEROKU_PROD_APP_NAME="prod$TICKS"
+# COMMENTED RANDOM NAME GENERATION
+# HEROKU_DEV_APP_NAME="dev$TICKS"
+# HEROKU_STAGING_APP_NAME="staging$TICKS"
+# HEROKU_PROD_APP_NAME="prod$TICKS"
+HEROKU_DEV_APP_NAME="devDH"
+HEROKU_STAGING_APP_NAME="stagingDH"
+HEROKU_PROD_APP_NAME="prodDH"
 
 # Pipeline
-HEROKU_PIPELINE_NAME="pipeline$TICKS"
+# COMMENTED RANDOM NAME GENERATION
+# HEROKU_PIPELINE_NAME="pipeline$TICKS"
+HEROKU_PIPELINE_NAME="dreamhousesfdx"
 
 # Usernames or aliases of the orgs you're using
 DEV_HUB_USERNAME="MyDevHub"
@@ -37,7 +43,7 @@ PROD_USERNAME="MyProd"
 GITHUB_REPO="salesforceplatform/dreamhouse-sfdx"
 
 # Your package name
-PACKAGE_NAME="DHPackage2"
+PACKAGE_NAME="Dreamhouse-App"
 
 ### Setup script
 

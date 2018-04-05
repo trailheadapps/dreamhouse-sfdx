@@ -30,7 +30,7 @@ sfdx force:org:delete -u "dreamhouse"
 Push to Demo org
 mkdir mdapiout
 sfdx force:source:convert -d mdapiout
-sfdx force:mdapi:deploy -d mdapiout -u "CDODevHub" --testlevel NoTestRun --wait 2
+sfdx force:mdapi:deploy -d mdapiout -u "MyStagingSB" --testlevel NoTestRun --wait 2
 
 Alternative via Packaging
 sfdx force:package2:create --containeroptions Unlocked --nonamespace --name Dreamhouse-App
