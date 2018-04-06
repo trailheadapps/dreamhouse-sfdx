@@ -1,0 +1,74 @@
+
+UI: Authorize Dev Hub
+sfdx help force:auth:web:login
+sfdx force:auth:web:login --setdefaultdevhubusername
+
+sfdx force:config:list
+
+sfdx force:org:create -s -f config/project-scratch-def.json -d 1 -a "dreamhouse"
+sfdx force:org:list
+
+UI: Open scratch org
+sfdx force:org:open
+sfdx force:source:status
+
+Push source:
+sfdx force:source:push -u "dreamhouse"
+sfdx force:user:permset:assign -n dreamhouse
+sfdx force:data:tree:import --plan ./data/sample-data-plan.json
+sfdx force:user:password:generate -u "dreamhouse"
+sfdx force:org:display -u "dreamhouse"
+
+Run test classes:
+sfdx force:apex:test:run --tests BotTest --resultformat human --synchronous --loglevel error
+
+Debug in Scratch org:
+sfdx force:apex:log:tail --color
+
+sfdx force:org:delete -u "dreamhouse"
+
+Push to Demo org
+mkdir mdapiout
+sfdx force:source:convert -d mdapiout
+sfdx force:mdapi:deploy -d mdapiout -u "MyStagingSB" --testlevel NoTestRun --wait 2
+
+Alternative via Packaging
+sfdx force:package2:create --containeroptions Unlocked --nonamespace --name Dreamhouse-App
+
+!! Edit the "packageDirectories" section of the sfdx-project.json file in your project and for the “id” field, enter the 0Ho ID that you got
+Make sure packageID is in your sfdx-project.json file
+
+sfdx force:package2:version:create -d force-app -w 20
+sfdx force:package2:version:create:list
+sfdx force:org:create --noancestors --nonamespace -f config/project-scratch-def.json -a "dreamhouse" -s -d 1 
+sfdx force:package:install --id <04t_id> --wait 10 -u "dreamhouse"
+Install via
+https://<DOAMIN_PREFIX>.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=<04t_id>
+https://jwsdh-dev-ed.lightning.force.com/packagingSetupUI/ipLanding.app?apvId=04t0Y000002aB3WQAU with apvId is the <04t_id> Package2 Version Id
+
+Next CI: UI Git Push
+
+
+
+NOTES:
+
+Blogs
+SFDX Wade: http://www.wadewegner.com/
+
+Plugins
+sfdx plugins:install sfdx-mobilesdk-plugin
+Use:
+  sfdx mobilesdk:reactnative:create
+    --platform ios
+    --appname demo1
+    --packagename com.wadewegner.demo1
+    --organization WadeWegner.com
+    --outputdir mobile
+
+
+sfdx plugins:install sfdx-waw-plugin
+
+Github
+Generate code snippets from templates: https://github.com/wadewegner/sfdx-code-gen
+Convert WSDL to Apex: https://github.com/wadewegner/sfdx-wsdl2apex-plugin
+

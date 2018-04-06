@@ -1,0 +1,66 @@
+{
+  "name": "dreamhouse-sfdx",
+  "version": "0.0.1",
+  "description": "Dreamhpuse SFDX Heroku Pipeline using salesforce-dx-buildpack",
+  "repository": "https://github.com/salesforceplatform/dreamhouse-sfdx/",
+  "author": "JWS",
+  "license": "ALv2",
+  "bugs": {
+    "url": "https://github.com/salesforceplatform/dreamhouse-sfdx/issues"
+  },
+  "homepage":
+    "https://github.com/salesforceplatform/dreamhouse-sfdx#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup":
+          "./vendor/sfdx/release.sh ci-$HEROKU_TEST_RUN_COMMIT_VERSION && ./bin/test-setup.sh",
+        "test": "./bin/test.sh"
+      }
+    }
+  },
+  "scripts": {
+    "pr-predestroy": "./bin/ra-org-delete.sh"
+  },
+  "formation": {
+    "test": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "env": {
+    "SFDX_AUTH_URL": {
+      "required": true
+    },
+    "SFDX_BUILDPACK_DEBUG": {
+      "required": true
+    },
+    "SFDX_CREATE_PACKAGE_VERSION": {
+      "required": true
+    },
+    "SFDX_DEV_HUB_AUTH_URL": {
+      "required": true
+    },
+    "SFDX_INSTALL_PACKAGE_VERSION": {
+      "required": true
+    },
+    "SFDX_PACKAGE_NAME": {
+      "required": true
+    },
+    "STAGE": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/salesforce-cli-buildpack"
+    },
+    {
+      "url": "https://github.com/heroku/salesforce-buildpack"
+    }
+  ]
+}
