@@ -51,22 +51,24 @@ Next CI: UI Git Push
 
 
 NOTES:
-Buildpack added. Next release on dev1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
-Run git push heroku master to create a new release using this buildpack.
-Buildpack added. Next release on staging1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
-Run git push heroku master to create a new release using this buildpack.
-Buildpack added. Next release on prod1522920455 will use https://github.com/heroku/salesforce-cli-buildpack.
-Run git push heroku master to create a new release using this buildpack.
-Buildpack added. Next release on dev1522920455 will use:
-  1. https://github.com/heroku/salesforce-cli-buildpack
-  2. https://github.com/heroku/salesforce-buildpack
-Run git push heroku master to create a new release using these buildpacks.
-Buildpack added. Next release on staging1522920455 will use:
-  1. https://github.com/heroku/salesforce-cli-buildpack
-  2. https://github.com/heroku/salesforce-buildpack
-Run git push heroku master to create a new release using these buildpacks.
-Buildpack added. Next release on prod1522920455 will use:
-  1. https://github.com/heroku/salesforce-cli-buildpack
-  2. https://github.com/heroku/salesforce-buildpack
-Run git push heroku master to create a new release using these buildpacks.
+
+Blogs
+SFDX Wade: http://www.wadewegner.com/
+
+Plugins
+sfdx plugins:install sfdx-mobilesdk-plugin
+Use:
+  sfdx mobilesdk:reactnative:create
+    --platform ios
+    --appname demo1
+    --packagename com.wadewegner.demo1
+    --organization WadeWegner.com
+    --outputdir mobile
+
+
+sfdx plugins:install sfdx-waw-plugin
+
+Github
+Generate code snippets from templates: https://github.com/wadewegner/sfdx-code-gen
+Convert WSDL to Apex: https://github.com/wadewegner/sfdx-wsdl2apex-plugin
 
