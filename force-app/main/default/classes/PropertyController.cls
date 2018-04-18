@@ -57,7 +57,7 @@ global with sharing class PropertyController {
     
     @AuraEnabled
     public static Property__c[] getAtRiskProperties() {
-        return [SELECT id, name, address__c, city__c, price__c, Predicted_Days_On_Market__c 
+        return [SELECT id, name, address__c, city__c, price__c, Thumbnail__c, Predicted_Days_On_Market__c 
                 FROM Property__c
                 WHERE Predicted_Days_On_Market__c > 30];
     }

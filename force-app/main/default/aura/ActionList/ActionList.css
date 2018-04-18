@@ -25,3 +25,11 @@
 .THIS .slds-card__body_inner .slds-grid {
     margin-top: 12px;
 }
+
+.THIS .property-pic {
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 8px;
+}

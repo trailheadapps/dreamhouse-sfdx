@@ -23,7 +23,7 @@
                 <c:PropertyView recordId="{!v.recordId}"/>
             </lightning:layoutItem>
             <lightning:layoutItem class="content">
-                <header>First, examine how your listing stacks up against comprable properties nearby. Here is a list of competitive listings:</header>
+                <header>First, examine how your listing stacks up against comparable properties nearby. Here is a list of competitive listings:</header>
                 <lightning:datatable data="{!v.comparableProperties}" columns="{!v.columns}" keyField="Id" hideCheckboxColumn="true" />
             </lightning:layoutItem>
         </lightning:layout>

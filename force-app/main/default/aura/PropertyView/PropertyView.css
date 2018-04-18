@@ -6,6 +6,7 @@
     width: 210px;
     max-width: inherit;
     margin-bottom: 8px;
+    border-radius: 4px;
 }
 
 .THIS .price {

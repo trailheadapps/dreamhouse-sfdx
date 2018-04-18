@@ -18,6 +18,12 @@
             <name>compList</name>
             <extensionName>c:FlowScreenCompList</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -35,6 +41,12 @@
             <name>compl</name>
             <extensionName>c:FlowScreenComplete</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -55,6 +67,12 @@
             <name>priceChange</name>
             <extensionName>c:FlowScreenPriceChange</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
@@ -75,10 +93,23 @@
             <name>imageUpload</name>
             <extensionName>c:FlowScreenImageUpload</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>Comp_List</startElementReference>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

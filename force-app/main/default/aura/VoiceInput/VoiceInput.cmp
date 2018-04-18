@@ -9,7 +9,7 @@
 
     <lightning:layout verticalAlign="center">
         <lightning:layoutItem flexibility="grow">
-            <input aura:id="utterance" type="text" class="slds-input" placeholder="Ask Astro..." onkeypress="{!c.onKeyPress}" />
+            <input aura:id="utterance" type="text" class="slds-input" placeholder="How can I assist you?" onkeypress="{!c.onKeyPress}" />
         </lightning:layoutItem>
         <lightning:layoutItem >
             <div class="audio-icon">

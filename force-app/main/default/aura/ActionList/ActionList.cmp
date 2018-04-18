@@ -21,9 +21,12 @@
             </header>
         </div>
         <div class="slds-card__body slds-card__body_inner">
-            Einstein predicts the following properties are at risk and will stay on the market for too long. Click Optimize to fix the issues.
+            Einstein Prediction Builder determined the following properties are at risk and will stay on the market for too long. Click Optimize to address the issues.
             <aura:iteration items="{!v.atRiskProperties}" var="property" indexVar="i">
                 <lightning:layout verticalAlign="center" class="row">
+                    <lightning:layoutItem>
+                        <img src="{!property.Thumbnail__c}" class="property-pic" />
+                    </lightning:layoutItem>
                     <lightning:layoutItem flexibility="grow">
                         {!property.Address__c}, {!property.City__c}
                         <p><lightning:formattedNumber value="{!property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0" maximumFractionDigits="0"/></p>
