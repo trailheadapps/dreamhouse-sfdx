@@ -1,0 +1,15 @@
+<aura:component extends="c:Storage" controller="YelpServiceController" access="global">
+
+	<aura:attribute name="errorMessage" type="String" />
+    <aura:attribute name="latlon" type="String" description="Option for centering the search on comma separated lattitude and longitude" />
+    <aura:attribute name="address" access="global" type="String" description="Option for centering the search on an address" />
+    <aura:attribute name="searchTerm" type="String" default="restaurant" />
+
+    <aura:registerEvent name="yelpDataFound" type="c:dataRetrieved" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:handler name="change" value="{!v.address}" action="{!c.updateSearch}" />
+    <aura:handler name="change" value="{!v.searchTerm}" action="{!c.updateSearch}" />
+
+</aura:component>

@@ -1,0 +1,4 @@
+<design:component label="Yelp Demo">
+	<design:attribute name="defaultSearch" label="Default Search" default="Restaurants" description="What would you like to search for?" />
+	<design:attribute name="designHeight" label="Height" datasource="small,medium,large" default="small" description="How tall should the component?" />
+</design:component>

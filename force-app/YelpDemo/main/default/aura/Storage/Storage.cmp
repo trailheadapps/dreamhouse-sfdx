@@ -1,0 +1,14 @@
+<aura:component abstract="true">
+
+    <aura:set attribute="auraPreInitBlock">
+        <auraStorage:init name="actions" persistent="{!v.persistentAuraStorage}" secure="{!v.secureAuraStorage}" clearStorageOnInit="{!v.clearStorageOnInit}" defaultExpiration="{!v.defaultExpiration}" defaultAutoRefreshInterval="{!v.defaultAutoRefreshInterval}" maxSize="{!v.maxSizeAuraStorage}" version="1.0"/>
+    </aura:set>
+
+    <aura:attribute name="defaultExpiration" type="String" default="50" />
+    <aura:attribute name="clearStorageOnInite" type="boolean" default="true" />
+    <aura:attribute name="defaultAutoRefreshInterval" type="String" default="60" />
+    <aura:attribute name="maxSizeAuraStorage" type="String" default="1024" />
+    <aura:attribute name="persistentAuraStorage" type="Boolean" default="false" />
+    <aura:attribute name="secureAuraStorage" type="Boolean" default="false" />
+
+</aura:component>
