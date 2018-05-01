@@ -1,0 +1,39 @@
+{
+  "name": "dreamhouse-sfdx",
+  "scripts": {
+    "postdeploy": "bin/post-setup.sh"
+  },
+  "env": {
+    "SFDX_AUTH_URL": {
+      "required": true
+    },
+    "SFDX_BUILDPACK_DEBUG": {
+      "required": true
+    },
+    "SFDX_CREATE_PACKAGE_VERSION": {
+      "required": true
+    },
+    "SFDX_INSTALL_PACKAGE_VERSION": {
+      "required": true
+    },
+    "SFDX_PACKAGE_NAME": {
+      "required": true
+    },
+    "STAGE": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/salesforce-cli-buildpack"
+    },
+    {
+      "url": "https://github.com/heroku/salesforce-buildpack"
+    }
+  ]
+}
