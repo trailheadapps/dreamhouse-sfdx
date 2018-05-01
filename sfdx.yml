@@ -1,0 +1,10 @@
+scratch-org-def: config/project-scratch-def.json
+assign-permset: true
+permset-name: dreamhouse
+run-apex-tests: true
+apex-test-format: tap
+delete-scratch-org: false
+show-scratch-org-url: true
+open-path: one/one.app
+import-data: true
+data-plans: assets/data/sample-data-plan.json
