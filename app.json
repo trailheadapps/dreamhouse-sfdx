@@ -1,0 +1,49 @@
+{
+    "name": "salesforce-dx-pipeline-sample",
+    "version": "0.0.1",
+    "description": "Test application for the salesforce-dx-buildpack",
+    "repository": "https://github.com/wadewegner/salesforce-dx-pipeline-sample",
+    "author": "",
+    "license": "ALv2",
+    "bugs": {
+        "url": "https://github.com/wadewegner/salesforce-dx-pipeline-sample/issues"
+    },
+    "homepage": "https://github.com/wadewegner/salesforce-dx-pipeline-sample#readme",
+    "dependencies": {},
+    "devDependencies": {},
+    "buildpacks": [{
+            "url": "https://github.com/heroku/salesforce-cli-buildpack"
+        },
+        {
+            "url": "https://github.com/heroku/salesforce-buildpack"
+        }
+    ],
+    "env": {
+        "SFDX_DEV_HUB_AUTH_URL": {
+            "required": true
+        },
+        "SFDX_BUILDPACK_DEBUG": {
+            "required": true
+        },
+        "HEROKU_APP_NAME": {
+            "required": true
+        }
+    },
+    "environments": {
+        "test": {
+            "scripts": {
+                "test-setup": "./vendor/sfdx/release.sh ci-$HEROKU_TEST_RUN_COMMIT_VERSION && ./bin/test-setup.sh",
+                "test": "./bin/test.sh"
+            },
+            "formation": {
+                "test": {
+                    "quantity": 1,
+                    "size": "standard-1x"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "pr-predestroy": "./bin/ra-org-delete.sh"
+    }
+}
