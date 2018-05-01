@@ -1,0 +1,72 @@
+.THIS {
+    position: relative;
+    overflow: hidden;
+}
+.THIS.small {
+    height: 28rem;
+}
+.THIS.medium {
+    height: 40rem;
+}
+.THIS.large {
+    height: 53rem;
+}
+.THIS.autoHeight {
+    min-height: 100vh;
+	height: auto;
+}
+.THIS.small .scroll-container {
+	height: 22rem;
+}
+.THIS.medium .scroll-container {
+	height: 34rem;
+}
+.THIS.large .scroll-container {
+	height: 47rem;
+}
+.THIS.small .scroll-container.details {
+	height: 25rem;
+	padding-bottom: 1rem;
+}
+.THIS.medium .scroll-container.details {
+	height: 37rem;
+	padding-bottom: 1rem;
+}
+.THIS.large .scroll-container.details {
+	height: 50rem;
+	padding-bottom: 1rem;
+}
+.THIS .ratingStars {
+	max-width: 6.5rem;
+}
+.THIS header {
+	height: 5rem;
+	padding-bottom: .25rem;
+}
+.THIS .map {
+	width: 100%;
+	min-height: 240px;
+}
+.THIS .panel {
+	padding: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.THIS .panel--visible {
+    transform: translate3d(0, 0, 0);
+    transition: transform .35s linear;
+}
+.THIS .panel--stageLeft {
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .35s linear;
+}
+.THIS .panel--stageRight {
+    transform: translate3d(100%, 0, 0);
+    transition: transform .35s linear;
+}
+.THIS .backbutton {
+	float: left;
+	padding-right: 1rem;
+}

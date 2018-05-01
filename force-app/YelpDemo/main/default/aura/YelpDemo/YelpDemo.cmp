@@ -1,0 +1,92 @@
+<aura:component controller="YelpDemoController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+
+	<ltng:require styles="/resource/leaflet/leaflet.css" scripts="/resource/leaflet/leaflet.js" />
+ 
+    <aura:attribute name="recordId" type="Id" default=""/>
+    <aura:attribute name="sObjectName" type="String" default="Contact" />
+    <aura:attribute name="defaultSearch" type="String" />
+    <aura:attribute name="designHeight" type="String" />
+    <aura:attribute name="location" type="Object" />
+    <aura:attribute name="staticLocation" type="Object" />
+    <aura:attribute name="restaurantList" type="Object[]" access="global" />
+    <aura:attribute name="openItem" type="String" />
+    <aura:attribute name="searchTerm" type="String" default="restaurant" />
+    <aura:attribute name="errorMessage" type="String" />
+    <aura:attribute name="map" type="Object" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.location}" action="{!c.updateSearch}" />
+    <aura:handler name="change" value="{!v.searchTerm}" action="{!c.updateSearch}" />
+    <aura:handler name="yelpDataFound" event="c:dataRetrieved" action="{!c.renderYelpData}" />
+
+    <c:YelpService defaultExpiration="30" aura:id="yelpservice" address="{!v.location}" searchTerm="{!v.searchTerm}" />
+
+
+    <div class="slds-box small" aura:id="main">
+        <div class="panel panel--visible " aura:id="panelList">
+            <header class="panel__header">
+                <h2 class="slds-text-heading--small slds-m-bottom--small">In the Neighborhood</h2>
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-assistive-text" for="searchBox">Search</label>
+                    <div class="slds-form-element__control">
+                        <ui:inputText aura:id="searchTerm" label="" class="field" placeholder="Search for..." value="{!v.searchTerm}"/>
+                    </div>
+                </div>
+            </header>
+            <p class="slds-hide" aura:id="warning">{!v.errorMessage}</p>
+            <div class="slds-scrollable--y scroll-container" aura:id="scrollableArea">
+                <ul class="slds-list--vertical slds-has-dividers--top-space">
+                    <aura:iteration items="{!v.restaurantList}" var="item" indexVar="i">
+                        <li class="slds-list__item" onclick="{!c.showDetails}" data-record="{!i}">
+                            <h3 class="slds-text-heading--small slds-m-bottom--x-small">{!item.name}</h3>
+                            <img src="{!item.ratingImg}" alt="" class="ratingStars" />
+                            <div class="slds-hide slds-m-top--medium" data-details="{!i}">
+                                <ul class="slds-list--vertical">
+                                    <li class="slds-list__item">{!item.address}</li>
+                                    <li class="slds-list__item">{!item.city}, {!item.state}</li>
+                                    <li class="slds-list__item">{!item.phone}</li>
+                                </ul>
+                                <div class="slds-media slds-m-top--medium">
+                                    <div class="slds-media__figure">
+                                        <img src="{!item.image}" class="slds-avatar--large slds-avatar--circle" alt="Placeholder" />
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <p>{!item.review}</p>
+                                    </div>
+                                </div>                       	
+                            </div>
+                        </li>
+                    </aura:iteration>
+            	</ul>
+            </div>
+        </div>
+        <div class="panel panel--stageRight" aura:id="panelDetails">
+        <a href="" class="backbutton slds-text-heading--small" aura:id="backButton" onclick="{!c.backButton}">&lt;</a>
+        <h2 class="slds-text-heading--small slds-m-bottom--small">Details</h2>
+        <div class="slds-scrollable--y scroll-container details">
+            <div aura:id="map" class="map"></div>
+            <h3 class="slds-text-heading--small slds-m-top--medium" aura:id="itemName">{!v.itemName}</h3>
+            <ul class="slds-list--vertical">
+                <li class="slds-list__item">{!v.address}</li>
+                <li class="slds-list__item">{!v.city}, {!v.state}</li>
+                <li class="slds-list__item">{!v.phone}</li>
+            </ul>
+            <div class="slds-media slds-m-top--medium">
+                <div class="slds-media__figure">
+                    <img src="{!v.image}" class="slds-avatar--large slds-avatar--circle" alt="Placeholder" />
+                </div>
+                <div class="slds-media__body">
+                    <p>{!v.review}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="slds-spinner_container" aura:id="spinner">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+    	</div>
+    </div>
+
+</aura:component>

@@ -127,6 +127,17 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>defaultSearch</name>
+                <value>Restaurants</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>designHeight</name>
+                <value>small</value>
+            </componentInstanceProperties>
+            <componentName>YelpDemo</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentName>PropertyCarousel</componentName>
         </componentInstances>
         <componentInstances>

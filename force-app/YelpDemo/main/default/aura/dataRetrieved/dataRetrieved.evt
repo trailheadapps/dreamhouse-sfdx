@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+	<aura:attribute name="resultList" type="Object[]" />
+	<aura:attribute name="locationUsed" type="Object" />
+</aura:event>
