@@ -3,7 +3,6 @@
         var utterance = event.getParam("value");
         var messages = component.get("v.messages");
         messages.push({author: "Me", messageText: utterance});
-        //event.target.value = "";
         component.set("v.messages", messages);
         helper.submit(component, utterance, component.get('v.session'), null, null, function(answer) {
             if (answer) {
