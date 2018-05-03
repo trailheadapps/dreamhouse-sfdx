@@ -56,15 +56,31 @@ global with sharing class PropertyController {
     }
     
     @AuraEnabled
+    public static Property__c[] getAtRiskProperties() {
+        return [SELECT id, name, address__c, city__c, price__c, Thumbnail__c, Predicted_Days_On_Market__c 
+                FROM Property__c
+                WHERE Predicted_Days_On_Market__c > 30];
+    }
+
+    @AuraEnabled
+    public static List<Property__c> getComparableProperties(Id propertyId) {
+        Property__c property = [SELECT Id, Price__c FROM Property__c WHERE Id = :propertyId];
+        return [
+            SELECT Id, Name, Address__c, City__c, State__c, Zip__c, Beds__c, Baths__c, Price__c, Predicted_Days_On_Market__c 
+                FROM Property__c WHERE Id != :propertyId AND Price__c > :property.Price__c - 100000 AND Price__c < :property.Price__c + 100000 LIMIT 8
+        ];
+    }
+
+    @AuraEnabled
     public static List<Property__c> getSimilarProperties (Id propertyId, Decimal bedrooms, Decimal price, String searchCriteria) {
         if (searchCriteria == 'Bedrooms') {
             return [
-                SELECT Id, Name, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
+                SELECT Id, Name, Address__c, City__c, State__c, Zip__c, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
                 FROM Property__c WHERE Id != :propertyId AND Beds__c = :bedrooms
             ];
         } else {
             return [
-                SELECT Id, Name, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
+                SELECT Id, Name, Address__c, City__c, State__c, Zip__c, Beds__c, Baths__c, Price__c, Broker__c, Status__c, Thumbnail__c 
                 FROM Property__c WHERE Id != :propertyId AND Price__c > :price - 100000 AND Price__c < :price + 100000
             ];
         }

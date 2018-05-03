@@ -13,6 +13,10 @@
                 <name>hideUpdateButton</name>
                 <value>false</value>
             </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>variant</name>
+                <value>linear</value>
+            </componentInstanceProperties>
             <componentName>runtime_sales_pathassistant:pathAssistant</componentName>
         </componentInstances>
         <mode>Replace</mode>
@@ -127,12 +131,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>PropertyCarousel</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>PropertyDaysOnMarketChart</componentName>
-        </componentInstances>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>latField</name>
                 <value>Location__Latitude__s</value>
@@ -146,6 +144,9 @@
                 <value>Name</value>
             </componentInstanceProperties>
             <componentName>MapCard</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>PropertyCarousel</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

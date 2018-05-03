@@ -1,13 +1,15 @@
 ({
-    onInit : function(component) {
-        var action = component.get("c.getPictures");
-        action.setParams({
-            "propertyId": component.get("v.recordId"),
-        });
-        action.setCallback(this, function (response) {
-            component.set("v.files", response.getReturnValue());
-        });
-        $A.enqueueAction(action);
-    }
+    onInit : function(component, event, helper) {
+        helper.loadPictures(component);
+    },
+    
+	onUploadFinished: function (component, event, helper) {
+        helper.loadPictures(component);
+    },
+    
+    recordChangeHandler: function (component, event, helper) {
+        component.set("v.recordId", event.getParam("recordId"));
+        helper.loadPictures(component);
+    },
 
 })

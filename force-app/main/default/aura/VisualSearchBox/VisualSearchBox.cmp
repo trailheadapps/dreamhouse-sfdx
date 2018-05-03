@@ -2,7 +2,7 @@
 
     <aura:attribute name="modelId" type="String" />
     <aura:attribute name="files" type="Object[]" />
-    <aura:attribute name="predictions" type="Object[]" />
+    <aura:attribute name="predictions" type="List" />
     <aura:attribute name="waiting" type="Boolean" default="false" />
     <aura:attribute name="pictureSrc" type="String" />
 

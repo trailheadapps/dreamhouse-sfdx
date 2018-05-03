@@ -63,15 +63,7 @@
 
         <div class="footer slds-form-element slds-p-horizontal--x-small">
             <div class="slds-form-element__control">
-                <input aura:id="utterance" type="text" class="slds-input" placeholder="Ask DreamBot..." onkeypress="{!c.utteranceHandler}" />
-                <lightning:input aura:id="fileInput" 
-                                 type="file" name="file" 
-                                 multiple="false" 
-                                 accept="image/*;capture=camera" 
-                                 files="{!v.files}"
-                                 onchange="{!c.uploadFile}"
-                         		 label="Select a file"/>
-
+                <c:VoiceInput onchange="{!c.utteranceHandler}"/>
             </div>
         </div>            
 

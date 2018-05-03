@@ -1,4 +1,4 @@
-<design:component >
+<design:component label="Property Filters">
     <design:attribute name="einsteinVisionModelId" 
         label="Einstein Vision Model Id" 
         description="Einstein Vision Model Id" />

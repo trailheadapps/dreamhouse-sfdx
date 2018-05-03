@@ -8,6 +8,12 @@ public with sharing class HandlerFindPropertiesByBedrooms implements BotHandler 
     }
     
 	public BotResponse handle(String utterance, String[] params, Map<String, String> session, String fileName, String fileContent) {
+        if (params[0] == 'one') params[0] = '1';
+        if (params[0] == 'two') params[0] = '2';
+        if (params[0] == 'three') params[0] = '3';
+        if (params[0] == 'four') params[0] = '4';
+        if (params[0] == 'five') params[0] = '5';
+        if (params[0] == 'six') params[0] = '6';
         List<Property__c> properties = 
             [SELECT Id, Name, Beds__c, Baths__c, Price__c FROM Property__c
              WHERE City__c = :params[1] AND 

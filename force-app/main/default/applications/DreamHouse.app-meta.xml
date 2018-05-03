@@ -4,6 +4,7 @@
         <headerColor>#84BF41</headerColor>
         <logo>dreamhouselogosquare</logo>
         <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>DreamHouse helps you connect with your Customers in a whole new way.</description>
     <formFactors>Large</formFactors>
@@ -15,7 +16,6 @@
     <tabs>Property__c</tabs>
     <tabs>Broker__c</tabs>
     <tabs>standard-Contact</tabs>
-    <tabs>Command_Center</tabs>
     <tabs>Einstein_Vision</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>

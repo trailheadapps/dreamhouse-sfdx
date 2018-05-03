@@ -424,10 +424,6 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Command_Center</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>Einstein_Vision</tab>
         <visibility>Visible</visibility>
     </tabSettings>

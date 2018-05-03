@@ -470,6 +470,18 @@
                 sampleUtterance: "Account United"
 			},
             {
+                name: "Report",
+                apexClass: "HandlerReport",
+                pattern: "(?i).*([A-Za-z0-9]*) report",
+                sampleUtterance: "open market report"
+			},
+            {
+                name: "Dashboard",
+                apexClass: "HandlerDashboard",
+                pattern: "(?i).*([A-Za-z0-9]*) dashboard",
+                sampleUtterance: "open portfolio dashboard"
+			},
+            {
                 name: "Find Contact",
                 apexClass: "HandlerFindContact",
                 pattern: "(?i).*contact ([A-Za-z0-9]*)",
@@ -484,7 +496,7 @@
             {
                 name: "Find Properties by Bedrooms",
                 apexClass: "HandlerFindPropertiesByBedrooms",
-                pattern: "(?i)([0-9]*) bedrooms in ([A-Za-z]*)",
+                pattern: "(?i)([A-Za-z0-9]*) bedrooms in ([A-Za-z]*)",
                 sampleUtterance: "3 bedrooms in Boston"
 			},
             {

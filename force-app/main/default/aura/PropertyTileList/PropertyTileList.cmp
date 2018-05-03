@@ -17,7 +17,7 @@
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:handler event="c:PropertyFilterChange" action="{!c.onFilterChange}"/>
 
-    <lightning:card>
+    <div class="slds-card">
         <lightning:layout horizontalAlign="center" multipleRows="true">
             <aura:iteration items="{!v.properties}" var="property">
                 <lightning:layoutItem padding="around-small" size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3">
@@ -27,6 +27,6 @@
         </lightning:layout>
         <c:PropertyPaginator page="{!v.pageNumber}" pages="{!v.pages}" total="{!v.total}"
                             pagePrevious="{!c.onPagePrevious}" pageNext="{!c.onPageNext}"/>
-    </lightning:card>
+    </div>
     
 </aura:component>
