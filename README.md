@@ -4,23 +4,6 @@
 
 Dreamhouse is a sample application for the real estate business built on the Salesforce platform. It allows brokers to manage their properties and customers to find their dream house.
 
-Features demonstrated in DreamHouse include:
-- Lightning Components
-- Lightning Components in Quick Actions
-- Lightning Components in Utility Bar
-- Lightning Base Components
-- Lightning Data Service
-- Standard events (force:navigateToSObject, force:editRecord, ltng:selectSObject)
-- Process automation with Process Builder
-- Reports and Dashboards
-- Einstein Vision
-- Salesforce mobile app
-
-There are also a number of apps built on top of DreamHouse that demonstrate additional features:
-- Customer-facing mobile application with the Salesforce Mobile SDK (Ionic and React Native)
-- Bot integration (Facebook Messenger, Slack, and Alexa)
-- IoT integration (smart lights, smart locks, smart thermostat)
-
 ## Installation Instructions
 
 1. Install Salesforce DX. Enable the Dev Hub in your org or sign up for a Dev Hub trial org and install the Salesforce DX CLI. Follow the instructions in the [Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm?search_text=trial%20hub%20org) or in the [App Development with Salesforce DX](https://trailhead.salesforce.com/modules/sfdx_app_dev) Trailhead module.
