@@ -43,7 +43,7 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 ### Lightning Components
 DreamHouse features a large number of Lightning Components to enhance the user experience. Lightning Components are used on the Property record page, on an app pages (**Property Finder** and **Property Explorer**), in the utility bar, and as quick actions.
 
-Installing a Lightning component as a **quick action)) can be a great alternative to adding the component directly to the page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In DreamHouse, the [SmartHome](force-app/main/default/aura/SmartHome) component is installed as a quick action on the Property record page.
+Installing a Lightning component as a **quick action** can be a great alternative to adding the component directly to the page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In DreamHouse, the [SmartHome](force-app/main/default/aura/SmartHome) component is installed as a quick action on the Property record page.
 
 The **utility bar** is a great place to host components you always want at your fingertips. [MortgageCalculator](force-app/main/default/aura/MortgageCalculator) is a great example.
 
@@ -59,24 +59,24 @@ You can use third-party JavaScript libraries in Lightning Components using **ltn
 - [PriceRange](force-app/main/default/aura/PropertyListMap) uses the [nouislider](https://refreshless.com/nouislider/) library for its double slider.
 
 ### Standard Application Events
-Standard application events are available by default in the framework and are used to trigger high level actions. For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), **force:navigateToSObject** is used to navigate to a record, and **force:editRecord** is used to edit a record "in place."
+Standard application events are available by default in the framework and are used to trigger high level actions. For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), **force:navigateToSObject** is used to navigate to the broker record page, and **force:editRecord** is used to edit a record "in place."
 
 ### Custom Application Events 
-Application events are used for communication between components in App Builder. For example, the [PropertyFilterChange](force-app/main/default/aura/PropertyFilterChange) event is fired in the [PropertyFilter](force-app/main/default/aura/PropertyFilter) component to notify other components that the user selected new filter criteria.
+Custom application events are used for communication between components in App Builder. For example, the [PropertyFilterChange](force-app/main/default/aura/PropertyFilterChange) event is fired in the [PropertyFilter](force-app/main/default/aura/PropertyFilter) component to notify other components that new filtering criteria have been selected.
 
 ### Component Events
-Component events are used for finer-grained communication between components. For example, the [PropertyPaginator](force-app/main/default/aura/PropertyProperty) component fires the **pageNext** and **pagePrevious** events to notify its parent ([PropetyTileList](force-app/main/default/aura/PropertyTileList)) that the user requested the next or previous page.
+Component events are used for finer-grained communication between components. For example, the [PropertyPaginator](force-app/main/default/aura/PropertyPaginator) component fires the **pageNext** and **pagePrevious** events to notify its parent ([PropetyTileList](force-app/main/default/aura/PropertyTileList)) that the user requested the next or previous page.
 
 ### Custom Page Templates
 Custom Page Templates allow you to create ad hoc page layouts that admins can use in App Builder to create new pages. Custom Page Templates are implemented as Lightning Components. There are two custom page templates in Dreamhouse: [PageTemplate_2_6_4](force-app/main/default/aura/PageTemplate_2_6_4/PageTemplate_2_6_4.cmp) (used by the **Property Finder** page) and [PageTemplate_2_7_3](force-app/main/default/aura/PageTemplate_2_7_3/PageTemplate_2_7_3.cmp) (used by the **Property Explorer** page). They provide custom three column layouts using different relative widths for each column.
 
 ### Reports and Dashboards
-Reports and dashboards are easy to create and look great in Lightning. Just to get things started, the DreamHouse app includes a few reports in the DreamHouse Reports folder (**Days on Market**, **Properties by Broker**, and **Portfolio Health**).
+Reports and dashboards are easy to create and look great in Lightning. Just to get things started, the DreamHouse app includes a few reports in the **DreamHouse Reports** folder (**Days on Market**, **Properties by Broker**, and **Portfolio Health**), and a dashboard in the **DreamHouse Dashboard** folder (**My Dashboard**).
 
 ### Einstein Vision
-The [VisualSearchBox](force-app/main/default/aura/VisualSearchBox) component leverages Einstein Vision to provide a visual search feature that allows you to find houses based on the picture of a house you like. Just select or drag a picture: Einstein Vision will recognize the type of house (colonial, victorian, or contemporary) and you will be presented with a list of houses matching that category. Follow the instructions below to enable visual search in the **Property Finder** and **Property Explorer** pages:
+The [VisualSearchBox](force-app/main/default/aura/VisualSearchBox) component leverages Einstein Vision to provide a visual search feature that allows you to find houses based on the picture of a house you like. Just select or drag a picture in the Visual search area of the property filters: Einstein Vision will recognize the type of house (colonial, victorian, or contemporary) and you will be presented with a list of houses matching that category. Follow the instructions below to enable visual search in the **Property Finder** and **Property Explorer** pages:
 
-1. Get an **Einstein Platform Services** account. Follow the instructions [here](https://github.com/dreamhouseapp/dreamhouse-sfdx/tree/spring18).
+1. Get an **Einstein Platform Services** account. Follow the instructions [here](https://trailhead.salesforce.com/projects/predictive_vision_apex/steps/predictive_vision_apex_prep).
 
 1. In Salesforce, click the **Files** tab and upload **einstein_platform.pem**.
 
