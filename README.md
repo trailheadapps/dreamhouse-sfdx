@@ -14,7 +14,7 @@ Dreamhouse is a sample application for the real estate business built on the Sal
     cd dreamhouse-sfdx
     ```
 
-1. Create a scratch org and provide it with an alias of your choice (dh in the command below):
+1. Create a scratch org and provide it with an alias of your choice (`dh` in the command below):
     ```
     sfdx force:org:create -s -f config/project-scratch-def.json -a dh
     ```
