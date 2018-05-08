@@ -43,14 +43,12 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 ### Lightning Components
 DreamHouse features a large number of Lightning Components to enhance the user experience. Lightning Components are used on the Property record page, on an app pages (**Property Finder** and **Property Explorer**), in the utility bar, and as quick actions.
 
+Installing a Lightning component as a quick action can be a great alternative to adding the component directly to the page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In DreamHouse, the [SmartHome](force-app/main/default/aura/SmartHome) component is installed as a quick action on the Property record page.
+
+The utility bar is a great place to host components you always want at your fingertips. [MortgageCalculator](force-app/main/default/aura/MortgageCalculator) is a great example.
+
 ### Lightning Data Service
 Lightning Data Service allows you to manipulate (retrieve, create, update, delete) Salesforce records without writing server-side code (Apex). In DreamHouse, all the Lightning components that work with a single Property record use Lightning Data Service. Check out [PropertySummary](force-app/main/default/aura/PropertySummary) for an example.
-
-### Lightning Components in Quick Actions
-A quick action can be implemented with a Lightning Component, and it can be a great alternative to adding the component directly to the page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In the DreamHouse application, the [SmartHome](force-app/main/default/aura/SmartHome) component is used as a quick action on the Property record page.
-
-### Lightning Components in Utility Bar
-The utility bar is a great place to host components you always want at your fingertips. [MortgageCalculator](force-app/main/default/aura/MortgageCalculator) is a great example.
 
 ### Third-Party JavaScript Libraries
 You can use third-party JavaScript libraries in Lightning Components using **ltng:require**. For example:
