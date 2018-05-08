@@ -1,7 +1,7 @@
 <aura:component access="global">
 
-    <ltng:require styles="{!$Resource.leaflet1 + '/leaflet.css'}" 
-                  scripts="{!$Resource.leaflet1 + '/leaflet.js'}"
+    <ltng:require styles="{!$Resource.leaflet + '/leaflet.css'}" 
+                  scripts="{!$Resource.leaflet + '/leaflet.js'}"
              	  afterScriptsLoaded="{!c.jsLoaded}" />
 
     <aura:attribute name="location" type="SObject"/>
