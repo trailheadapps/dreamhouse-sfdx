@@ -48,7 +48,7 @@ This is the recommended option for non developers. Use this option if you want t
 
 1. [Sign up](https://developer.salesforce.com/signup) for a developer edition.
 
-1. Enable My Domain. Follow the instructions to enable My Domain [here].(https://trailhead.salesforce.com/projects/quickstart-lightning-components/steps/quickstart-lightning-components1)
+1. Enable My Domain. Follow the instructions to enable My Domain [here](https://trailhead.salesforce.com/projects/quickstart-lightning-components/steps/quickstart-lightning-components1).
 
 1. Click [this link]( https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000JjFPIA0) to install the DreamHouse unlocked package into your developer edition org.
 
