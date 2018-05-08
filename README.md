@@ -1,11 +1,14 @@
 # DreamHouse Sample Application
 
-[![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com)
-
 Dreamhouse is a sample application for the real estate business built on the Salesforce platform. It allows brokers to manage their properties and customers to find their dream house.
 
 ## Installation Instructions
 
+There are two options to install DreamHouse:
+- Using Salesforce DX. Recommended option for developers. Use this option if you want to experience the app and the code.
+- Using an unlocked package. Recommended option for non developers. Use this option if you want to experience the sample app but do not plan to modify the code.
+
+### Installing DreamHouse using SFDX
 1. Install Salesforce DX. Enable the Dev Hub in your org or sign up for a Dev Hub trial org and install the Salesforce DX CLI. Follow the instructions in the [Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm?search_text=trial%20hub%20org) or in the [App Development with Salesforce DX](https://trailhead.salesforce.com/modules/sfdx_app_dev) Trailhead module.
 
 1. Clone the **dreamhouse-sfdx** repository:
@@ -38,6 +41,9 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 
 1. Click the **Data Import** tab and click **Initialize Sample Data**
 
+### Installing DreamHouse using an unlocked package
+
+
 ## Code Highlights
 
 ### Lightning Components
@@ -48,7 +54,7 @@ Installing a Lightning component as a **quick action** can be a great alternativ
 The **utility bar** is a great place to host components you always want at your fingertips. [MortgageCalculator](force-app/main/default/aura/MortgageCalculator) is a great example.
 
 ### Base Lightning Components
-Base Lightning Components are a set of powerful UI components available in the Lightning Component Framework. The DreamHouse custom components use many Base Lightning Components as building blocks. For example, [PropertyCarousel](force-app/main/default/aura/PropertyCarousel/PropertyCarousel.cmp), which allows you to navigate through the pictures of a property and upload new pictures, is built using **lightning:carousel** and **lightning:fileUpload**. [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummary.cmp) leverages **lightning:formattedAddress** and **lightning:formattedNumber**.
+Base Lightning Components are a set of powerful UI components available in the Lightning Component Framework. The DreamHouse custom components use many Base Lightning Components as building blocks. For example, **lightning:card**, **lightning:button**, and **lightning:layout** are used throughout the application. [PropertyCarousel](force-app/main/default/aura/PropertyCarousel/PropertyCarousel.cmp), which allows you to navigate through the pictures of a property and upload new pictures, is built using **lightning:carousel** and **lightning:fileUpload**. [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummary.cmp) leverages **lightning:formattedAddress** and **lightning:formattedNumber**.
 
 ### Lightning Data Service
 Lightning Data Service allows you to manipulate (retrieve, create, update, delete) Salesforce records without writing server-side code (Apex). In DreamHouse, all the Lightning components that work with a single Property record use Lightning Data Service. Check out [PropertySummary](force-app/main/default/aura/PropertySummary) for an example.
@@ -59,7 +65,7 @@ You can use third-party JavaScript libraries in Lightning Components using **ltn
 - [PriceRange](force-app/main/default/aura/PropertyListMap) uses the [nouislider](https://refreshless.com/nouislider/) library for its double slider.
 
 ### Standard Application Events
-Standard application events are available by default in the framework and are used to trigger high level actions. For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), **force:navigateToSObject** is used to navigate to the broker record page, and **force:editRecord** is used to edit a record "in place."
+Standard application events are available by default in the framework and are used to trigger high level actions. For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), **force:navigateToSObject** is used to navigate to the broker record page, and **force:editRecord** is used to edit a record in place.
 
 ### Custom Application Events 
 Custom application events are used for communication between components in App Builder. For example, the [PropertyFilterChange](force-app/main/default/aura/PropertyFilterChange) event is fired in the [PropertyFilter](force-app/main/default/aura/PropertyFilter) component to notify other components that new filtering criteria have been selected.
