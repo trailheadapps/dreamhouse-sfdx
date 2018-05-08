@@ -41,48 +41,45 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 ## Code Highlights
 
 ### Lightning Components
-DreamHouse features a large number of Lightning Components that enhance the broker experience. Lightning Components can be added to the home page, to a record page, to an app page, in a quick action, or in the utility bar.
-
-### Lightning Components in Quick Actions
-
-Lightning actions are quick or global actions implemented with a Lightning component. An action can be a great alternative to adding a component to a page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In the DreamHouse application, the SmartHome component is used as a quick action on the Property record page.
-
-### Lightning Components in Utility Bar
-
-Lightning components can also be used in the utility bar. Utility bar components are always at your fingertips. In the DreamHouse app, there are two components in the utility bar: Bot and MortgageCalculator
+DreamHouse features a large number of Lightning Components that enhance the user experience. Lightning Components are used on the Property record page, on an app pages (Property Finder and Property Explorer), in the utility bar, and as quick actions.
 
 ### Lightning Data Service
+Lightning Data Service allows you to manipulate (retrieve, create, update, delete) Salesforce records without writing server-side (Apex) code. In DreamHouse, all the Lightning components that deal with a single Property record use Lightning Data Service. Check out [PropertySummary]((force-app/main/default/aura/PropertySummary) for an example.
 
-The Lightning Data Service allows you to work with Salesforce records without writing  server-side (Apex) code. The Lightning Data Service automatically fetches records from the server when requested the first time, stores them in a highly efficient client cache, and shares them between all components that request them. This also ensures UI consistency across components: When the user changes the data in one component, the other components automatically show the new values. In DreamHouse, all the Lightning components that deal with a single Property record use the Lightning Data Service. For example: PropertySummary, PropertyMap, and PropertyDaysOnMarketChart.
+### Lightning Components in Quick Actions
+A Quick action can be implemented with a Lightning Component and can be a great alternative to adding a component to a page layout because the component instantiation is deferred until the action button is clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute to a faster page loading time, and a streamlined user interface. In the DreamHouse application, the [SmartHome](force-app/main/default/aura/SmartHome) component is used as a quick action on the Property record page.
 
-### Third-Party libraries (Map Component)
+### Lightning Components in Utility Bar
+The utility bar is great for components you always want at your fingertips. [MortgageCalculator](force-app/main/default/aura/SmartHome) is a great example.
 
-Before you decide to use a third-party library in a Lightning component, make sure you really need it. DOM manipulation libraries and UI libraries in particular often aren’t needed when working with a framework like the Lightning Component Framework. Read this blog post for details. The DreamHouse sample application uses the Leaflet map library.
-```
-<ltng:require styles="{!$Resource.leaflet + '/leaflet.css'}"
-              scripts="{!$Resource.leaflet + '/leaflet.js'}"
-              afterScriptsLoaded="{!c.jsLoaded}" />
-```
+### Third-Party JavaScript libraries
+You can use third-party JavaScript libraries in Lightning Components. For example:
+- [Map](force-app/main/default/aura/Map) and [PropertyListMap](force-app/main/default/aura/PropertyListMap) use the [Leaflet](https://leafletjs.com/) library.
+- [PriceRange](force-app/main/default/aura/PropertyListMap) uses the [nouislider](https://refreshless.com/nouislider/) library's double slider.
 
 ### Custom page templates
+Custom Page Templates allow you to create ad hoc page layouts that admins can use in App Builder to create new pages. Custom Page Templates are implemented as Lightning Components. There are two custom page templates in Dreamhouse: [PageTemplate_2_6_4]((force-app/main/default/aura/PageTemplate_2_6_4/PageTemplate_2_6_4.cmp) (used by the Property Finder page) and [PageTemplate_2_7_3](force-app/main/default/aura/PageTemplate_2_7_3/PageTemplate_2_7_3.cmp) (used by the Property Explorer page). They provide custom three column layouts using different relative widths for each column.
 
-Custom Page Templates allow you to create ad hoc page layouts that admins can use in App Builder to create new pages. In Dreamhouse, the Property Explorer uses a custom page template (PageTemplate_2_6_4) to allow you to take full control over the width of each column in a three column layout.
+### Base Lightning Component
+Base Lightning Components are a set of powerful UI components available in the Lightning Component Framework. The DreamHouse custom components leverage many Base Lightning Components. For example, the [PropertyCarousel](force-app/main/default/aura/PropertyCarousel/PropertyCarousel.cmp) component which allows you to navigate through the pictures of a property and allows you to upload new pictures is built using lightning:carousel and lightning:fileUpload. [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummary.cmp) leverages lightning:formattedAddress and lightning:formattedNumber.
 
-### Lightning Base Component
-DreamHouse custom components are built leveraging the [Lightning Base Components](). For example:
-- PropertyCarousel is built using lightning:fileUpload and lightning:carousel
-- PropertySummary leverages lightning:formattedAddress and lightning:formattedNumber.
+### Standard application events
+Standard application events are available by default in the framework and are used to trigger high level actions/ For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), force:navigateToSObject is used to navigate to a record, and force:editRecord is used to edit a record "in place."
 
-https://<mydomain>.lightning.force.com/componentReference/suite.app?page=lightning:clickToDial
-https://developer.salesforce.com/docs/component-library/overview/components
+### Custom Application Events 
+Application events are used for communication between components in App Builder. For example, the PropertyFilterChange event is fired in the [PropertyFilter](force-app/main/default/aura/PropertyProperty) component to notify other components that the user selected new filter criteria.
 
-### Process automation with Process Builder
+### Component events
+Component events are used for finer-grained communication between components. For example, the [PropertyPaginator](force-app/main/default/aura/PropertyProperty) component fires the pageNext and pagePrevious events to notify its parent ([PropetyTileList](force-app/main/default/aura/PropertyTileList)) that the user requested the next or previous page.
+
+### Reports and dashboards
+Reports and dashboards are easy to create and look great in Lightning. Just to get things started, the DreamHouse app includes a few reports in the DreamHouse Reports folder:
+- Days on Market
+- Properties by Broker
+- Portfolio Health
 
 ### Einstein Vision
-
-Home buyers may know the type of house they like when they see it, but they may not always know how that type of house is called (Victorian, Colonial, Greek Revival, etc …). Visual search, powered by Einstein Vision, can help prospective home buyers find similar houses based on the picture of a house they like. The new Property Finder makes it easy to perform that type of visual search. Just select or drag a picture of a house you like. Instructions to enable visual search are available here.
-
-Optional instruction to enable visual search in the **Property Finder** and **Property Explorer** pages:
+The PropertyFilter component leverages Einstein Vision to provide a visual search feature that allows home buyers to find houses based on the picture of a house they like. Just select or drag a picture: Einstein Vision will recognize the type of house (colonial, victorian, or contemporary) and you are presented of a list of houses matching that category. Follow the instructions below to enable visual search in the **Property Finder** and **Property Explorer** pages:
 
 1. Get an **Einstein Platform Services** account. Follow the instructions [here](https://github.com/dreamhouseapp/dreamhouse-sfdx/tree/spring18).
 
@@ -110,68 +107,13 @@ Optional instruction to enable visual search in the **Property Finder** and **Pr
 
 You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters component on the **Property Finder** and **Property Explorer** pages. 
 
-### Reports and dashboards
-
-Reports and dashboards are easy to create and look great in Lightning. Just to get things started, the DreamHouse app now includes a few reports in the DreamHouse Reports folder:
-- Days on Market
-- Properties by Broker
-- Portfolio Health
-
-### Standard application events
-Standard application events are application events that are available by default in the framework.  DreamHouse uses a number of standard application events. For example:
-- force:navigateToSObject is used in the PropertyTile component to ask the framework to navigate to the specified record. Use this approach instead of linking directly to specific URL fragments, which is not supported (URL fragments are subject to change).
-- force:editRecord is used in the PropertySummary component to provide a dialog to edit a record “in place.”
-- ltng:selectSObject is used in the PropertyTile component to notify other components that a new record has been selected. Other components like PropertySummary and PropertyMap listen to that event to display data for the selected record. This event is often used to implement master/details interfaces like in the Property Explorer and Command Center pages.
-
-### Custom Application Events 
-Limit the use of application events to coarse-grained application-level communication, such as communication between components added to pages with App Builder. For example, in DreamHouse:
-
-The PropertyFilterChange event is fired in the PropertyFilter component to notify other components that the user selected a new filter criteria.
-
-### Component events
-Use component events for finer-grained communication between components. For example, in DreamHouse, the PropertyPaginator component fires the pageNext and pagePrevious events to notify its parent (PropetyTileList) that the user requested the next or previous page.
-
-PropetyTileList (parent):
-```
-<aura:iteration items="{!v.properties}" var="property">
-    <c:PropertyTile property="{#property}" />
-</aura:iteration>
-
-<c:PropertyPaginator
-    pagePrevious="{!c.onPagePrevious}"
-    pageNext="{!c.onPageNext}"/>
-```
-
-PropertyPaginator (child):
-<!-- Markup -->
-```
-<aura:registerEvent name="pagePrevious" type="c:PropertyPageChange"/>
-<aura:registerEvent name="pageNext" type="c:PropertyPageChange"/>
-
-<lightning:buttonIcon iconName="utility:left" onclick="{!c.previousPage}"/>
-<lightning:buttonIcon iconName="utility:right" onclick="{!c.nextPage}"/>
-```
-
-// controller
-```
-previousPage : function(component) {
-        var pageChangeEvent = component.getEvent("pagePrevious");
-        pageChangeEvent.fire();
-},
-
-nextPage : function(component) {
-        var pageChangeEvent = component.getEvent("pageNext");
-        pageChangeEvent.fire();
-}
-```
-
 ### Many more features
-
 The DreamHouse sample application has many more features not discussed in this article which focuses on the latest additions to the app. For example, DreamHouse also demonstrates how to:
 
-Use the Salesforce Mobile App
-Create a customer engagement mobile app with the Mobile SDK
-Automate processes with Process Builder, including sending push notification messages to the customer engagement app
-Integrate with Alexa, Slack, and Facebook Messenger
-Integrate with IoT devices like smart lights, smart thermostats, and smart locks
-Head over to dreamhouseapp.io to explore all the features available in the DreamHouse sample app.
+- Use the Salesforce Mobile App
+- Create a customer engagement mobile app with the Mobile SDK
+- Automate processes with Process Builder, including sending push notification messages to the customer engagement app
+- Integrate with Alexa, Slack, and Facebook Messenger
+- Integrate with IoT devices like smart lights, smart thermostats, and smart locks
+
+Head over to [dreamhouseapp.io](http://dreamhouseapp.io) to explore all the features available in the DreamHouse sample app.
