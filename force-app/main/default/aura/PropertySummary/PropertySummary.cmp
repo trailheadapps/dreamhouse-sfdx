@@ -15,6 +15,7 @@
                               'Price__c',
                               'Beds__c',
                               'Baths__c',
+                              'Broker__r.Id',
                               'Broker__r.Name',
                               'Broker__r.Title__c',
                               'Broker__r.Mobile_Phone__c',
@@ -62,7 +63,7 @@
                 </lightning:layoutItem>
                 <lightning:layoutItem >
                     <div class="broker">
-                        <p><a onclick="{!c.navigateToRecord}">{!v.property.Broker__r.Name}</a></p>
+                        <p><a onclick="{!c.navigateToBrokerRecord}">{!v.property.Broker__r.Name}</a></p>
                         <p>{!v.property.Broker__r.Title__c}</p>
                         <p>{!v.property.Broker__r.Mobile_Phone__c}</p>
                         <p>{!v.property.Broker__r.Email__c}</p>

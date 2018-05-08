@@ -19,9 +19,9 @@
         editRecordEvent.fire();
     },
 
-    navigateToRecord : function(component, event) {
+    navigateToBrokerRecord : function(component, event) {
 	    var navigateEvent = $A.get("e.force:navigateToSObject");
-        navigateEvent.setParams({"recordId": component.get("v.brokerId"), slideDevName: "detail"});
+        navigateEvent.setParams({"recordId": component.get("v.property").Broker__r.Id, slideDevName: "detail"});
 	    navigateEvent.fire();
     }
 
