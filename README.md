@@ -4,11 +4,11 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 
 ## Installation Instructions
 
-There are two options to install DreamHouse:
+There are two ways to install DreamHouse:
 - Using Salesforce DX 
 - Using an unlocked package
 
-### Installing DreamHouse using SFDX
+### Installing DreamHouse using Salesforce DX
 This is the recommended installation option for developers who want to experience the app and the code.
 
 1. Install Salesforce DX. Enable the Dev Hub in your org or sign up for a Dev Hub trial org and install the Salesforce DX CLI. Follow the instructions in the [Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm?search_text=trial%20hub%20org) or in the [App Development with Salesforce DX](https://trailhead.salesforce.com/modules/sfdx_app_dev) Trailhead module.
@@ -48,15 +48,15 @@ This is the recommended option for non developers. Use this option if you want t
 
 1. [Sign up](https://developer.salesforce.com/signup) for a developer edition.
 
-1. Enable My Domain. Follow the instruction [here](https://trailhead.salesforce.com/projects/quickstart-lightning-components/steps/quickstart-lightning-components1)
+1. Enable My Domain. Follow the instructions to enable My Domain [here].(https://trailhead.salesforce.com/projects/quickstart-lightning-components/steps/quickstart-lightning-components1)
 
-1. Click [this link]() to install the DreamHouse unlocked package into your developer edition org.
+1. Click [this link]( https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000JjFPIA0) to install the DreamHouse unlocked package into your developer edition org.
 
 1. Select **Install for All Users**. When prompted, make sure you grant access to the external sites (api.lifx.com, dreamhouzz-push-server.herokuapp.com, and hooks.slack.com).
 
-1. Select **DreamHouse** in the App Launcher
+1. Select **DreamHouse** in the App Launcher.
 
-1. Click the **Data Import** tab and click **Initialize Sample Data**
+1. Click the **Data Import** tab and click **Initialize Sample Data**.
 
 ## Code Highlights
 
