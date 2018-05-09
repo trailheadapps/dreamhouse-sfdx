@@ -122,7 +122,7 @@ The [VisualSearchBox](force-app/main/default/aura/VisualSearchBox) component lev
 
 You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters component on the **Property Finder** and **Property Explorer** pages. 
 
-### Many more features
+## Additional resources
 DreamHouse has many more features not discussed here. For example, DreamHouse also demonstrates how to:
 
 - Use the Salesforce Mobile App
