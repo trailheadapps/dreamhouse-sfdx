@@ -1,6 +1,0 @@
-scratch-org-def: config/project-scratch-def.json
-assign-permset: true
-permset-name: dreamhouse
-run-apex-tests: false
-delete-scratch-org: false
-show-scratch-org-url: true
