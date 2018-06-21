@@ -1,14 +1,17 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true,
-      "id": "0Ho6A000000k9czSAA",
-      "versionName": "Spring 18",
-      "versionNumber": "2.0.0.NEXT"
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "package": "dreamhouse",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "42.0",
+    "packageAliases": {
+        "dreamhouse": "0Ho6A000000XZD1SAO"
     }
-  ],
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "42.0"
 }
