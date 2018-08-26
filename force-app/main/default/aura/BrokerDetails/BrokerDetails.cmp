@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+
+    <aura:attribute name="brokerFields" type="List" default="['Name', 'Phone__c', 'Mobile_Phone__c', 'Email__c']" />
+    <aura:attribute name="property" type="Object"/>
+
+    <force:recordData recordId="{!v.recordId}" fields="['Broker__c']" targetFields="{!v.property}"/>
+
+    <lightning:card title="Broker Details" iconName="standard:avatar">
+        <aura:if isTrue="{!v.property.Broker__c}">
+            <lightning:recordForm recordId="{!v.property.Broker__c}" objectApiName="Broker__c" fields="{!v.brokerFields}" columns="2"/>
+        </aura:if>    
+    </lightning:card>
+
+</aura:component>	
