@@ -17,7 +17,7 @@
             <aura:set attribute="label">
                 <aura:if isTrue="{!v.tabIcons}">
 	                <lightning:icon iconName="utility:unlock" size="small"/>
-                </aura:if>    
+                </aura:if>
                 Locks
             </aura:set>
             <c:SmartLocks />
@@ -26,18 +26,10 @@
             <aura:set attribute="label">
                 <aura:if isTrue="{!v.tabIcons}">
 	                <lightning:icon iconName="utility:frozen" size="small"/>
-                </aura:if>    
+                </aura:if>
                 Temp
             </aura:set>
             <c:SmartThermostat />
-        </lightning:tab>
-        <lightning:tab >
-            <aura:set attribute="label">
-                <aura:if isTrue="{!v.tabIcons}">
-	                <lightning:icon iconName="utility:shield" size="small"/>
-                </aura:if>.    
-                Alarm
-            </aura:set>
         </lightning:tab>
     </lightning:tabset>
 
