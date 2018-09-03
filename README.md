@@ -15,7 +15,7 @@ Dreamhouse is a sample application for the real estate business built on the Sal
 ## Installation Instructions
 
 There are two ways to install DreamHouse:
-- Using Salesforce DX 
+- Using Salesforce DX
 - Using an unlocked package
 
 ### Installing DreamHouse using Salesforce DX
@@ -60,7 +60,7 @@ This is the recommended option for non developers. Use this option if you want t
 
 1. Enable My Domain. Follow the instructions to enable My Domain [here](https://trailhead.salesforce.com/projects/quickstart-lightning-components/steps/quickstart-lightning-components1).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB00000009UeX) to install the DreamHouse unlocked package into your developer edition org.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036seVQAQ) to install the DreamHouse unlocked package into your developer edition org.
 
 1. Select **Install for All Users**. When prompted, make sure you grant access to the external sites (api.lifx.com, dreamhouzz-push-server.herokuapp.com, and hooks.slack.com).
 
@@ -91,7 +91,7 @@ You can use third-party JavaScript libraries in Lightning Components using **ltn
 ### Standard application events
 Standard application events are available by default in the framework and are used to trigger high level actions. For example, in [PropertySummary](force-app/main/default/aura/PropertySummary/PropertySummaryController.js), **force:navigateToSObject** is used to navigate to the broker record page, and **force:editRecord** is used to edit a record in place.
 
-### Custom application events 
+### Custom application events
 Custom application events are used for communication between components in App Builder. For example, the [PropertyFilterChange](force-app/main/default/aura/PropertyFilterChange) event is fired in the [PropertyFilter](force-app/main/default/aura/PropertyFilter) component to notify other components that new filtering criteria have been selected.
 
 ### Component events
@@ -130,7 +130,7 @@ The [VisualSearchBox](force-app/main/default/aura/VisualSearchBox) component lev
 
 1. Repeat the last step for the **Property Explorer** page.
 
-You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters component on the **Property Finder** and **Property Explorer** pages. 
+You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters component on the **Property Finder** and **Property Explorer** pages.
 
 ## Additional resources
 DreamHouse has many more features not discussed here. For example, DreamHouse also demonstrates how to:
