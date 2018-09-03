@@ -1,45 +1,124 @@
 version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/node:latest
 
+# Defining default values for all jobs
+defaults: &defaults
+  docker:
+    - image: circleci/node:latest
+
+jobs:
+  setup_dx:
+    # This command runs the preparation steps needed for the CI workflow:
+    #
+    # - Installation of the Salesforce CLI using npm
+    # - Authentication of the DevHub
+    # - Creation of a scratch org
+    #
+    # While a scratch org isn't needed in all steps it's still part of the process. The reason for this is
+    # that we need to store the sfdx configuration files for it in the workspace, so that data can be shared
+    # across different workflow steps.
+    #
+    # Keep it simple!
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-              - sfdx-version-42-local
       - run:
           name: Install Salesforce DX
           command: |
-              openssl aes-256-cbc -k $KEY -in .circleci/server.key.enc -out .circleci/server.key -d
+              openssl enc -nosalt -aes-256-cbc -d -in .circleci/server.key.enc -out .circleci/server.key -base64 -K $DECRYPTION_KEY -iv $DECRYPTION_IV
               export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
               export SFDX_DOMAIN_RETRY=300
               npm install sfdx-cli
               node_modules/sfdx-cli/bin/run --version
               node_modules/sfdx-cli/bin/run plugins --core
-      - save_cache:
-          key: sfdx-version-42-local
-          paths:
-              - node_modules
       - run:
           name: Authenticate DevHub
           command: |
               node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile .circleci/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
       - run:
-          name: Create Scratch Org
+          name: Define CI Org
+          # We define the to be used CI org. Based on the branch we either create a new scratch org
+          # or we use a project variable to authenticate a UAT or full-copy sandbox as target org.
+          #
+          # You can get the sfdxurl via sfdx force:org:display -u yourOrg --json --verbose from your local machine.
           command: |
-              node_modules/sfdx-cli/bin/run force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg
+              echo $SFDX_AUTH_PACKAGING > ~/auth.url
+              node_modules/sfdx-cli/bin/run force:auth:sfdxurl:store -s -a packagingorg -f ~/auth.url
+              node_modules/sfdx-cli/bin/run force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -d 1
+      - persist_to_workspace:
+          # This is an important step. If we don't store the project data (cloned GitHub source and node_modules from the CLI installation)
+          # we'd have to re-run installation for every workflow step.
+          #
+          # Also this step is crucial as we use it to share sfdx config parameters between steps.
+          root: ~/
+          paths:
+              - .sfdx/*
+              - project/*
+  deploy_source:
+  # This deploys the source to the ci scratch org.
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Push Source
           command: |
              node_modules/sfdx-cli/bin/run force:source:push -u ciorg
+  create_and_test_package:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Create and install package
+          command: |
+             scripts/packagingDeployment.sh
+          no_output_timeout: 15m
+
+  run_apex_tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Run Apex Tests
           command: |
               node_modules/sfdx-cli/bin/run force:apex:test:run -u ciorg -c -r human
+  cleanup_scratch_org:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Clean Up
-          when: always
           command: |
               node_modules/sfdx-cli/bin/run force:org:delete -u ciorg -p
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - setup_dx
+      - deploy_source:
+          requires:
+            - setup_dx
+          filters:
+            branches:
+              ignore: master
+      - create_and_test_package:
+          requires:
+            - setup_dx
+          filters:
+            branches:
+              only: master
+      - run_apex_tests:
+          requires:
+            - deploy_source
+          filters:
+            branches:
+              ignore: master
+      - cleanup_scratch_org:
+          requires:
+            - setup_dx
+            - deploy_source
+            - create_and_test_package
+            - run_apex_tests
