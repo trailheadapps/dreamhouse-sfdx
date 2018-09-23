@@ -22,7 +22,7 @@
         "prettier": "^1.14.3"
     },
     "lint-staged": {
-        "*.{php,css,js,json}": [
+        "*.{json,js,css,md}": [
             "npm run prettier",
             "git add"
         ]
