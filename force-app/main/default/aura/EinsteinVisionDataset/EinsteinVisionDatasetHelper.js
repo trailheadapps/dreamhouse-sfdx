@@ -1,8 +1,8 @@
 ({
-	getModelsByDataset : function(component) {
-        var action = component.get("c.getModelsByDataset"); 
+    getModelsByDataset: function(component) {
+        var action = component.get('c.getModelsByDataset');
         action.setParams({
-            datasetId: component.get("v.dataset").id
+            datasetId: component.get('v.dataset').id,
         });
         action.setCallback(this, function(response) {
             var state = response.getState();
@@ -11,24 +11,24 @@
                 var errors = response.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        alert("Error message: " + errors[0].message);
+                        alert('Error message: ' + errors[0].message);
                     }
                 } else {
-                    console.log("Unknown error");
+                    console.log('Unknown error');
                 }
             }
             var models = JSON.parse(response.getReturnValue()).data;
-            for (var i=0; i<models.length; i++) {
+            for (var i = 0; i < models.length; i++) {
                 console.log(models[i].progress);
                 if (models[i].progress) {
-	                models[i].progress = parseFloat(models[i].progress) * 100 + "%";
+                    models[i].progress = parseFloat(models[i].progress) * 100 + '%';
                     console.log(models[i].progress);
                 } else {
                     console.log('n/a');
                 }
             }
-            component.set("v.models", models);
+            component.set('v.models', models);
         });
-        $A.enqueueAction(action); 
-	}
-})
+        $A.enqueueAction(action);
+    },
+});

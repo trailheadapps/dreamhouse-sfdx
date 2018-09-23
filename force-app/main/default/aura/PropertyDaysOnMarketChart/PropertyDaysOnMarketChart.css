@@ -4,35 +4,35 @@
 }
 
 .THIS .days-block {
-	text-align: center;
+    text-align: center;
     margin-right: 8px;
     padding: 8px 12px;
     border-radius: 0.25rem;
     border: solid 1px rgb(216, 221, 230);
-} 
+}
 .THIS .days-block.red {
-	color: #C23934;
-    border: solid 1px #C23934;
-} 
+    color: #c23934;
+    border: solid 1px #c23934;
+}
 
 .THIS .days-block.green {
-	color: #00716B;
-    border: solid 1px #00716B;
-} 
+    color: #00716b;
+    border: solid 1px #00716b;
+}
 
 .THIS .days-block.orange {
-	color: #FFB75D;
-    border: solid 1px #FFB75D;
-} 
+    color: #ffb75d;
+    border: solid 1px #ffb75d;
+}
 
 .THIS .days {
-	font-size: 28px;
-	line-height: 28px;
-	font-weight: 300;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 300;
     margin-right: 12px;
     margin: 0;
     padding: 0;
-} 
+}
 
 .THIS .chart {
     position: relative;
@@ -44,7 +44,7 @@
     transform: translate3d(0, 0, 0);
     height: 32px;
     width: 0;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     position: absolute;
     bottom: 2px;
     left: 2px;
@@ -52,15 +52,15 @@
 }
 
 .THIS .bar.green {
-    background-color: #00716B;
+    background-color: #00716b;
 }
 
 .THIS .bar.orange {
-    background-color: #FFB75D;
+    background-color: #ffb75d;
 }
 
 .THIS .bar.red {
-    background-color: #C23934;
+    background-color: #c23934;
 }
 
 .THIS .axis {
@@ -69,14 +69,13 @@
     right: 0;
     display: flex;
     bottom: 0;
-
 }
 
 .THIS .axis > div {
     height: 34px;
-	flex: 1;
-	border-bottom: solid 1px rgb(216, 221, 230);
-	border-left: solid 1px rgb(216, 221, 230);
+    flex: 1;
+    border-bottom: solid 1px rgb(216, 221, 230);
+    border-left: solid 1px rgb(216, 221, 230);
 }
 
 .THIS .axis .legend {

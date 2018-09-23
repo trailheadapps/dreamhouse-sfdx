@@ -2,25 +2,25 @@
     position: relative;
     width: 100%;
     height: 100%;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .THIS * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .THIS .filmstrip {
-	-webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     height: 100%;
-	display: inline-block;
-	white-space: nowrap;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .THIS .slide {
     height: 100%;
-	display: inline-block;
+    display: inline-block;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,8 +41,7 @@
 }
 
 .THIS .btn.fullscreen,
-.THIS .btn.close
-{
+.THIS .btn.close {
     bottom: 0;
     left: 0;
 }

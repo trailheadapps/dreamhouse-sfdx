@@ -8,14 +8,14 @@
 }
 
 .THIS .noUi-connect {
-  background: #1F5395;
-  border: none;
+    background: #1f5395;
+    border: none;
 }
 
 .THIS .noUi-target {
-    background: #ECEBEA;
+    background: #ecebea;
     border: none;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     height: 4px;
 }
 
@@ -24,7 +24,7 @@
     border-radius: 50%;
     height: 16px;
     width: 16px;
-    background-color: #1F5395;
+    background-color: #1f5395;
     border: none;
     box-shadow: none;
     border: none !important;
@@ -40,7 +40,7 @@
     border: none;
     background-color: transparent;
     color: rgb(112, 110, 107);
-    font-size: .75rem;
+    font-size: 0.75rem;
     line-height: 1.5;
     padding: 0;
 }

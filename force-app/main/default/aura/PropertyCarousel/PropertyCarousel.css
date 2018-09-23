@@ -10,7 +10,7 @@
 }
 
 .THIS .slds-carousel__content {
-     display: none;
+    display: none;
 }
 
 .THIS .slds-carousel__autoplay {
@@ -27,8 +27,8 @@
 }
 
 .THIS .slds-carousel__image {
-	border-top-left-radius: .25rem;
-	border-top-right-radius: .25rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
 }
 
 .THIS .slds-file-selector,

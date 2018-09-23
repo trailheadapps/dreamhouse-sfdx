@@ -1,8 +1,8 @@
 ({
-	getDatasets : function(component) {
-        var action = component.get("c.getDatasets"); 
+    getDatasets: function(component) {
+        var action = component.get('c.getDatasets');
         action.setCallback(this, function(response) {
-            component.set("v.waiting", false);
+            component.set('v.waiting', false);
             var state = response.getState();
             console.log(state);
             if (state === 'ERROR') {
@@ -12,13 +12,13 @@
                         return alert(errors[0].message);
                     }
                 } else {
-                    return console.log("Unknown error");
+                    return console.log('Unknown error');
                 }
             }
             var result = response.getReturnValue();
-            component.set("v.datasets", JSON.parse(result).data);
+            component.set('v.datasets', JSON.parse(result).data);
         });
-        component.set("v.waiting", true);
-        $A.enqueueAction(action); 
-	}
-})
+        component.set('v.waiting', true);
+        $A.enqueueAction(action);
+    },
+});

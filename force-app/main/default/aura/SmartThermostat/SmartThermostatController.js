@@ -1,9 +1,9 @@
 ({
-	sliderInputHandler : function(component, event) {
-		component.set("v.requestedTemp", event.target.value);
-	},
+    sliderInputHandler: function(component, event) {
+        component.set('v.requestedTemp', event.target.value);
+    },
 
-    sliderChangeHandler : function() {
-		// Make call to connected thermostat here
-	}
-})
+    sliderChangeHandler: function() {
+        // Make call to connected thermostat here
+    },
+});

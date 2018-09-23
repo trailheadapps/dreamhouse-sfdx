@@ -1,5 +1,3 @@
 ({
-	myAction : function() {
-
-	}
-})
+    myAction: function() {},
+});
