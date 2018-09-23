@@ -1,0 +1,30 @@
+{
+    "name": "dreamhouse-sfdx",
+    "version": "1.0.0",
+    "description": "[![CircleCI](https://circleci.com/gh/dreamhouseapp/dreamhouse-sfdx.svg?style=svg)](https://circleci.com/gh/dreamhouseapp/dreamhouse-sfdx)",
+    "main": "prettier.config.js",
+    "scripts": {
+        "prettier": "prettier --write --config \"./.prettierrc\" \"./**/*.{json,js,css,md}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dreamhouseapp/dreamhouse-sfdx.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dreamhouseapp/dreamhouse-sfdx/issues"
+    },
+    "homepage": "https://github.com/dreamhouseapp/dreamhouse-sfdx#readme",
+    "devDependencies": {
+        "husky": "^1.0.0-rc.15",
+        "lint-staged": "^7.3.0",
+        "prettier": "^1.14.3"
+    },
+    "lint-staged": {
+        "*.{php,css,js,json}": [
+            "npm run prettier",
+            "git add"
+        ]
+    }
+}
