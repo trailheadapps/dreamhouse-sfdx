@@ -1,8 +1,7 @@
 {
     "name": "dreamhouse-sfdx",
     "version": "1.0.0",
-    "description": "[![CircleCI](https://circleci.com/gh/dreamhouseapp/dreamhouse-sfdx.svg?style=svg)](https://circleci.com/gh/dreamhouseapp/dreamhouse-sfdx)",
-    "main": "prettier.config.js",
+    "description": "DreamHouse Sample Application",
     "scripts": {
         "prettier": "prettier --write --config \"./.prettierrc\" \"./**/*.{json,js,css,md}\""
     },
@@ -10,8 +9,8 @@
         "type": "git",
         "url": "git+https://github.com/dreamhouseapp/dreamhouse-sfdx.git"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Salesforce",
+    "license": "CC0 1.0 Universal",
     "bugs": {
         "url": "https://github.com/dreamhouseapp/dreamhouse-sfdx/issues"
     },
