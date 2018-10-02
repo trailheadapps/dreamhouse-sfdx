@@ -13,7 +13,7 @@ public with sharing class HandlerReport implements BotHandler {
         
         for (Report r : reports) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', r.Name, '#/sObject/' + r.Id + '/view' ));
+            fields.add(new BotField('Name', r.Name, '/lightning/r/Report/' + r.Id + '/view'));
             fields.add(new BotField('Folder', r.FolderName));
             records.add(new BotRecord(fields));
         }

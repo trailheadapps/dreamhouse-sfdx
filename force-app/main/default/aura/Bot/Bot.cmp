@@ -35,7 +35,7 @@
                                     <dt class="slds-item--label slds-text-color--weak slds-truncate">{!field.name}:</dt>
                                     <dd class="slds-item--detail slds-truncate">
                                         <aura:if isTrue="{!field.linkURL}">
-                                            <a href="{#field.linkURL}">{#field.value}</a>
+                                            <a href="{#field.linkURL}" onclick="{!c.fieldClickHandler}">{#field.value}</a>
                                             <aura:set attribute="else">
                                                 {#field.value}
                                             </aura:set>

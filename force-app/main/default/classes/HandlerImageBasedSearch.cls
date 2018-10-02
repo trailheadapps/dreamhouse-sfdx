@@ -31,7 +31,7 @@ public with sharing class HandlerImageBasedSearch implements BotHandler {
         List<BotRecord> propertyRecords = new List<BotRecord>();
         for (Property__c p : properties) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', p.Name, '#/sObject/' + p.Id + '/view'));
+            fields.add(new BotField('Name', p.Name, '/lightning/r/Property__c/' + p.Id + '/view'));
             fields.add(new BotField('Bedrooms', '' + p.Beds__c));
             fields.add(new BotField('Category', '' + p.Tags__c));
             fields.add(new BotField('Price', '' + this.formatCurrency(p.Price__c)));

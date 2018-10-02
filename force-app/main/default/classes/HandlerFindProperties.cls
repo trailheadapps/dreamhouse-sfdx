@@ -54,7 +54,7 @@ public class HandlerFindProperties implements BotHandler {
             
             for (Property__c p : properties) {
                 List<BotField> fields = new List<BotField>();
-                fields.add(new BotField('Name', p.Name, '#/sObject/' + p.Id + '/view'));
+                fields.add(new BotField('Name', p.Name, '/lightning/r/Property__c/' + p.Id + '/view'));
                 fields.add(new BotField('Bedrooms', '' + p.Beds__c));
                 fields.add(new BotField('Baths', '' + p.Baths__c));
                 fields.add(new BotField('Price', '' + this.formatCurrency(p.Price__c)));

@@ -9,7 +9,7 @@ public with sharing class HandlerTopOpportunities implements BotHandler {
         
         for (Opportunity o : opportunities) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', o.Name, '#/sObject/' + o.Id + '/view'));
+            fields.add(new BotField('Name', o.Name, '/lightning/r/Opportunity/' + o.Id + '/view'));
             fields.add(new BotField('Amount', '$' + o.Amount));
             fields.add(new BotField('Probability', '' + o.Probability + '%'));
             fields.add(new BotField('Stage', o.StageName));

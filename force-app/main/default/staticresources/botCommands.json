@@ -8,14 +8,14 @@
     {
         "name": "Report",
         "Apex_Class__c": "HandlerReport",
-        "Pattern__c": "(?i).*([A-Za-z0-9]*) report",
-        "Sample_Utterance__c": "open market report"
+        "Pattern__c": "(?i).*report ([A-Za-z0-9]*)",
+        "Sample_Utterance__c": "open report market"
     },
     {
         "name": "Dashboard",
         "Apex_Class__c": "HandlerDashboard",
-        "Pattern__c": "(?i).*([A-Za-z0-9]*) dashboard",
-        "Sample_Utterance__c": "open portfolio dashboard"
+        "Pattern__c": "(?i).*dashboard ([A-Za-z0-9]*)",
+        "Sample_Utterance__c": "open dashboard portfolio"
     },
     {
         "name": "Find Contact",

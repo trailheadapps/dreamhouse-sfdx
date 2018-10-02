@@ -12,7 +12,7 @@ public with sharing class HandlerFindAccount implements BotHandler {
         
         for (Account a : accounts) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', a.Name, '#/sObject/' + a.Id + '/view' ));
+            fields.add(new BotField('Name', a.Name, '/lightning/r/Account/' + a.Id + '/view'));
             fields.add(new BotField('Phone', a.Phone, 'tel:' + a.Phone));
             records.add(new BotRecord(fields));
         }

@@ -10,7 +10,7 @@ public with sharing class HandlerFileUpload implements BotHandler {
 			ContentDocument doc = [SELECT Id FROM ContentDocument where LatestPublishedVersionId = :v.Id];
 			List<BotRecord> records = new List<BotRecord>();
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Id', v.Id, '#/sObject/ContentDocument/' + doc.Id));
+            fields.add(new BotField('Name', v.Id, '/lightning/r/ContentDocument/' + doc.Id + '/view'));
             fields.add(new BotField('Name', v.title));
             records.add(new BotRecord(fields));
 	        return new BotResponse(new BotMessage('Bot', 'Your file was uploaded successfully', records));

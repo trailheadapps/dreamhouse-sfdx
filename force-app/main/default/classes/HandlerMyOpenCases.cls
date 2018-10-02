@@ -10,11 +10,11 @@ public with sharing class HandlerMyOpenCases implements BotHandler {
         
         for (Case c : cases) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Case Number', c.CaseNumber, '#/sObject/' + c.Id + '/view'));
+            fields.add(new BotField('Name', c.CaseNumber, '/lightning/r/Case/' + c.Id + '/view'));
             fields.add(new BotField('Subject', c.Subject));
             fields.add(new BotField('Priority', c.Priority));
             fields.add(new BotField('Status', c.Status));
-            fields.add(new BotField('Contact', c.Contact.Name, '#/sObject/' + c.Contact.Id + '/view'));
+            fields.add(new BotField('Name', c.Contact.Name, '/lightning/r/Contact/' + c.Contact.Id + '/view'));
             records.add(new BotRecord(fields));
         }
         BotMessage message = new BotMessage('Bot', 'Here are your open cases:', records);
