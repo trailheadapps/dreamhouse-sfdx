@@ -12,12 +12,12 @@
                     "message": "Sample data successfully imported.",
                 });
             } else {
-                var toastEvent = $A.get("e.force:showToast");
-                toastEvent.setParams({
-                    "title": "Error",
-                    "message": "Sample data import failed"
+                console.log(response.getError());
+                component.find('notifLib').showToast({
+                    "variant": "error",
+                    "header": "Error",
+                    "message": "Sample data import failed.",
                 });
-                toastEvent.fire();
             }
         });
         $A.enqueueAction(action);
