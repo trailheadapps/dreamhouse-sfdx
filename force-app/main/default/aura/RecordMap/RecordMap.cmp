@@ -1,0 +1,29 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="dsRecordId" type="Id" />
+    <aura:attribute name="sObject" type="SObject" />
+    <aura:attribute name="titleField" type="String" default="Name" />
+    <aura:attribute name="latField" type="String" default="Location__Latitude__s" />
+    <aura:attribute name="longField" type="String" default="Location__Longitude__s" />
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="fields" type="String[]" default="['Id']" />
+    <aura:attribute name="mapMarkers" type="Object[]" />
+    <aura:attribute name="zoomLevel" type="Integer" default="4" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <force:recordData aura:id="service" 
+                         recordId="{!v.dsRecordId}" 
+                         targetFields="{!v.sObject}" 
+                         fields="{!v.fields}"
+                         recordUpdated="{!c.onRecordUpdated}" />
+    
+    <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}" />
+    
+    <lightning:card title="{!v.title}" iconName="custom:custom106">
+        <lightning:map mapMarkers="{!v.mapMarkers}" zoomLevel="{!v.zoomLevel}" />
+    </lightning:card>  
+
+</aura:component>
