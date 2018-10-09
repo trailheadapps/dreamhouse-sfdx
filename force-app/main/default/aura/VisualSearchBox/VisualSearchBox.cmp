@@ -19,7 +19,7 @@
 
         <div class="frame" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
             <aura:if isTrue="{!!v.pictureSrc}">
-                <p class="drop-message slds-text-color--weak">or drop picure here</p>
+                <p class="drop-message slds-text-color_weak">or drop picure here</p>
             </aura:if>
             <img src="{!v.pictureSrc}" />
         </div>

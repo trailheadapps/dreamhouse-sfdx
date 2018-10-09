@@ -10,17 +10,17 @@
     <aura:attribute name="longField" type="String" default="Location__Longitude__s" />
     <aura:attribute name="title" type="String" />
     <aura:attribute name="fields" type="String[]" default="['Id']" />
-    
+
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    
-    <force:recordData aura:id="service" 
-                         recordId="{!v.dsRecordId}" 
-                         targetFields="{!v.sObject}" 
+
+    <force:recordData aura:id="service"
+                         recordId="{!v.dsRecordId}"
+                         targetFields="{!v.sObject}"
                          fields="{!v.fields}"
                          recordUpdated="{!c.onRecordUpdated}"/>
-    
+
     <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}"/>
-    
+
     <lightning:card title="{!v.title}" iconName="custom:custom106">
         <aura:set attribute="actions">
             <lightning:buttonIcon onclick="{!c.fullScreen}" size="large" iconName="utility:expand" />
@@ -35,8 +35,8 @@
                     <lightning:buttonIcon variant="border-filled" onclick="{!c.closeDialog}" size="large" iconName="utility:close" />
                 </div>
             </div>
-            <div class="slds-backdrop slds-backdrop--open"></div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
         </aura:if>
-    </lightning:card>  
+    </lightning:card>
 
 </aura:component>

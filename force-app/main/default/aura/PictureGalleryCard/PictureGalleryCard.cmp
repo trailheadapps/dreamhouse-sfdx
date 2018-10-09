@@ -17,13 +17,13 @@
                 <div class="slds-modal__container">
                     <c:PictureCarousel slides="{!v.slides}"/>
                 </div>
-                
+
                 <div class="btn slds-modal__close close x-large">
                     <lightning:buttonIcon variant="border-filled" onclick="{!c.closeDialog}" size="large" iconName="utility:close" />
                 </div>
-                
+
             </div>
-            <div class="slds-backdrop slds-backdrop--open"></div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
         </aura:if>
     </lightning:card>
 
