@@ -33,7 +33,11 @@ jobs:
       - run:
           name: Authenticate DevHub
           command: |
-              node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile .circleci/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
+              if [[ $CIRCLE_BRANCH == prerelease* ]]; then
+                node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY_PRERELEASE --jwtkeyfile .circleci/server.key --username $USERNAME_PRERELEASE --setdefaultdevhubusername -a HubOrg
+              else
+                node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile .circleci/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
+              fi
       - run:
           name: Define CI Org
           # We define the to be used CI org. Based on the branch we either create a new scratch org
@@ -71,7 +75,9 @@ jobs:
       - run:
           name: Create and install package
           command: |
-             scripts/packagingDeployment.sh
+            if [[ $SFDX_TEST_PACKAGING == "true" ]]; then
+              scripts/packagingDeployment.sh
+            fi
           no_output_timeout: 15m
 
   run_apex_tests:
