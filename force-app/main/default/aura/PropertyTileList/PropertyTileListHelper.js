@@ -1,7 +1,6 @@
 ({
         getProperties: function (component, pageNumber) {
                 var action = component.get("c.getPropertyListPage");
-                action.setStorable();
                 var pageSize = component.get("v.pageSize");
                 action.setParams({
                         "searchKey": component.get("v.searchKey"),
