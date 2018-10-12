@@ -5,7 +5,7 @@
     "settings": {
       "orgPreferenceSettings": {
         "s1DesktopEnabled": true,
-        "s1EncryptedStoragePref2": true
+        "s1EncryptedStoragePref2": false
       }
     }
 }
