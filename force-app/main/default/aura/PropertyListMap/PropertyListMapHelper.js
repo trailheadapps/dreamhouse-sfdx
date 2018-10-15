@@ -9,7 +9,6 @@
             "numberBathrooms": component.get("v.numberBathrooms"),
             "visualSearchKey": component.get("v.visualSearchKey")
         });
-        action.setStorable();
         action.setCallback(this, function (response) {
             var properties = response.getReturnValue();
             component.set("v.properties", properties);

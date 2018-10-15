@@ -12,7 +12,7 @@ public with sharing class HandlerFindContact implements BotHandler {
         
         for (Contact c : contacts) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', c.Name, '#/sObject/' + c.Id + '/view'));
+            fields.add(new BotField('Name', c.Name, '/lightning/r/Contact/' + c.Id + '/view'));
             fields.add(new BotField('Phone', c.MobilePhone, 'tel:' + c.MobilePhone));
             records.add(new BotRecord(fields));
         }

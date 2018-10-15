@@ -4,14 +4,14 @@
         <processMetadataValues>
             <name>apexSelection</name>
             <value>
-                <stringValue>Post Price Change Notification to Slack</stringValue>
+                <stringValue>Push Price Change Notification</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Post to Slack</label>
+        <label>Push Notification</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>PostPriceChangeToSlack</actionName>
+        <actionName>PushPriceChangeNotification</actionName>
         <actionType>apex</actionType>
         <inputParameters>
             <processMetadataValues>
@@ -156,9 +156,10 @@
             <label>Price Change?</label>
         </rules>
     </decisions>
-    <description>When the price of a property changes, post it to Slack</description>
-    <interviewLabel>Post_Price_Changes_to_Slack-1_InterviewLabel</interviewLabel>
-    <label>Post Price Changes to Slack</label>
+    <description>When the price of a property changes, send Push Notification</description>
+    <status>ACTIVE</status>
+    <interviewLabel>Price_Change_Push_Notification-1_InterviewLabel</interviewLabel>
+    <label>Price Change Push Notification</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>

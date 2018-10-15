@@ -41,10 +41,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>DreamHouseSampleDataController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>EinsteinVisionController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -411,10 +407,6 @@
         <object>Property__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <pageAccesses>
-        <apexPage>DreamHouseSampleData</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
     <tabSettings>
         <tab>Bot_Command__c</tab>
         <visibility>Visible</visibility>

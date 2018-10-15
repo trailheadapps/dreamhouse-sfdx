@@ -8,6 +8,8 @@
     </brand>
     <description>DreamHouse helps you connect with your Customers in a whole new way.</description>
     <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>DreamHouse</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>

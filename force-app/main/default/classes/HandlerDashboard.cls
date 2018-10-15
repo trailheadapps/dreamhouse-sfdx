@@ -17,7 +17,7 @@ public with sharing class HandlerDashboard implements BotHandler {
         
         for (Dashboard d : dashboards) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Title', d.Title, '#/sObject/' + d.Id + '/view' ));
+            fields.add(new BotField('Name', d.Title, '/lightning/r/Dashboard/' + d.Id + '/view'));
             fields.add(new BotField('Folder', d.FolderName));
             records.add(new BotRecord(fields));
         }

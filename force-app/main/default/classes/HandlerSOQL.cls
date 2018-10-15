@@ -11,8 +11,15 @@ public with sharing class HandlerSOQL implements BotHandler {
             Map<String, Object> fieldMap = o.getPopulatedFieldsAsMap();
             for (String fieldName : fieldMap.keySet()) {
                 String linkURL;
+                String objectType;
                 if (fieldName == 'Id') {
-                    linkURL = '#/sObject/' + o.Id + '/view';
+                    Pattern p = Pattern.compile('.* (?i)FROM ([A-Za-z0-9_]*) .*');
+                    Matcher pm = p.matcher(utterance);
+                    if (pm.matches()) {
+                        objectType = pm.group(1);
+                        System.debug(objectType);
+                    }
+                    linkURL = '/lightning/r/' + objectType + '/' + o.Id + '/view';
                 }
                 fields.add(new BotField(fieldName, '' + fieldMap.get(fieldName), linkURL));
             }

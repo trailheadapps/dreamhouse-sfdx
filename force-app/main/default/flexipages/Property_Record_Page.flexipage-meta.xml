@@ -143,7 +143,7 @@
                 <name>titleField</name>
                 <value>Name</value>
             </componentInstanceProperties>
-            <componentName>MapCard</componentName>
+            <componentName>RecordMap</componentName>
         </componentInstances>
         <componentInstances>
             <componentName>PropertyCarousel</componentName>

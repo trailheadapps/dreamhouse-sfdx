@@ -83,6 +83,7 @@
         </rules>
     </decisions>
     <description>When a new property is added, post it to chatter</description>
+    <status>ACTIVE</status>
     <formulas>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>

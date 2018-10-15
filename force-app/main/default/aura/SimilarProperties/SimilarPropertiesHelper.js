@@ -2,7 +2,6 @@
     loadSimilarProperties : function(component) {
         var property = component.get("v.property");
         var action = component.get("c.getSimilarProperties");
-        action.setStorable();
         action.setParams({
             propertyId: property.Id,
             price: property.Price__c,

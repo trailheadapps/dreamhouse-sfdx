@@ -1,6 +1,6 @@
 global with sharing class PropertyController {
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static Property__c[] getPropertyList(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey) {
         String key = '%' + searchKey + '%';
         String visualKey = '%' + visualSearchKey + '%';
@@ -14,7 +14,7 @@ global with sharing class PropertyController {
                       ORDER BY price__c LIMIT 100];
     }
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static PropertyListPage getPropertyListPage(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey, Decimal pageSize, Decimal pageNumber) {
 		Integer pSize = (Integer)pageSize;
         String key = '%' + searchKey + '%';
@@ -41,14 +41,14 @@ global with sharing class PropertyController {
         return page;
     }
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static Property__c findById(Id propertyId) {
         return [SELECT id, name, beds__c, baths__c, address__c, city__c, state__c, assessed_value__c, price__c, Date_Listed__c, Location__Latitude__s, Location__Longitude__s 
                 FROM Property__c
                 WHERE Id=:propertyId];
     }
 
-    @RemoteAction @AuraEnabled
+    @AuraEnabled
     public static Property__c[] getAvailableProperties() {
         return [SELECT id, name, address__c, city__c, price__c, Date_Listed__c, Days_On_Market__c, Date_Agreement__c, Location__Latitude__s, Location__Longitude__s 
                 FROM Property__c
@@ -62,7 +62,7 @@ global with sharing class PropertyController {
                 WHERE Predicted_Days_On_Market__c > 30];
     }
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Property__c> getComparableProperties(Id propertyId) {
         Property__c property = [SELECT Id, Price__c FROM Property__c WHERE Id = :propertyId];
         return [
@@ -71,7 +71,7 @@ global with sharing class PropertyController {
         ];
     }
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Property__c> getSimilarProperties (Id propertyId, Decimal bedrooms, Decimal price, String searchCriteria) {
         if (searchCriteria == 'Bedrooms') {
             return [

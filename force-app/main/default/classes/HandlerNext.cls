@@ -9,7 +9,7 @@ public with sharing class HandlerNext implements BotHandler {
         
         for (Opportunity o : opportunities) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Name', o.Name, '#/sObject/' + o.Id + '/view'));
+            fields.add(new BotField('Name', o.Name, '/lightning/r/Opportunity/' + o.Id + '/view'));
             fields.add(new BotField('Amount', '$' + o.Amount));
             fields.add(new BotField('Probability', '' + o.Probability + '%'));
             fields.add(new BotField('Stage', o.StageName));
@@ -24,10 +24,10 @@ public with sharing class HandlerNext implements BotHandler {
         
         for (Case c : cases) {
             List<BotField> fields = new List<BotField>();
-            fields.add(new BotField('Case Number', c.CaseNumber, '#/sObject/' + c.Id + '/view'));
+            fields.add(new BotField('Name', c.CaseNumber, '/lightning/r/Case/' + c.Id + '/view'));
             fields.add(new BotField('Subject', c.Subject));
             fields.add(new BotField('Status', c.Status));
-            fields.add(new BotField('Contact', c.Contact.Name, '#/sObject/' + c.Contact.Id + '/view'));
+            fields.add(new BotField('Name', c.Contact.Name, '/lightning/r/Contact/' + c.Contact.Id + '/view'));
             caseRecords.add(new BotRecord(fields));
         }
         BotMessage caseMessage = new BotMessage('Bot', 'You should work on these high priority cases assigned to you:', caseRecords);
