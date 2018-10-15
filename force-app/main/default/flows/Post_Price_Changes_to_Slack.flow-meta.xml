@@ -4,14 +4,14 @@
         <processMetadataValues>
             <name>apexSelection</name>
             <value>
-                <stringValue>Post to Slack</stringValue>
+                <stringValue>Post Price Change Notification to Slack</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Post to Slack</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>SlackOpportunityPublisher</actionName>
+        <actionName>PostPriceChangeToSlack</actionName>
         <actionType>apex</actionType>
         <inputParameters>
             <processMetadataValues>
@@ -29,7 +29,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>opportunityId</stringValue>
+                    <stringValue>propertyId</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -50,7 +50,7 @@
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <name>opportunityId</name>
+            <name>propertyId</name>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
@@ -69,12 +69,12 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>isChangedDecision2_myRule_1_StageName</targetReference>
+            <targetReference>isChangedDecision2_myRule_1_Price_c</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <name>isChangedDecision2_myRule_1_StageName</name>
-        <label>isChangedDecision2_myRule_1_StageName</label>
+        <name>isChangedDecision2_myRule_1_Price_c</name>
+        <label>isChangedDecision2_myRule_1_Price_c</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -82,7 +82,7 @@
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>isChangedRule_2_myRule_1_StageName</name>
+            <name>isChangedRule_2_myRule_1_Price_c</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -92,16 +92,16 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <leftValueReference>myVariable_old.Price__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>myVariable_current.StageName</elementReference>
+                    <elementReference>myVariable_current.Price__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
-            <label>isChangedRule_2_myRule_1_StageName</label>
+            <label>isChangedRule_2_myRule_1_Price_c</label>
         </rules>
     </decisions>
     <decisions>
@@ -129,13 +129,13 @@
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Currency</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>operatorDataType</name>
                     <value>
-                        <stringValue>String</stringValue>
+                        <stringValue>Currency</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -144,7 +144,7 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_2_myRule_1_StageName</leftValueReference>
+                <leftValueReference>isChangedRule_2_myRule_1_Price_c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -153,16 +153,17 @@
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>Stage Change?</label>
+            <label>Price Change?</label>
         </rules>
     </decisions>
-    <description>When the status of an opportunity changes, post the new status to Slack</description>
-    <interviewLabel>Opportunity_Status_Change-1_InterviewLabel</interviewLabel>
-    <label>Opportunity Status Change</label>
+    <description>When the price of a property changes, post it to Slack</description>
+    <status>ACTIVE</status>
+    <interviewLabel>Post_Price_Changes_to_Slack-1_InterviewLabel</interviewLabel>
+    <label>Post Price Changes to Slack</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Opportunity</stringValue>
+            <stringValue>Property__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -191,7 +192,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Opportunity</objectType>
+        <objectType>Property__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -199,7 +200,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Opportunity</objectType>
+        <objectType>Property__c</objectType>
     </variables>
     <variables>
         <name>myVariable_waitStartTimeVariable</name>
