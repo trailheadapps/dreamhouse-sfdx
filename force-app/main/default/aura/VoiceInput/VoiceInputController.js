@@ -85,6 +85,10 @@
         }
         component.set("v.utterance", event.target.value);
         helper.fireChangeEvent(component);
-	},
+    },
+    
+    clear : function(component) {
+        component.find('utterance').getElement().value = '';
+    }
 
 })

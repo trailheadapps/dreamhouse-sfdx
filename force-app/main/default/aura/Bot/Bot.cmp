@@ -63,7 +63,7 @@
 
         <div class="footer slds-form-element slds-p-horizontal_x-small">
             <div class="slds-form-element__control">
-                <c:VoiceInput onchange="{!c.utteranceHandler}"/>
+                <c:VoiceInput aura:id="voiceInput" onchange="{!c.utteranceHandler}"/>
             </div>
         </div>
 

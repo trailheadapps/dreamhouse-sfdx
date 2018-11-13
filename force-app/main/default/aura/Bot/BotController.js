@@ -15,6 +15,7 @@
                 // }
             }
         });
+        component.find("voiceInput").clear();
 	},
     
     postbackButtonClickHandler : function(component, event, helper) {
