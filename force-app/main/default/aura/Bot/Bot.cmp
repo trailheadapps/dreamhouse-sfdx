@@ -5,6 +5,7 @@
     <aura:attribute name="session" type="Array"/>
     <aura:attribute name="height" type="String" default="500px"/>
 	<aura:attribute name="files" type="Object[]"/>
+	<aura:attribute name="files2" type="Object[]"/>
 
     <div style="{#'height: '+v.height}" class="slds-p-vertical_x-small">
 		<div aura:id="content" class="content">
