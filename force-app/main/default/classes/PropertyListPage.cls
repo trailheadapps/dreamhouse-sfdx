@@ -1,5 +1,5 @@
 public class PropertyListPage {
-    
+// acomment    
     @AuraEnabled
     public Integer pageSize { get;set; }
     
