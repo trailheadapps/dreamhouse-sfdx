@@ -1,6 +1,5 @@
 public class HandlerTravelApproval implements BotHandler {
-
-	public BotResponse handle(String utterance, String[] params, Map<String, String> session, String fileName, String fileContent) {
+    public BotResponse handle(String utterance, String[] params, Map<String, String> session, String fileName, String fileContent) {
         if (session == null) {
             BotMessage message = new BotMessage('Bot', 'Where are you going?');
             session = new Map<String, String>();
@@ -8,10 +7,10 @@ public class HandlerTravelApproval implements BotHandler {
             session.put('step', 'destination');
             return new BotResponse(message, session);
         }
-		String step = session.get('step');
+        String step = session.get('step');
         if (step == 'destination') {
             session.put('destination', utterance);
-			List<BotMessageButton> buttons = new List<BotMessageButton>();
+            List<BotMessageButton> buttons = new List<BotMessageButton>();
             buttons.add(new BotMessageButton('Customer Facing', 'Customer Facing'));
             buttons.add(new BotMessageButton('Internal Meetings', 'Internal Meetings'));
             buttons.add(new BotMessageButton('Billable Work', 'Billable Work'));
@@ -46,9 +45,8 @@ public class HandlerTravelApproval implements BotHandler {
         fields.add(new BotField('Airfare', session.get('airfare')));
         fields.add(new BotField('Hotel', utterance));
         records.add(new BotRecord(fields));
-		return new BotResponse(new BotMessage('Bot', 'OK, I submitted the following travel approval request on your behalf:', records));
-
+        return new BotResponse(
+            new BotMessage('Bot', 'OK, I submitted the following travel approval request on your behalf:', records)
+        );
     }
-
-    
 }

@@ -1,14 +1,14 @@
 public with sharing class HandlerMyOpenCases implements BotHandler {
-    
     public BotResponse handle(String utterance, String[] params, Map<String, String> session, String fileName, String fileContent) {
-        
-        List<Case> cases = 
-            [SELECT Id, CaseNumber, Subject, Status, Priority, Contact.Id, Contact.Name 
-             FROM Case WHERE OwnerId =:UserInfo.getUserId() AND Status != 'Closed'];
-        
+        List<Case> cases = [
+            SELECT Id, CaseNumber, Subject, Status, Priority, Contact.Id, Contact.Name
+            FROM Case
+            WHERE (OwnerId = :UserInfo.getUserId() AND Status != 'Closed')
+        ];
+
         List<BotRecord> records = new List<BotRecord>();
-        
-        for (Case c : cases) {
+
+        for (Case c: cases) {
             List<BotField> fields = new List<BotField>();
             fields.add(new BotField('Name', c.CaseNumber, '/lightning/r/Case/' + c.Id + '/view'));
             fields.add(new BotField('Subject', c.Subject));
@@ -19,7 +19,5 @@ public with sharing class HandlerMyOpenCases implements BotHandler {
         }
         BotMessage message = new BotMessage('Bot', 'Here are your open cases:', records);
         return new BotResponse(message);
-        
     }
-    
 }

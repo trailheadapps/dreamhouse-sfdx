@@ -1,14 +1,18 @@
 public virtual class BotMessage {
+    @AuraEnabled
+    public String author { get; set; }
+    @AuraEnabled
+    public String messageText { get; set; }
+    @AuraEnabled
+    public List<BotRecord> records { get; set; }
+    @AuraEnabled
+    public List<BotItem> items { get; set; }
+    @AuraEnabled
+    public List<BotMessageButton> buttons { get; set; }
+    @AuraEnabled
+    public String imageURL { get; set; }
 
-    @AuraEnabled public String author { get;set; }
-    @AuraEnabled public String messageText { get;set; }
-    @AuraEnabled public List<BotRecord> records { get;set; }
-    @AuraEnabled public List<BotItem> items { get;set; }
-    @AuraEnabled public List<BotMessageButton> buttons { get;set; }
-    @AuraEnabled public String imageURL { get;set; }
-
-    public BotMessage() {
-    }
+    public BotMessage() {}
 
     public BotMessage(String author, String messageText) {
         this.author = author;
@@ -38,6 +42,4 @@ public virtual class BotMessage {
         this.messageText = messageText;
         this.imageURL = imageURL;
     }
-
-
 }

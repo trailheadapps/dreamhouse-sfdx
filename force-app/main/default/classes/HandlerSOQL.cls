@@ -1,15 +1,13 @@
 public with sharing class HandlerSOQL implements BotHandler {
-    
     public BotResponse handle(String utterance, String[] params, Map<String, String> session, String fileName, String fileContent) {
-        
         SObject[] objects = Database.query(utterance);
-        
+
         List<BotRecord> records = new List<BotRecord>();
-        
-        for (sObject o : objects) {
+
+        for (sObject o: objects) {
             List<BotField> fields = new List<BotField>();
             Map<String, Object> fieldMap = o.getPopulatedFieldsAsMap();
-            for (String fieldName : fieldMap.keySet()) {
+            for (String fieldName: fieldMap.keySet()) {
                 String linkURL;
                 String objectType;
                 if (fieldName == 'Id') {
@@ -26,7 +24,5 @@ public with sharing class HandlerSOQL implements BotHandler {
             records.add(new BotRecord(fields));
         }
         return new BotResponse(new BotMessage('Bot', 'Here is the result of your query:', records));
-        
     }
-    
 }
