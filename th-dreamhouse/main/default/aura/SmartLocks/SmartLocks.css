@@ -1,0 +1,8 @@
+.THIS .slds-checkbox_toggle [type=checkbox]:checked+.slds-checkbox_faux,
+.THIS .slds-checkbox_toggle [type=checkbox]:checked~.slds-checkbox_faux {
+	background-color: #32738E;
+}
+
+.THIS .slds-form-element__label {
+	width: 90px;
+}

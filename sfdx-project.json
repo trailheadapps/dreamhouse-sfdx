@@ -4,16 +4,33 @@
             "path": "force-app",
             "default": true,
             "package": "dreamhouse",
-            "versionNumber": "3.0.0.NEXT",
-            "versionName": "Winter '19"
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        },
+        {
+            "path": "th-dreamhouse",
+            "package": "th-dreamhouse",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false
+        },
+        {
+            "path": "chatbot",
+            "package": "chatbot",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": false
         }
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "44.0",
     "packageAliases": {
-        "dreamhouse": "0Ho1I000000XZDVSA4",
-        "dreamhouse@2.0.0-4": "04t1I0000036seVQAQ",
-        "dreamhouse@3.0.0-5": "04t1I0000036u98QAA"
+        "dreamhouse": "0Hof4000000TN5lCAG",
+        "dreamhouse@0.1.0-1": "04tf4000003RNTSAA4",
+        "th-dreamhouse": "0Hof4000000TN5qCAG",
+        "th-dreamhouse@0.1.0-1": "04tf4000003RNTXAA4",
+        "th-dreamhouse@0.1.0-2": "04tf4000003RNTcAAO",
+        "chatbot": "0Hof4000000TN5vCAG"
     }
 }

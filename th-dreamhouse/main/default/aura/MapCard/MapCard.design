@@ -1,0 +1,7 @@
+<design:component label="Map">
+
+    <design:attribute name="titleField" label="Title Field" default="Name"/>
+    <design:attribute name="latField" label="Latitude Field" default="Location__Latitude__s" />
+    <design:attribute name="longField" label="Longitude Field" default="Location__Longitude__s" />
+    
+</design:component>

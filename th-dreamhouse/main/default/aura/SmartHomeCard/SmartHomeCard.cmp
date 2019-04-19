@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global" >
+
+    <aura:attribute name="tabIcons" type="Boolean" default="false"/>
+    <aura:attribute name="demoMode" type="Boolean" default="true"/>
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="property" type="Property__c" />
+
+    <force:recordData recordId="{!v.recordId}" 
+                      targetFields="{!v.property}" 
+                      layoutType="FULL" />
+
+    <lightning:card iconName="utility:power" title="Smart Home">
+        
+        <aura:set attribute="actions">
+            {! v.property.Address__c}, {! v.property.City__c}&nbsp;{! v.property.State__c}
+        </aura:set>
+        
+        <c:SmartHome demoMode="{!v.demoMode}" tabIcons="{!v.tabIcons}"/>    	
+        
+    </lightning:card>        
+
+</aura:component>

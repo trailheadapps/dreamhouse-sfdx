@@ -1,0 +1,24 @@
+<aura:component >
+
+    <aura:attribute name="page" type="integer"/>
+    <aura:attribute name="pages" type="integer"/>
+    <aura:attribute name="total" type="integer"/>
+    
+    <aura:registerEvent name="pagePrevious" type="c:PropertyPageChange"/>
+    <aura:registerEvent name="pageNext" type="c:PropertyPageChange"/>
+    
+    <div class="container">
+        <div class="left">
+            <aura:if isTrue="{!v.page > 1}">
+                <lightning:buttonIcon iconName="utility:left" variant="border" onclick="{!c.previousPage}"/>
+            </aura:if>
+        </div>
+        <div class="centered">{!v.total} properties • page {!v.page} of {!v.pages}</div>
+        <div class="right">
+            <aura:if isTrue="{!v.page &lt; v.pages}">
+                <lightning:buttonIcon iconName="utility:right" variant="border" onclick="{!c.nextPage}"/>
+            </aura:if>
+        </div>
+	</div>
+    
+</aura:component>

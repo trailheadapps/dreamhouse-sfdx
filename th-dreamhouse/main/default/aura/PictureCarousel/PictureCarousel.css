@@ -1,0 +1,57 @@
+.THIS {
+    position: relative;
+    width: 100%;
+    height: 100%;
+	overflow: hidden;
+}
+
+.THIS * {
+	box-sizing: border-box;
+}
+
+.THIS .filmstrip {
+	-webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: all .5s ease-in-out;
+    height: 100%;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.THIS .slide {
+    height: 100%;
+	display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.THIS .btn {
+    position: absolute;
+}
+
+.THIS .btn.next {
+    top: 44%;
+    right: 6px;
+}
+
+.THIS .btn.prev {
+    top: 44%;
+    left: 6px;
+}
+
+.THIS .btn.fullscreen,
+.THIS .btn.close
+{
+    bottom: 0;
+    left: 0;
+}
+
+.THIS .btn.x-large .slds-button {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.THIS .btn.x-large .slds-button__icon {
+    width: 1.7rem;
+    height: 1.7rem;
+}

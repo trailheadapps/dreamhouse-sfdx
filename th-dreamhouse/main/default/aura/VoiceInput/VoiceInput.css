@@ -1,0 +1,20 @@
+.THIS .slds-form-element__label {
+    display: none;
+}
+
+.THIS .audio-icon {
+    margin: 0 4px;
+}
+
+.THIS {
+    padding: 4px 0;
+}
+
+.THIS .slds-icon-eq {
+    margin: 0 6px;
+}
+
+.THIS .voice-input {
+    color: initial;
+    font-size: .8125rem;
+}

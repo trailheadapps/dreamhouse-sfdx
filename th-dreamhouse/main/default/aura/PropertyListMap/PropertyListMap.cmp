@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="PropertyController" access="global">
+
+    <ltng:require styles="{!$Resource.leaflet + '/leaflet.css'}" 
+                  scripts="{!$Resource.leaflet + '/leaflet.js'}" 
+                  afterScriptsLoaded="{!c.onJSLoaded}" />
+
+    <aura:attribute name="searchKey" type="String" default=""/>
+    <aura:attribute name="minPrice" type="integer" default="0"/>
+    <aura:attribute name="maxPrice" type="integer" default="10000000"/>
+    <aura:attribute name="numberBedrooms" type="integer" default="0"/>
+    <aura:attribute name="numberBathrooms" type="integer" default="0"/>
+    <aura:attribute name="visualSearchKey" type="String" default=""/>
+    <aura:attribute name="properties" type="Object[]" default="[]" />
+    <aura:attribute name="center" type="SObject" access="global" />
+    <aura:attribute name="jsLoaded" type="boolean" default="false" />
+
+    <aura:registerEvent name="selectSObject" type="ltng:selectSObject"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:handler event="c:PropertyFilterChange" action="{!c.onFilterChange}"/>
+
+    <lightning:card>
+        <div aura:id="map"></div>
+    </lightning:card>
+
+</aura:component>

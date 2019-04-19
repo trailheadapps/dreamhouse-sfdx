@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="PropertyController">
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="property" type="Property__c" />
+    <aura:attribute name="similarProperties" type="Property__c[]" />
+    <aura:attribute name="searchCriteria" type="String" default="Price" />
+
+    <force:recordData aura:id="service" recordId="{!v.recordId}" targetFields="{!v.property}" fields="['Id', 'Address__c', 'City__c', 'Price__c', 'Beds__c']"
+        recordUpdated="{!c.recordUpdated}" />
+
+    <aura:handler event="ltng:selectSObject" action="{!c.recordChangeHandler}" />
+
+    <lightning:card iconName="custom:custom90" title="{! 'Similar Properties by ' + v.searchCriteria}">
+        <aura:iteration items="{!v.similarProperties}" var="property" indexVar="i">
+            <lightning:layout verticalAlign="center" class="row">
+                <lightning:layoutItem padding="horizontal-small">
+                    <aura:if isTrue="{!property.Thumbnail__c}">
+                        <!-- to make sure we don't show a broken image before the record is loaded -->
+                        <img src="{!property.Thumbnail__c}" class="property-pic" />
+                    </aura:if>
+                </lightning:layoutItem>
+                <lightning:layoutItem>
+                    <div>
+                        <lightning:formattedAddress street="{!property.Address__c}" city="{!property.City__c}" province="{!property.State__c}" postalCode="{!property.Zip__c}"
+                        />
+                        <p>Beds: {!property.Beds__c} Baths: {!property.Baths__c}</p>
+                        <p>
+                            <lightning:formattedNumber value="{!property.Price__c}" style="currency" currencyCode="USD" minimumFractionDigits="0"
+                                maximumFractionDigits="0" />
+                        </p>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:iteration>
+    </lightning:card>
+
+</aura:component>

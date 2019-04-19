@@ -1,0 +1,11 @@
+.THIS .slds-card__body {
+    padding: 0 12px;
+}
+
+.THIS .slds-slider__range::-webkit-slider-thumb {
+    box-shadow: none; 
+}
+
+.THIS .slds-slider-label__label {
+    margin-top: 6px;
+}

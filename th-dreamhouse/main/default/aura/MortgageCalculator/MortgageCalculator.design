@@ -1,0 +1,5 @@
+<design:component label="Mortgage Calculator">
+    <design:attribute name="principal" label="Principal" description="Mortgage principal" />
+    <design:attribute name="years" label="Years" description="Mortgage years" />
+    <design:attribute name="rate" label="Rate" description="Mortgage rate" />
+</design:component>

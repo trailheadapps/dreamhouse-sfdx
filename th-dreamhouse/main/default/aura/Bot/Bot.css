@@ -1,0 +1,59 @@
+.THIS {
+    position: relative;
+	box-sizing: border-box;
+    overflow: hidden !important;
+}
+
+.THIS>.content {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    overflow: scroll;
+}
+
+.THIS>.footer {
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.THIS>.author {
+    font-weight: bold;
+}
+
+.THIS dl {
+    padding: 4px 0 4px 0;
+    border-bottom: solid 1px #f4f6f9;
+}
+
+.THIS .list-item {
+	margin: 4px 0 4px 0;
+    border-bottom: solid 1px #f4f6f9;
+}
+
+.THIS .slds-post {
+    border-top: none !important;
+}
+
+.THIS .message-button {
+    display: block;
+    width:100%;
+    margin-top: 4px;
+    margin-left: 0;
+}
+
+.THIS .slds-form-element__label {
+    display: none;
+}
+
+.THIS .slds-file-selector {
+    margin-top: 4px;
+    width: 100% !important;
+}
+
+.THIS .slds-file-selector__dropzone {
+    width: 100% !important;
+}

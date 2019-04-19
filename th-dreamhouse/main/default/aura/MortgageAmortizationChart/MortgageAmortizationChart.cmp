@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    
+    <aura:attribute name="amortization" type="Object[]"/>
+
+	<aura:handler event="c:MortgageChange" action="{!c.mortgageChange}"/>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th class="principal">Principal</th>
+                <th class="stretch"></th>
+                <th class="interest">Interest</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.amortization}" var="year" indexVar="index">
+                <tr>
+                    <td>{!index + 1}</td>
+                    <td class="principal"><ui:outputCurrency value="{!year.principalY}" format="$#,###"/></td>
+                    <td class="stretch">
+                        <div class="flex">
+                            <div class="bar principal" style="{!'flex:'+year.principalY+';-webkit-flex:'+year.principalY}"></div>
+                            <div class="bar interest" style="{!'flex:'+year.interestY+';-webkit-flex:'+year.interestY}"></div>
+                        </div>
+                    </td>
+                    <td class="interest"><ui:outputCurrency value="{!year.interestY}" format="$#,###"/></td>
+                    <td><ui:outputCurrency value="{!year.balance}" format="$#,##0"/></td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+</aura:component>

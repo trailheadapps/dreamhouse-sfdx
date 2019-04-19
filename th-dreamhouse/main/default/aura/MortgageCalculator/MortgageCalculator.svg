@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#E1D951" x="0" y="0" width="100" height="100" rx="8"></rect>
+        <text id="%" font-family="SalesforceSans-Regular, Salesforce Sans" font-size="64" font-weight="light" fill="#FFFFFF">
+            <tspan x="10.46" y="73">%</tspan>
+        </text>
+    </g>
+</svg>
