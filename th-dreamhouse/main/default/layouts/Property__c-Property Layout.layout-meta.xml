@@ -47,6 +47,10 @@
                 <behavior>Edit</behavior>
                 <field>Asking_Price__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>something__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
