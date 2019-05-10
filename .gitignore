@@ -8,3 +8,5 @@
 .tern-project
 .settings
 IlluminatedCloud/
+JWT/
+.todo*
