@@ -10,7 +10,7 @@
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "44.0",
+    "sourceApiVersion": "45.0",
     "packageAliases": {
         "dreamhouse": "0Ho1I000000XZDVSA4",
         "dreamhouse@2.0.0-4": "04t1I0000036seVQAQ",
