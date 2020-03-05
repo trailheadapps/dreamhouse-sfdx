@@ -3,7 +3,7 @@
     <aura:attribute name="question" type="String" default=""/>
     <aura:attribute name="messages" type="Object[]"/>
     <aura:attribute name="session" type="Array"/>
-    <aura:attribute name="height" type="String" default="500px"/>
+    <aura:attribute name="height" type="String" default="502px"/>
 	<aura:attribute name="files" type="Object[]"/>
 
     <div style="{#'height: '+v.height}" class="slds-p-vertical_x-small">
