@@ -55,7 +55,7 @@ public with sharing class BotController {
             
         } catch (Exception e) {
             System.debug(e);                
-            return new BotResponse(new BotMessage('Bot', 'Oops, something went wrong invoking that command'));
+            return new BotResponse(new BotMessage('Bot', 'Oops, something went wrssong invoking that command'));
         }
         
     }
