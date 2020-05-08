@@ -1,0 +1,25 @@
+name: PMD Scanner
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    steps:
+      - name: Setup JRE
+        uses: actions/setup-java@v1
+        with:
+          java-version: '13.0.2'
+          java-package: jre
+          architecture: x64
+
+      - uses: pikeje/actions-pmd@v1.0.1
+      - name: run-pmd
+        run: pmd -d <source code> -R <ruleset> -f html --failOnViolation false > report.html
