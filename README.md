@@ -8,7 +8,7 @@
 
 Dreamhouse is a sample application for the real estate business built on the Salesforce platform. It allows brokers to manage their properties and customers to find their dream house.
 
-## Table of contents
+## Table of content
 
 * [Installation instructions](#installation-instructions)
     * [Installing DreamHouse using Salesforce DX](#installing-dreamhouse-using-salesforce-dx)
