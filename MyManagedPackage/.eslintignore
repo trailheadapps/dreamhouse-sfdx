@@ -1,0 +1,5 @@
+**/lwc/**/*.css
+**/lwc/**/*.html
+**/lwc/**/*.json
+**/lwc/**/*.svg
+.sfdx
