@@ -1,6 +1,15 @@
 @isTest
 public class BotTest {
     
+    static testMethod void testAutoBotController() {
+		Bot_Command__c bc1 = new Bot_Command__c(Sample_Utterance__c='help lightning', apex_class__c='HandlerHelpTopic', pattern__c='help (.*)');
+        insert bc1;
+        BotResponse response = BotController.submit('help lightning', null, null, null);
+        Map<String, String> session = response.session;
+        response = BotController.submit('Developer', session, null, null);
+        System.assert(response.messages[0].items.size() > 0);
+    }
+    
     static testMethod void testBotController() {
 		Bot_Command__c bc1 = new Bot_Command__c(Sample_Utterance__c='help lightning', apex_class__c='HandlerHelpTopic', pattern__c='help (.*)');
         insert bc1;
