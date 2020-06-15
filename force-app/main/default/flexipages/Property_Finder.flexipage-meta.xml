@@ -13,6 +13,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>PropertyListMap</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>pageSize</name>
                 <value>8</value>
