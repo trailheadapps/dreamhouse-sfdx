@@ -1,4 +1,4 @@
-public class BotController {
+public with sharing class BotController {
 
     class HandlerMapping {
         
