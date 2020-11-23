@@ -1,19 +1,37 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- job: Directory_CICDCheck
+  displayName: 'Validate Pull Request in Scratch org'
+  timeoutInMinutes: 359
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+    - task: sfpwowerscript-installsfdx-task@7
+      displayName: 'Install SalesforceDX'
+    - task: sfpwowerscript-authenticateorg-task@9
+      displayName: 'Authenticate against DevHub Org'
+      inputs:
+        method: 'ServiceConnection'
+        salesforce_connection: 'DevHub'
+        alias: 'MCDDevHubOrg'
+    - task: sfpwowerscript-managescratchorg-task@8
+      displayName: 'Create scratch org: scratchorg'
+      inputs:
+        action: 'Create'
+        config_file_path: 'sfdx-project.json'
+        alias: 'scratchorg'
+        devhub_alias: 'MCDDevHubOrg'
+        maintainorg: 'delete'
+    - task: sfpowerscript-deploysourcetoorg-task@10
+      displayName: 'Deploy metadata to org: scratchorg'
+      inputs:
+        target_org: 'scratchorg'
+        source_directory: 'force-app'
+        checkonly: false
+        wait_time: '20'
+        testlevel: 'RunAllTestsInOrg'
+        isToBreakBuildIfEmpty: true
+    - task: sfpwowerscript-validateapextestcoverage-task@4
+      displayName: 'Verify code coverage of 75%'
+      inputs:
+        target_org: 'scratchorg'
+        test_coverage: '75'
