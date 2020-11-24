@@ -11,7 +11,7 @@ jobs:
       displayName: 'Authenticate against DevHub Org'
       inputs:
         method: 'ServiceConnection'
-        salesforce_connection: 'DevHub'
+        salesforce_connection: 'Empathetic Unicorn'
         alias: 'DevHub'
     - task: sfpwowerscript-managescratchorg-task@8
       displayName: 'Create scratch org: scratchorg'
