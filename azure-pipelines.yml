@@ -12,14 +12,14 @@ jobs:
       inputs:
         method: 'ServiceConnection'
         salesforce_connection: 'Empathetic Unicorn'
-        alias: 'DevHub'
+        alias: 'MCDDevHubOrg'
     - task: sfpwowerscript-managescratchorg-task@8
       displayName: 'Create scratch org: scratchorg'
       inputs:
         action: 'Create'
         config_file_path: 'config/project-scratch-def.json'
         alias: 'scratchorg'
-        devhub_alias: 'DevHub'
+        devhub_alias: 'MCDDevHubOrg'
         maintainorg: 'delete'
     - task: sfpowerscript-deploysourcetoorg-task@10
       displayName: 'Deploy metadata to org: scratchorg'
