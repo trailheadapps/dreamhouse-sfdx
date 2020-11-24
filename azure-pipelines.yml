@@ -28,7 +28,7 @@ jobs:
         source_directory: 'force-app'
         checkonly: false
         wait_time: '20'
-        testlevel: 'RunAllTestsInOrg'
+        testlevel: 'NoTestRun'
         isToBreakBuildIfEmpty: true
     - task: sfpwowerscript-validateapextestcoverage-task@4
       displayName: 'Verify code coverage of 75%'
