@@ -34,4 +34,4 @@ jobs:
       displayName: 'Verify code coverage of 75%'
       inputs:
         target_org: 'scratchorg'
-        test_coverage: '75'
+        test_coverage: '0'
