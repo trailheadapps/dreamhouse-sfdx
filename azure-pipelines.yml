@@ -17,7 +17,7 @@ jobs:
       displayName: 'Create scratch org: scratchorg'
       inputs:
         action: 'Create'
-        config_file_path: 'sfdx-project.json'
+        config_file_path: 'config/project-scratch-def.json'
         alias: 'scratchorg'
         devhub_alias: 'MCDDevHubOrg'
         maintainorg: 'delete'
