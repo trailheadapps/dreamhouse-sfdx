@@ -25,14 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - name: Salesforce SFDX CLI Action
         # You may pin to the exact commit or the version.
         # uses: sfdx-actions/setup-sfdx@11c446244374e3ada4f0116cbd0e3fcb8833fbcf
         uses: sfdx-actions/setup-sfdx@v1
       
       - name: Run a one-line script
-        run: sudo sfdx plugins:install sfpowerkit
+        run: echo 'y' | sfdx plugins:install sfpowerkit
