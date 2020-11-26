@@ -35,4 +35,4 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
       
       - name: Run a one-line script
-        run: sfdx plugins:install sfpowerkit
+        run: sudo sfdx plugins:install sfpowerkit
