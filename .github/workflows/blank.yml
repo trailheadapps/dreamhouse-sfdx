@@ -31,4 +31,6 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
       
       - name: Run a one-line script
-        run: echo 'y' | sfdx plugins:install sfpowerkit@2.4.4 DEBUG=*
+        run: |
+              export DEBUG=*
+              echo 'y' | sfdx plugins:install sfpowerkit@2.4.4 
