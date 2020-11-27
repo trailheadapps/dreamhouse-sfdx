@@ -33,4 +33,4 @@ jobs:
       - name: Run a one-line script
         run: |
               export DEBUG=*
-              echo 'y' | sfdx plugins:install sfpowerkit@2.4.4 
+              echo 'y' | sfdx plugins:install sfpowerkit@alpha
