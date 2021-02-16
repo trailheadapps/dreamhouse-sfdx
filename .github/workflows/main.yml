@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Quality Clouds Build Check for Salesforce
+uses: qualityclouds/action-full-scan@0.0.10
+with:xxx
+  token:
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+
+
