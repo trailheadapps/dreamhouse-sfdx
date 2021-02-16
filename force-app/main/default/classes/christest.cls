@@ -1,6 +1,8 @@
 public class chrisTest {
     
-    static void chrisTestMethodx() {
+    static void chrisTestxxxMethodx() {
+
+        String x = 'testyyyyy'; 
     }
 }
 
