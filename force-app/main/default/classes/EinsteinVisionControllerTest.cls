@@ -17,6 +17,7 @@ public class EinsteinVisionControllerTest {
     }
     
     static testMethod void testGetDataSets() {
+        String chrisTest = 'test'; 
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
