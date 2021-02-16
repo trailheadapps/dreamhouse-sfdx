@@ -10,7 +10,7 @@ on:
     branches:
       - master
 jobs:
-  say_hello:
+  qccheck:
     runs-on: ubuntu-latest
     steps:
     - uses: qualityclouds/action-full-scan@v0.0.1
