@@ -1,0 +1,5 @@
+<design:component >
+	<design:attribute name="min" label="Min Value" default="0"/>	
+	<design:attribute name="max" label="Max Value" default="1000"/>	
+	<design:attribute name="step" label="Step" default="10"/>	
+</design:component>

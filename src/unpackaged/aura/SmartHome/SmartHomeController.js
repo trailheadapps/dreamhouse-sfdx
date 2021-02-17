@@ -1,0 +1,5 @@
+({
+	myAction : function() {
+
+	}
+})

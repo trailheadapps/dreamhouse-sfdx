@@ -1,0 +1,37 @@
+.THIS {
+    padding: 4px;
+}
+
+.THIS .slds-card__body {
+    text-align: center;
+    margin-bottom: 0;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+
+.THIS .slds-carousel__content {
+     display: none;
+}
+
+.THIS .slds-carousel__autoplay {
+    display: none;
+}
+
+.THIS lightning-file-upload .slds-form-element__label {
+    display: none;
+}
+
+.THIS .card-content {
+    padding: 8px;
+    text-align: center;
+}
+
+.THIS .slds-carousel__image {
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
+
+.THIS .slds-file-selector,
+.THIS lightning-primitive-file-droppable-zone {
+    width: 100%;
+}

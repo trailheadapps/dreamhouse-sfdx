@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:registerEvent name="propertyFilterChange" type="c:PropertyFilterChange"/>
+
+    <div class="slds-card">
+        <c:VoiceInput onchange="{!c.onChange}"></c:VoiceInput>
+    </div>
+
+</aura:component>

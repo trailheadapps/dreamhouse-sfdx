@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable" access="global" controller="EinsteinVisionController">
+
+    <aura:attribute name="modelId" type="String" />
+    <aura:attribute name="files" type="Object[]" />
+    <aura:attribute name="predictions" type="List" />
+    <aura:attribute name="waiting" type="Boolean" default="false" />
+    <aura:attribute name="pictureSrc" type="String" />
+
+    <aura:registerEvent name="onPrediction" type="c:VisualSearchEvent" />
+
+    <div>
+
+        <p class="slds-form-element__label">Visual search</p>
+
+        <button class="slds-button slds-button_neutral upload-btn">
+            <lightning:icon iconName="utility:upload" size="xx-small" /> Upload Picture
+            <input aura:id="fileInput" type="file" accept="image/*" onchange="{!c.onFileChange}" />
+        </button>
+
+        <div class="frame" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+            <aura:if isTrue="{!!v.pictureSrc}">
+                <p class="drop-message slds-text-color_weak">or drop picure here</p>
+            </aura:if>
+            <img src="{!v.pictureSrc}" />
+        </div>
+
+        <aura:iteration items="{!v.predictions}" var="prediction">
+            <lightning:layout>
+                <lightning:layoutitem>
+                    <lightning:icon iconName="utility:preview" size="x-small" /></lightning:layoutitem>
+                <lightning:layoutitem>{! prediction.formattedProbability}</lightning:layoutitem>
+                <lightning:layoutitem flexibility="grow">{!prediction.label}</lightning:layoutitem>
+            </lightning:layout>
+        </aura:iteration>
+
+        <aura:if isTrue="{! v.waiting }">
+            <lightning:spinner size="large" />
+        </aura:if>
+
+    </div>
+
+</aura:component>

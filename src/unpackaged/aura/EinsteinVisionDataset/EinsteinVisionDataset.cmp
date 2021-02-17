@@ -1,0 +1,42 @@
+<aura:component controller="EinsteinVisionController">
+    
+    <aura:attribute name="dataset" type="Object"/>
+    <aura:attribute name="datasetColumns" type="List" />
+    <aura:attribute name="modelColumns" type="List" />
+    <aura:attribute name="models" type="Object[]"/>
+    <aura:attribute name="currentTab" type="String" default="labels"/>
+
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }"/>
+    <aura:registerEvent name="onchange" type="c:EinsteinVisionDatasetEvent"/>
+    
+    <lightning:card title="{!v.dataset.name}" iconName="utility:preview">
+        
+        <aura:set attribute="actions">
+            <aura:if isTrue="{!v.currentTab=='labels'}">
+                <lightning:button label="Train" onclick="{!c.onTrainModel}" />
+                <lightning:button label="Delete" onclick="{!c.onDeleteDataset}" />
+            </aura:if>
+            <aura:if isTrue="{!v.currentTab=='models'}">
+	            <lightning:button label="Refresh Models" onclick="{!c.onRefresh}" />
+            </aura:if>                
+        </aura:set>
+
+        Dataset Id: {!v.dataset.id}
+        <lightning:tabset >
+            <lightning:tab label="Labels" onactive="{!c.onLabelsTab}">
+                <lightning:datatable data="{!v.dataset.labelSummary.labels}"
+                        columns="{!v.datasetColumns}"
+                        keyField="id"
+                        hideCheckboxColumn="true" />
+            </lightning:tab>
+            <lightning:tab label="Models" onactive="{!c.onModelsTab}">
+                <lightning:datatable data="{!v.models}"
+                    columns="{!v.modelColumns}"
+                    keyField="modelId"
+                    hideCheckboxColumn="true" />
+            </lightning:tab>
+        </lightning:tabset>    
+        
+    </lightning:card>
+    
+</aura:component>
