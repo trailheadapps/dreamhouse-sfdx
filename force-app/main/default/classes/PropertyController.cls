@@ -13,7 +13,7 @@ global with sharing class PropertyController {
                       AND baths__c >= :numberBathrooms
                       ORDER BY price__c LIMIT 100];
     }
-
+public string title;
     @AuraEnabled(cacheable=true)
     public static PropertyListPage getPropertyListPage(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey, Decimal pageSize, Decimal pageNumber) {
 		Integer pSize = (Integer)pageSize;
