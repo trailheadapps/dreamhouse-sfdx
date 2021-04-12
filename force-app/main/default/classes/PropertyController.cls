@@ -1,5 +1,5 @@
 global with sharing class PropertyController {
-
+Public string Gender ='Male'
     @AuraEnabled(cacheable=true)
     public static Property__c[] getPropertyList(String searchKey, Decimal minPrice, Decimal maxPrice, Integer numberBedrooms, Integer numberBathrooms, String visualSearchKey) {
         String key = '%' + searchKey + '%';
