@@ -11,6 +11,7 @@ public with sharing class HandlerFindAccount implements BotHandler {
             SELECT Id, Name, Phone
             FROM Account
             WHERE Name LIKE :key
+            WITH SECURITY_ENFORCED
             ORDER BY Name
             LIMIT 5
         ];

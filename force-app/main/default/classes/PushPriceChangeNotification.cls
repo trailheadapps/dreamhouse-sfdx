@@ -18,6 +18,7 @@ public with sharing class PushPriceChangeNotification {
             SELECT Name, Price__c
             FROM Property__c
             WHERE Id = :propId
+            WITH SECURITY_ENFORCED
         ];
         String message =
             property.Name +
@@ -30,6 +31,7 @@ public with sharing class PushPriceChangeNotification {
             SELECT user__c
             FROM Property_Favorite__c
             WHERE property__c = :propId
+            WITH SECURITY_ENFORCED
         ];
         for (Property_Favorite__c favorite : favorites) {
             userIds.add(favorite.user__c);

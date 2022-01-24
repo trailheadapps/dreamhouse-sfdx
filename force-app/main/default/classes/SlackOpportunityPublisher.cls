@@ -9,6 +9,7 @@ public with sharing class SlackOpportunityPublisher {
             SELECT Name, StageName
             FROM Opportunity
             WHERE Id = :oppId
+            WITH SECURITY_ENFORCED
         ];
         Map<String, Object> msg = new Map<String, Object>();
         msg.put(

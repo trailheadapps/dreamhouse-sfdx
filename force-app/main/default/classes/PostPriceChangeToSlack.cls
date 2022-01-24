@@ -21,6 +21,7 @@ public class PostPriceChangeToSlack {
             SELECT Address__c, City__c, State__c, Price__c
             FROM Property__c
             WHERE Id = :propId
+            WITH SECURITY_ENFORCED
         ];
         String message =
             'Price change: ' +

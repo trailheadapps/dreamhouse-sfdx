@@ -11,6 +11,7 @@ public with sharing class HandlerTopOpportunities implements BotHandler {
             SELECT Id, Name, Amount, Probability, StageName, CloseDate
             FROM Opportunity
             WHERE isClosed = FALSE
+            WITH SECURITY_ENFORCED
             ORDER BY amount DESC
             LIMIT :qty
         ];
