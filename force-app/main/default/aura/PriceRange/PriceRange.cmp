@@ -1,6 +1,12 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
-
-    <ltng:require styles="{!$Resource.nouislider + '/nouislider.css'}" scripts="{!$Resource.nouislider + '/nouislider.js'}" afterScriptsLoaded="{!c.jsLoaded}" />
+<aura:component
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+    access="global"
+>
+    <ltng:require
+        styles="{!$Resource.nouislider + '/nouislider.css'}"
+        scripts="{!$Resource.nouislider + '/nouislider.js'}"
+        afterScriptsLoaded="{!c.jsLoaded}"
+    />
 
     <aura:registerEvent name="rangeChange" type="c:RangeChange" />
 
@@ -12,10 +18,9 @@
         <aura:attribute name="min" type="Integer" />
         <aura:attribute name="max" type="Integer" />
     </aura:method>
-    
+
     <div>
         <p class="slds-form-element__label">Price range</p>
         <div aura:id="slider" class="slider" />
     </div>
-
 </aura:component>

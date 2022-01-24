@@ -1,5 +1,4 @@
 public class HttpFormBuilder {
-
     //  The boundary is alligned so it doesn't produce padding characters when base64 encoded.
     private final static string Boundary = '1ff13444ed8140c7a32fc4e6451aa76d';
 
@@ -7,7 +6,9 @@ public class HttpFormBuilder {
      *  Returns the request's content type for multipart/form-data requests.
      */
     public static string GetContentType() {
-        return 'multipart/form-data; charset="UTF-8"; boundary="' + Boundary + '"';
+        return 'multipart/form-data; charset="UTF-8"; boundary="' +
+            Boundary +
+            '"';
     }
 
     /**
@@ -16,7 +17,8 @@ public class HttpFormBuilder {
     private static string SafelyPad(
         string value,
         string valueCrLf64,
-        string lineBreaks) {
+        string lineBreaks
+    ) {
         string valueCrLf = '';
         blob valueCrLfBlob = null;
 
@@ -43,8 +45,7 @@ public class HttpFormBuilder {
     /**
      *  Write a boundary at the end of the form's body.
      */
-    public static string WriteBoundary(
-        EndingType ending) {
+    public static string WriteBoundary(EndingType ending) {
         string value = '';
 
         if (ending == EndingType.Cr) {
@@ -75,14 +76,21 @@ public class HttpFormBuilder {
     /**
      *  Write a key-value pair to the form's body.
      */
-    public static string WriteBodyParameter(
-        string key,
-        string value) {
-        string contentDisposition = 'Content-Disposition: form-data; name="' + key + '"';
+    public static string WriteBodyParameter(string key, string value) {
+        string contentDisposition =
+            'Content-Disposition: form-data; name="' +
+            key +
+            '"';
         string contentDispositionCrLf = contentDisposition + '\r\n\r\n';
         blob contentDispositionCrLfBlob = blob.valueOf(contentDispositionCrLf);
-        string contentDispositionCrLf64 = EncodingUtil.base64Encode(contentDispositionCrLfBlob);
-        string content = SafelyPad(contentDisposition, contentDispositionCrLf64, '\r\n\r\n');
+        string contentDispositionCrLf64 = EncodingUtil.base64Encode(
+            contentDispositionCrLfBlob
+        );
+        string content = SafelyPad(
+            contentDisposition,
+            contentDispositionCrLf64,
+            '\r\n\r\n'
+        );
         string valueCrLf = value + '\r\n';
         blob valueCrLfBlob = blob.valueOf(valueCrLf);
         string valueCrLf64 = EncodingUtil.base64Encode(valueCrLfBlob);

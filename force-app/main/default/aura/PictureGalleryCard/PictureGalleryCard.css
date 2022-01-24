@@ -1,9 +1,9 @@
 .THIS * {
-	box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .THIS .slds-card__body {
-	height: 340px;
+    height: 340px;
     margin-bottom: 0;
 }
 

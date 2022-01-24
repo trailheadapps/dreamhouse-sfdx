@@ -1,15 +1,13 @@
 public class PropertyListPage {
-    
     @AuraEnabled
-    public Integer pageSize { get;set; }
-    
+    public Integer pageSize { get; set; }
+
     @AuraEnabled
-    public Integer pageNumber { get;set; }
-    
+    public Integer pageNumber { get; set; }
+
     @AuraEnabled
-    public Integer total { get;set; }
-    
+    public Integer total { get; set; }
+
     @AuraEnabled
-    public List<Property__c> properties { get;set; }
-    
+    public List<Property__c> properties { get; set; }
 }

@@ -1,0 +1,55 @@
+{
+    "name": "dreamhouse-sfdx",
+    "version": "1.0.0",
+    "description": "DreamHouse Sample App - Aura",
+    "scripts": {
+        "lint": "eslint **/{lwc,aura}/**/*.js",
+        "test": "npm run test:unit",
+        "test:unit": "sfdx-lwc-jest --skipApiVersionCheck",
+        "test:unit:watch": "sfdx-lwc-jest --watch --skipApiVersionCheck",
+        "test:unit:debug": "sfdx-lwc-jest --debug --skipApiVersionCheck",
+        "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
+        "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+        "postinstall": "husky install",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+            "prettier --write"
+        ],
+        "**/{aura,lwc}/**/*.js": [
+            "eslint"
+        ],
+        "**/lwc/**": [
+            "sfdx-lwc-jest --skipApiVersionCheck -- --bail --findRelatedTests"
+        ]
+    },
+    "author": "salesforce.com",
+    "license": "CC0-1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/forcedotcom/dreamhouse-lwc"
+    },
+    "devDependencies": {
+        "@lwc/eslint-plugin-lwc": "^1.1.1",
+        "@prettier/plugin-xml": "^1.1.0",
+        "@sa11y/jest": "^3.1.0",
+        "@salesforce/eslint-config-lwc": "^3.0.0",
+        "@salesforce/eslint-plugin-aura": "^2.0.0",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "@salesforce/sfdx-lwc-jest": "^0.14.0",
+        "eslint": "^7.29.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jest": "^25.3.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^12.1.2",
+        "prettier": "^2.5.1",
+        "prettier-plugin-apex": "^1.10.0"
+    },
+    "volta": {
+        "node": "14.17.3",
+        "npm": "6.14.13"
+    }
+}
