@@ -1,5 +1,4 @@
 <aura:component access="global">
-
     <aura:attribute name="talking" type="boolean" default="false" />
     <aura:attribute name="utterance" type="String" />
 
@@ -7,27 +6,42 @@
 
     <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
 
-    <aura:method name="clear" action="{!c.clear}"/>
+    <aura:method name="clear" action="{!c.clear}" />
 
     <lightning:layout verticalAlign="center">
         <lightning:layoutItem flexibility="grow">
-            <input aura:id="utterance" type="text" class="slds-input voice-input" placeholder="How can I assist you?" onkeypress="{!c.onKeyPress}" />
+            <input
+                aura:id="utterance"
+                type="text"
+                class="slds-input voice-input"
+                placeholder="How can I assist you?"
+                onkeypress="{!c.onKeyPress}"
+            />
         </lightning:layoutItem>
-        <lightning:layoutItem >
+        <lightning:layoutItem>
             <div class="audio-icon">
                 <aura:if isTrue="{!v.talking}">
-                    <div class="slds-icon-eq slds-is-animated" title="Description of the icon when needed">
+                    <div
+                        class="slds-icon-eq slds-is-animated"
+                        title="Description of the icon when needed"
+                    >
                         <div class="slds-icon-eq__bar"></div>
                         <div class="slds-icon-eq__bar"></div>
                         <div class="slds-icon-eq__bar"></div>
-                        <span class="slds-assistive-text">Text alternative when needed</span>
+                        <span class="slds-assistive-text"
+                            >Text alternative when needed</span
+                        >
                     </div>
                     <aura:set attribute="else">
-                        <lightning:buttonIcon iconName="utility:unmuted" variant="bare" size="large" onclick="{!c.onTalk}"></lightning:buttonIcon>
+                        <lightning:buttonIcon
+                            iconName="utility:unmuted"
+                            variant="bare"
+                            size="large"
+                            onclick="{!c.onTalk}"
+                        ></lightning:buttonIcon>
                     </aura:set>
                 </aura:if>
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-
 </aura:component>

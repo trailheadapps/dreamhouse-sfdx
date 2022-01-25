@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This is the utility bar for the Dreamhouse application</description>
+    <description
+    >This is the utility bar for the Dreamhouse application</description>
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>

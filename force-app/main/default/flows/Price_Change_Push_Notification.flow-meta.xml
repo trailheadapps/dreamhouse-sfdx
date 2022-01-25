@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <processMetadataValues>
@@ -41,7 +41,7 @@
             <processMetadataValues>
                 <name>objectType</name>
                 <value>
-                    <stringValue></stringValue>
+                    <stringValue />
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -62,14 +62,16 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <assignToReference
+            >myVariable_waitStartTimeVariable</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>isChangedDecision2_myRule_1_Price_c</targetReference>
+            <targetReference
+            >isChangedDecision2_myRule_1_Price_c</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -95,7 +97,8 @@
                 <leftValueReference>myVariable_old.Price__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>myVariable_current.Price__c</elementReference>
+                    <elementReference
+                    >myVariable_current.Price__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -144,7 +147,8 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_2_myRule_1_Price_c</leftValueReference>
+                <leftValueReference
+                >isChangedRule_2_myRule_1_Price_c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -156,9 +160,11 @@
             <label>Price Change?</label>
         </rules>
     </decisions>
-    <description>When the price of a property changes, send Push Notification</description>
+    <description
+    >When the price of a property changes, send Push Notification</description>
     <status>ACTIVE</status>
-    <interviewLabel>Price_Change_Push_Notification-1_InterviewLabel</interviewLabel>
+    <interviewLabel
+    >Price_Change_Push_Notification-1_InterviewLabel</interviewLabel>
     <label>Price Change Push Notification</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -185,7 +191,8 @@
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference
+    >myVariable_waitStartTimeAssignment</startElementReference>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

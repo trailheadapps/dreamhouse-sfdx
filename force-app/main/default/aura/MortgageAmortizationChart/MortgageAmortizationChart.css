@@ -1,20 +1,20 @@
 .THIS {
-	margin: 8px;
+    margin: 8px;
     border-collapse: collapse;
     font-weight: light;
     font-size: 14px;
 }
 .THIS td {
     font-family: menlo;
-	font-weight: 300;
+    font-weight: 300;
 }
 
 .THIS .principal {
-    color: #0288D1;
+    color: #0288d1;
 }
 
 .THIS .interest {
-    color: #EF6C00;
+    color: #ef6c00;
 }
 
 .THIS th {
@@ -25,9 +25,9 @@
 .THIS th,
 .THIS td {
     text-align: right;
-    border: solid 1px #EEEEEE !important;
+    border: solid 1px #eeeeee !important;
     padding: 1px 4px;
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 .THIS .bar {
@@ -37,19 +37,19 @@
 }
 
 .THIS .bar.principal {
-    background-color: #0288D1;
-    margin-right:1px;
+    background-color: #0288d1;
+    margin-right: 1px;
 }
 
 .THIS .bar.interest {
-    background-color: #EF6C00;
-    margin-left:1px;
+    background-color: #ef6c00;
+    margin-left: 1px;
 }
 
 .THIS .stretch {
     width: 100%;
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .THIS .flex {

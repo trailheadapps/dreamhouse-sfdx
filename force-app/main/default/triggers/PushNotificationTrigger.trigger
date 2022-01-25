@@ -1,5 +1,4 @@
-trigger PushNotificationTrigger on Property__c (after update) {
-    
+trigger PushNotificationTrigger on Property__c(after update) {
     /*
     for (Property__c property : Trigger.New) {
         
@@ -15,5 +14,4 @@ trigger PushNotificationTrigger on Property__c (after update) {
         
     }
 	*/
-
 }

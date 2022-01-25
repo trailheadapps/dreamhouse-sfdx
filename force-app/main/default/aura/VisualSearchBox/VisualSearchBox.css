@@ -3,11 +3,11 @@
 }
 
 .THIS td {
-	padding: 2px;
+    padding: 2px;
 }
 
 .THIS .probability {
-	padding-right: 4px;
+    padding-right: 4px;
     text-align: right;
 }
 
@@ -47,10 +47,10 @@
 }
 
 .THIS .upload-btn svg {
-    fill: #1F539C;
+    fill: #1f539c;
     margin-right: 1px;
 }
-    
+
 .THIS .drop-message {
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@
     margin: 0 auto;
 }
 
-.THIS input[type=file] {
+.THIS input[type='file'] {
     cursor: pointer;
     display: block;
     filter: alpha(opacity=0);
