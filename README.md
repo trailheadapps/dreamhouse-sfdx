@@ -1,6 +1,6 @@
 # DreamHouse Aura Sample Application
 
-> **⚠️ IMPORTANT ⚠️ :** This is the Aura version of the DreamHouse sample application. If you are looking for the new Lightning Web Components version, click [here](https://github.com/dreamhouseapp/dreamhouse-lwc).
+> **⚠️ IMPORTANT ⚠️ :** This is the Aura version of the DreamHouse sample application. This version is deprecated and has been archived since 2019. If you are looking for the new Lightning Web Components version, click [here](https://github.com/dreamhouseapp/dreamhouse-lwc).
 
 ![dreamhouse-logo](dreamhouse-logo.png)
 
