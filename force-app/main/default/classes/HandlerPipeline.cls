@@ -10,7 +10,7 @@ public with sharing class HandlerPipeline implements BotHandler {
             new BotMessage(
                 'Bot',
                 'Here is your pipeline:',
-                'https://s3-us-west-1.amazonaws.com/sfdc-demo/charts/pipeline.png'
+                'https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/charts/pipeline.png'
             )
         );
     }

@@ -7,7 +7,7 @@
     <aura:attribute
         name="pathToZip"
         type="String"
-        default="https://s3-us-west-1.amazonaws.com/sfdc-demo/houses.zip"
+        default="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/houses.zip"
     />
     <aura:attribute name="waiting" type="Boolean" default="false" />
 

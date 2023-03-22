@@ -10,7 +10,7 @@ public with sharing class HandlerQuarter implements BotHandler {
             new BotMessage(
                 'Bot',
                 'Your quarter so far:',
-                'https://s3-us-west-1.amazonaws.com/sfdc-demo/charts/quarter2.png'
+                'https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/charts/quarter2.png'
             )
         );
     }
